@@ -1,4 +1,4 @@
-from w209final.apps.core.models import *
+from w209final.apps.core.models import Disease, Vaccine, VaccineGroup
 from django.contrib import admin
 
 admin.site.register(Disease, admin.ModelAdmin)
