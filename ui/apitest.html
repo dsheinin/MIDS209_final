@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>API test</title>
+</head>
+<body>
+
+    <pre id="data_preview"></pre>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script type="text/javascript">
+        $.getJSON( "http://localhost:8000/api/fetch/coverage/dpt/", function( data ) {
+            $('#data_preview').text(JSON.stringify(data, null, 2));
+        });
+    </script>
+
+</body>
+</html>

@@ -61,7 +61,7 @@ class Vaccine(models.Model):
 
 class VaccinationEstimate(models.Model):
     year = models.IntegerField()
-    vaccine = models.ForeignKey(Vaccine)
+    vaccine = models.ForeignKey(Vaccine, related_name="vaccination_estimates")
     country = models.ForeignKey(Country)
     coverage = models.IntegerField()
 
