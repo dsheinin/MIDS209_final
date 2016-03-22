@@ -11,8 +11,19 @@ class PopulationMeasurement(models.Model):
     country = models.ForeignKey(Country)
     population = models.IntegerField()
 
+class VaccineGroup(models.Model):
+    slug = models.SlugField(unique=True)
+    name = models.CharField(max_length=20)
+
+    def __unicode__(self):
+        return self.name
+
 class Disease(models.Model):
     name = models.CharField(max_length=100)
+    group = models.ForeignKey(VaccineGroup, related_name="diseases", null=True)
+
+    def __unicode__(self):
+        return self.name
 
 class DiseaseIncidence(models.Model):
     year = models.IntegerField()
@@ -43,6 +54,10 @@ class DiseaseIncidence(models.Model):
 
 class Vaccine(models.Model):
     code = models.CharField(max_length=20)
+    group = models.ForeignKey(VaccineGroup, related_name="vaccines", null=True)
+
+    def __unicode__(self):
+        return self.code
 
 class VaccinationEstimate(models.Model):
     year = models.IntegerField()
