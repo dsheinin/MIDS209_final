@@ -9,7 +9,7 @@
 3. 
 ```
 ./manage.py migrate
-./manage.py import
+./manage.py loaddata data.json
 ```
 4. `./manage.py runserver` makes it available at localhost:8000 (but there's nothing to see there yet).
 
