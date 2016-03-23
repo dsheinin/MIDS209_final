@@ -10,7 +10,11 @@
 
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script type="text/javascript">
-        $.getJSON( "http://localhost:8000/api/fetch/coverage/dpt/", function( data ) {
+        var apiBaseUrl = "https://demo.sheinin.ca/w209/api/"
+        // For testing with a local Django installation
+        //var apiBaseUrl = "http://localhost:8000/api/"
+
+        $.getJSON( apiBaseUrl + "fetch/coverage/dpt/", function( data ) {
             $('#data_preview').text(JSON.stringify(data, null, 2));
         });
     </script>
