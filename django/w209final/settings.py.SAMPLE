@@ -49,6 +49,7 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'w209final.crossdomainxhr-middleware.XsSharing',
 ]
 
 ROOT_URLCONF = 'w209final.urls'
