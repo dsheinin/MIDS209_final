@@ -5,7 +5,7 @@
 (paths relative to the django directory)
 
 1. `pip install Django`, or however you install python modules. I use pip inside a virtualenv but the virtualenv isn't necessarily necessary.
-2. copy w209final/settings.py.SAMPLE to w209final/settings.py. Modify the `DATA_DIR` setting at the bottom of settings.py to point to the data directory in this repo.
+2. (optional, if running CSV import/export scripts) Copy w209final/settings.py.SAMPLE to w209final/settings.py. Modify the `DATA_DIR` setting at the bottom of settings.py to point to the data directory in this repo.
 3. 
 ```
 ./manage.py migrate
