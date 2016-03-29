@@ -28,6 +28,16 @@
 
     <!-- Custom styles for this template -->
     <link href="css/carousel.css" rel="stylesheet">
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/d3.min.js"></script>
+    
+    <style>
+    #mapdiv {
+        margin-left: 20px;
+    }
+    </style>
+    
         
     <!-- For the amchart map -->      
     <link rel="stylesheet" href="css/ammap.css" type="text/css">
@@ -47,7 +57,7 @@
           "dataProvider": {
             "map": "worldLow",
             "getAreasFromMap": true,
-            "zoomLevel": 2.86791,
+            "zoomLevel": 4.6,
             "zoomLatitude": -1.626942,
             "zoomLongitude": 20.373778,
             "areas": [{
@@ -289,8 +299,7 @@
               "balloonText": "",
               "alpha": 0
              
-            },
-            	{
+            }, {
                   "id": "BA",
               "selectable": false,
               "balloonText": "",
@@ -315,6 +324,86 @@
               "selectable": false,
               "balloonText": "",
               "alpha": 0
+            },{
+                "id": "JO",
+              "selectable": false,
+              "balloonText": "",
+              "alpha": 0
+            },{
+                "id": "PS",
+              "selectable": false,
+              "balloonText": "",
+              "alpha": 0
+            },{
+                "id": "RO",
+              "selectable": false,
+              "balloonText": "",
+              "alpha": 0
+            },{
+                "id": "UA",
+              "selectable": false,
+              "balloonText": "",
+              "alpha": 0
+            },{
+                "id": "MD",
+              "selectable": false,
+              "balloonText": "",
+              "alpha": 0
+            },{
+                "id": "HU",
+              "selectable": false,
+              "balloonText": "",
+              "alpha": 0
+            },{
+                "id": "AT",
+              "selectable": false,
+              "balloonText": "",
+              "alpha": 0
+            },{
+                "id": "SI",
+              "selectable": false,
+              "balloonText": "",
+              "alpha": 0
+            },{
+                "id": "DE",
+              "selectable": false,
+              "balloonText": "",
+              "alpha": 0
+            },{
+                "id": "CH",
+              "selectable": false,
+              "balloonText": "",
+              "alpha": 0
+            },{
+                "id": "BE",
+              "selectable": false,
+              "balloonText": "",
+              "alpha": 0
+            },{
+                "id": "LU",
+              "selectable": false,
+              "balloonText": "",
+              "alpha": 0
+            },{
+                "id": "GB",
+              "selectable": false,
+              "balloonText": "",
+              "alpha": 0
+            },{
+                "id": "SK",
+              "selectable": false,
+              "balloonText": "",
+              "alpha": 0
+            },{
+                "id": "CZ",
+              "selectable": false,
+              "balloonText": "",
+              "alpha": 0
+            },{
+                "id": "PL",
+              "selectable": false,
+              "balloonText": "",
+              "alpha": 0
             }],
           },
           "areasSettings": {
@@ -325,53 +414,27 @@
           },
         
           "zoomControl": {
-            zoomControlEnabled: true,
+            zoomControlEnabled: false,
             homeButtonEnabled: true,
             panControlEnabled: false
           },
           dragMap: false,
           zoomOnDoubleClick: false
         });
+        
+        //******* listener for click event *******//
+        map.addListener("clickMapObject", function(event) {
+          alert("Map object id: " + event.mapObject.id + "\nMap object title: " + event.mapObject.title)
+          
+          if (event.mapObject.id == "SD") {
+			
+          }   
+          
+          
+        });
       
      </script>
      
-     
-     
-     <!--script>
-        // This script will display the entire world map
-         AmCharts.theme = AmCharts.themes.light;
-         // add all your code to this method, as this will ensure that page is loaded
-         AmCharts.ready(function() {
-             // create AmMap object
-             var map = new AmCharts.AmMap();
-
-             // set path to images
-
-             var dataProvider = {
-                 mapVar: AmCharts.maps.worldLow,
-                 getAreasFromMap:true
-             };
-             // pass data provider to the map object
-             map.dataProvider = dataProvider;
-
-             /* create areas settings
-              * autoZoom set to true means that the map will zoom-in when clicked on the area
-              * selectedColor indicates color of the clicked area.
-              */
-             map.areasSettings = {
-                 autoZoom: true,
-                 rollOverBrightness:10,
-                 selectedBrightness:20
-             };
-
-             // let's say we want a small map to be displayed, so let's create and add it to the map
-             map.smallMap = new AmCharts.SmallMap();
-
-             // write the map to container div
-             map.write("mapdiv");
-         });
-
-     </script-->
     
     <script type="text/javascript" src="d3/d3.min.js"></script>  
         
@@ -396,14 +459,16 @@
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
-                <li><a href="#design">Our Design</a></li>
-                <li class="dropdown">
+                <li><a href="#myDashboard">Take Me to the Dashboard</a></li>
+                <li><a href="#meettheteam">Meet the Team</a></li>
+                <!--li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More Options<span class="caret"></span></a>
                   <ul class="dropdown-menu">
                     <li><a href="#myDashboard">Take Me to the Dashboard</a></li>
                     <li><a href="#meettheteam">Meet the Team</a></li>
                   </ul>
-                </li>
+                </li-->
+                
               </ul>
             </div>
           </div>
@@ -469,25 +534,140 @@
     <!-- Dashboard
     ================================================== -->
     <h1 id="myDashboard" style="text-align:center">Immunization Effectiveness Dashboard</h1></br>
+
+    <div class="btn-group btn-group-justified">
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+        Measles<span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu">
+          <!--li><a href="#">Both</a></li-->
+          <li id='MeaslesB'><a>Both</a></li>
+          <li id='Measles1'><a>MCV1</a></li>
+          <li id='Measles2'><a>MCV2</a></li>
+        </ul>
+      </div>
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+        Diphtheria, Tetanus, Pertussis<span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu">
+          <li id='DPTB'><a>Both</a></li>
+          <li id='DPT1'><a>DPT1</a></li>
+          <li id='DPT3'><a>DPT3</a></li>
+        </ul>
+      </div>      
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+        Neonatal Tetenus<span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu">
+          <li id='NTet'><a>PAB</a></li>
+        </ul>
+      </div>
+      <!--a href="#" class="btn btn-primary">Polio</a-->
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+        Polio<span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu">
+          <li id='Polio'><a>Pol3</a></li>
+        </ul>
+      </div> 
+       <div class="btn-group">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+        Yellow Fever<span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu">
+          <li id='YFev'><a>YFV</a></li>
+        </ul>
+      </div>   
+    </div>
+    
+    <script>
+
+      $('#MeaslesB').on('click', function (e) {
+        console.log('#MeaslesB was clicked'); // points to the clicked input button
+      //your awesome code here
+      });
+      $('#Measles1').on('click', function (e) {
+        console.log('#Measles1 was clicked'); // points to the clicked input button
+      //your awesome code here
+      });
+      $('#Measles2').on('click', function (e) {
+        console.log('#Measles2 was clicked'); // points to the clicked input button
+      //your awesome code here
+      });
+      $('#DPTB').on('click', function (e) {
+        console.log('#DPTB was clicked'); // points to the clicked input button
+      //your awesome code here
+      });
+      $('#DPT1').on('click', function (e) {
+        console.log('#DPT1 was clicked'); // points to the clicked input button
+      //your awesome code here
+      });
+      $('#DPT3').on('click', function (e) {
+        console.log('#DPT3 was clicked'); // points to the clicked input button
+      //your awesome code here
+      });
+      $('#NTet').on('click', function (e) {
+        console.log('#NTet was clicked'); // points to the clicked input button
+      //your awesome code here
+      });
+      $('#Polio').on('click', function (e) {
+        console.log('#Polio was clicked'); // points to the clicked input button
+      //your awesome code here
+      });
+      $('#YFev').on('click', function (e) {
+        console.log('#YFev was clicked'); // points to the clicked input button
+      //your awesome code here
+      });
+    </script>
+
+    <p></p>
     <div class="dashboard">
       <!-- Indicators -->
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
           <!--img data-src="holder.js/100%x500/white"-->
           
           <div id="mapdiv" style="width: 100%; background-color:#EEEEEE; height: 500px;"></div>
           
         </div>
-        <div class="col-md-6">
-          <img data-src="holder.js/100%x500/white">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <img data-src="holder.js/100%x500/white">
-        </div>
-        <div class="col-md-6">
-          <img data-src="holder.js/100%x500/white">
+        <div class="col-md-8">
+          <!--div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Dropdown
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </div-->
+          <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#home">Immunization Coverage vs Time</a></li>
+            <li><a data-toggle="tab" href="#menu1">Disease Incidence vs Time </a></li>
+            <li><a data-toggle="tab" href="#menu2">Coverage / Incidence vs Time</a></li>
+          </ul>
+          
+          <div class="tab-content">
+            <div id="home" class="tab-pane fade in active">
+              <p><strong>Chart Title</strong></p>
+              <p>Some explanatory text for this chart.</p>
+              <div id="graphtest"></div>
+              <script src="js/graphtest.js"></script>
+            </div>
+            <div id="menu1" class="tab-pane fade">
+              <p><strong>Chart Title</strong></p>
+              <p>Some explanatory text for this chart.</p>
+            </div>
+            <div id="menu2" class="tab-pane fade">
+              <p><strong>Chart Title</strong></p>
+              <p>Some explanatory text for this chart.</p>
+            </div>
+          </div>
+          
+          <!--img data-src="holder.js/100%x500/white"-->
+          
         </div>
       </div>
     </div><!-- /.dashboard -->
