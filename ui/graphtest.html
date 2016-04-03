@@ -3,6 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Line graph test</title>
+    <style type="text/css">
+
+        .axis path,
+        .axis line {
+            fill: none;
+            stroke: black;
+            shape-rendering: crispEdges;
+        }
+
+        .axis text {
+            font-size: 11px;
+        }
+
+    </style>
 </head>
 <body>
 
@@ -62,6 +76,22 @@
                     .attr("stroke", "lightgrey")
                     .attr("stroke-width", 2)
                     .attr("fill", "none");
+
+
+            // Create axes
+            var xAxis = d3.svg.axis()
+                    .scale(xScale)
+                    .orient("bottom")
+                    .tickFormat(d3.format("d"));
+
+            // Add axes
+            svg.append("g")
+                    .attr({
+                        id: "x-axis",
+                        class: "axis",
+                        transform: "translate(0," + (height - padding) + ")",
+                    })
+                    .call(xAxis);
 
         });
     </script>
