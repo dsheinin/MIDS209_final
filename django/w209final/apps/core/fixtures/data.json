@@ -185523,5 +185523,6235 @@
     "country": 43,
     "coverage": 64
   }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7640,
+  "fields": {
+    "year": 1980,
+    "vaccine": 1,
+    "country": 2,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7641,
+  "fields": {
+    "year": 1981,
+    "vaccine": 1,
+    "country": 2,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7642,
+  "fields": {
+    "year": 1982,
+    "vaccine": 1,
+    "country": 2,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7643,
+  "fields": {
+    "year": 1980,
+    "vaccine": 1,
+    "country": 3,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7644,
+  "fields": {
+    "year": 1981,
+    "vaccine": 1,
+    "country": 3,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7645,
+  "fields": {
+    "year": 1982,
+    "vaccine": 1,
+    "country": 3,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7646,
+  "fields": {
+    "year": 1983,
+    "vaccine": 1,
+    "country": 3,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7647,
+  "fields": {
+    "year": 1984,
+    "vaccine": 1,
+    "country": 3,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7648,
+  "fields": {
+    "year": 1980,
+    "vaccine": 1,
+    "country": 5,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7649,
+  "fields": {
+    "year": 1981,
+    "vaccine": 1,
+    "country": 5,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7650,
+  "fields": {
+    "year": 1982,
+    "vaccine": 1,
+    "country": 5,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7651,
+  "fields": {
+    "year": 1983,
+    "vaccine": 1,
+    "country": 5,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7652,
+  "fields": {
+    "year": 1984,
+    "vaccine": 1,
+    "country": 5,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7653,
+  "fields": {
+    "year": 1980,
+    "vaccine": 1,
+    "country": 6,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7654,
+  "fields": {
+    "year": 1980,
+    "vaccine": 1,
+    "country": 8,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7655,
+  "fields": {
+    "year": 1980,
+    "vaccine": 1,
+    "country": 10,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7656,
+  "fields": {
+    "year": 1981,
+    "vaccine": 1,
+    "country": 10,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7657,
+  "fields": {
+    "year": 1982,
+    "vaccine": 1,
+    "country": 10,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7658,
+  "fields": {
+    "year": 1983,
+    "vaccine": 1,
+    "country": 10,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7659,
+  "fields": {
+    "year": 1980,
+    "vaccine": 1,
+    "country": 11,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7660,
+  "fields": {
+    "year": 1981,
+    "vaccine": 1,
+    "country": 11,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7661,
+  "fields": {
+    "year": 1982,
+    "vaccine": 1,
+    "country": 11,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7662,
+  "fields": {
+    "year": 1983,
+    "vaccine": 1,
+    "country": 11,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7663,
+  "fields": {
+    "year": 1980,
+    "vaccine": 1,
+    "country": 13,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7664,
+  "fields": {
+    "year": 1981,
+    "vaccine": 1,
+    "country": 13,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7665,
+  "fields": {
+    "year": 1982,
+    "vaccine": 1,
+    "country": 13,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7666,
+  "fields": {
+    "year": 1983,
+    "vaccine": 1,
+    "country": 13,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7667,
+  "fields": {
+    "year": 1980,
+    "vaccine": 1,
+    "country": 15,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7668,
+  "fields": {
+    "year": 1981,
+    "vaccine": 1,
+    "country": 15,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7669,
+  "fields": {
+    "year": 1982,
+    "vaccine": 1,
+    "country": 15,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7670,
+  "fields": {
+    "year": 1983,
+    "vaccine": 1,
+    "country": 15,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7671,
+  "fields": {
+    "year": 1984,
+    "vaccine": 1,
+    "country": 15,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7672,
+  "fields": {
+    "year": 1980,
+    "vaccine": 1,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7673,
+  "fields": {
+    "year": 1981,
+    "vaccine": 1,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7674,
+  "fields": {
+    "year": 1982,
+    "vaccine": 1,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7675,
+  "fields": {
+    "year": 1983,
+    "vaccine": 1,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7676,
+  "fields": {
+    "year": 1984,
+    "vaccine": 1,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7677,
+  "fields": {
+    "year": 1985,
+    "vaccine": 1,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7678,
+  "fields": {
+    "year": 1986,
+    "vaccine": 1,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7679,
+  "fields": {
+    "year": 1987,
+    "vaccine": 1,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7680,
+  "fields": {
+    "year": 1988,
+    "vaccine": 1,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7681,
+  "fields": {
+    "year": 1989,
+    "vaccine": 1,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7682,
+  "fields": {
+    "year": 1990,
+    "vaccine": 1,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7683,
+  "fields": {
+    "year": 1991,
+    "vaccine": 1,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7684,
+  "fields": {
+    "year": 1992,
+    "vaccine": 1,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7685,
+  "fields": {
+    "year": 1980,
+    "vaccine": 1,
+    "country": 21,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7686,
+  "fields": {
+    "year": 1980,
+    "vaccine": 1,
+    "country": 22,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7687,
+  "fields": {
+    "year": 1981,
+    "vaccine": 1,
+    "country": 22,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7688,
+  "fields": {
+    "year": 1982,
+    "vaccine": 1,
+    "country": 22,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7689,
+  "fields": {
+    "year": 1980,
+    "vaccine": 1,
+    "country": 26,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7690,
+  "fields": {
+    "year": 1981,
+    "vaccine": 1,
+    "country": 26,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7691,
+  "fields": {
+    "year": 1982,
+    "vaccine": 1,
+    "country": 26,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7692,
+  "fields": {
+    "year": 1983,
+    "vaccine": 1,
+    "country": 26,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7693,
+  "fields": {
+    "year": 1980,
+    "vaccine": 1,
+    "country": 28,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7694,
+  "fields": {
+    "year": 1981,
+    "vaccine": 1,
+    "country": 28,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7695,
+  "fields": {
+    "year": 1982,
+    "vaccine": 1,
+    "country": 28,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7696,
+  "fields": {
+    "year": 1983,
+    "vaccine": 1,
+    "country": 28,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7697,
+  "fields": {
+    "year": 1984,
+    "vaccine": 1,
+    "country": 28,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7698,
+  "fields": {
+    "year": 1980,
+    "vaccine": 1,
+    "country": 29,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7699,
+  "fields": {
+    "year": 1980,
+    "vaccine": 1,
+    "country": 30,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7700,
+  "fields": {
+    "year": 1981,
+    "vaccine": 1,
+    "country": 30,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7701,
+  "fields": {
+    "year": 1980,
+    "vaccine": 1,
+    "country": 31,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7702,
+  "fields": {
+    "year": 1980,
+    "vaccine": 1,
+    "country": 33,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7703,
+  "fields": {
+    "year": 1980,
+    "vaccine": 1,
+    "country": 34,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7704,
+  "fields": {
+    "year": 1981,
+    "vaccine": 1,
+    "country": 34,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7705,
+  "fields": {
+    "year": 1982,
+    "vaccine": 1,
+    "country": 34,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7706,
+  "fields": {
+    "year": 1983,
+    "vaccine": 1,
+    "country": 34,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7707,
+  "fields": {
+    "year": 1980,
+    "vaccine": 1,
+    "country": 35,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7708,
+  "fields": {
+    "year": 1980,
+    "vaccine": 1,
+    "country": 36,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7709,
+  "fields": {
+    "year": 1980,
+    "vaccine": 1,
+    "country": 38,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7710,
+  "fields": {
+    "year": 1980,
+    "vaccine": 1,
+    "country": 42,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7711,
+  "fields": {
+    "year": 1980,
+    "vaccine": 1,
+    "country": 43,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7712,
+  "fields": {
+    "year": 1981,
+    "vaccine": 1,
+    "country": 43,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7713,
+  "fields": {
+    "year": 1982,
+    "vaccine": 1,
+    "country": 43,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7714,
+  "fields": {
+    "year": 1983,
+    "vaccine": 1,
+    "country": 43,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7715,
+  "fields": {
+    "year": 1980,
+    "vaccine": 1,
+    "country": 44,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7716,
+  "fields": {
+    "year": 2000,
+    "vaccine": 2,
+    "country": 5,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7717,
+  "fields": {
+    "year": 2001,
+    "vaccine": 2,
+    "country": 5,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7718,
+  "fields": {
+    "year": 2002,
+    "vaccine": 2,
+    "country": 5,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7719,
+  "fields": {
+    "year": 2003,
+    "vaccine": 2,
+    "country": 5,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7720,
+  "fields": {
+    "year": 2004,
+    "vaccine": 2,
+    "country": 5,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7721,
+  "fields": {
+    "year": 2005,
+    "vaccine": 2,
+    "country": 5,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7722,
+  "fields": {
+    "year": 2006,
+    "vaccine": 2,
+    "country": 5,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7723,
+  "fields": {
+    "year": 2007,
+    "vaccine": 2,
+    "country": 5,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7724,
+  "fields": {
+    "year": 2008,
+    "vaccine": 2,
+    "country": 5,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7725,
+  "fields": {
+    "year": 2009,
+    "vaccine": 2,
+    "country": 5,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7726,
+  "fields": {
+    "year": 2010,
+    "vaccine": 2,
+    "country": 5,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7727,
+  "fields": {
+    "year": 2011,
+    "vaccine": 2,
+    "country": 5,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7728,
+  "fields": {
+    "year": 2012,
+    "vaccine": 2,
+    "country": 5,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7729,
+  "fields": {
+    "year": 2013,
+    "vaccine": 2,
+    "country": 5,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7730,
+  "fields": {
+    "year": 2000,
+    "vaccine": 2,
+    "country": 24,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7731,
+  "fields": {
+    "year": 2000,
+    "vaccine": 2,
+    "country": 33,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7732,
+  "fields": {
+    "year": 2001,
+    "vaccine": 2,
+    "country": 33,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7733,
+  "fields": {
+    "year": 2002,
+    "vaccine": 2,
+    "country": 33,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7734,
+  "fields": {
+    "year": 2003,
+    "vaccine": 2,
+    "country": 33,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7735,
+  "fields": {
+    "year": 2004,
+    "vaccine": 2,
+    "country": 33,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7736,
+  "fields": {
+    "year": 2005,
+    "vaccine": 2,
+    "country": 33,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7737,
+  "fields": {
+    "year": 2006,
+    "vaccine": 2,
+    "country": 33,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7738,
+  "fields": {
+    "year": 2007,
+    "vaccine": 2,
+    "country": 33,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7739,
+  "fields": {
+    "year": 2008,
+    "vaccine": 2,
+    "country": 33,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7740,
+  "fields": {
+    "year": 2009,
+    "vaccine": 2,
+    "country": 33,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7741,
+  "fields": {
+    "year": 2010,
+    "vaccine": 2,
+    "country": 33,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7742,
+  "fields": {
+    "year": 2011,
+    "vaccine": 2,
+    "country": 33,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7743,
+  "fields": {
+    "year": 2012,
+    "vaccine": 2,
+    "country": 33,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7744,
+  "fields": {
+    "year": 2013,
+    "vaccine": 2,
+    "country": 33,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7745,
+  "fields": {
+    "year": 2000,
+    "vaccine": 2,
+    "country": 37,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7746,
+  "fields": {
+    "year": 2001,
+    "vaccine": 2,
+    "country": 37,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7747,
+  "fields": {
+    "year": 2002,
+    "vaccine": 2,
+    "country": 37,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7748,
+  "fields": {
+    "year": 2003,
+    "vaccine": 2,
+    "country": 37,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7749,
+  "fields": {
+    "year": 2004,
+    "vaccine": 2,
+    "country": 37,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7750,
+  "fields": {
+    "year": 2005,
+    "vaccine": 2,
+    "country": 37,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7751,
+  "fields": {
+    "year": 2006,
+    "vaccine": 2,
+    "country": 37,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7752,
+  "fields": {
+    "year": 2007,
+    "vaccine": 2,
+    "country": 37,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7753,
+  "fields": {
+    "year": 2008,
+    "vaccine": 2,
+    "country": 37,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7754,
+  "fields": {
+    "year": 2009,
+    "vaccine": 2,
+    "country": 37,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7755,
+  "fields": {
+    "year": 2010,
+    "vaccine": 2,
+    "country": 37,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7756,
+  "fields": {
+    "year": 2011,
+    "vaccine": 2,
+    "country": 37,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7757,
+  "fields": {
+    "year": 2012,
+    "vaccine": 2,
+    "country": 37,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7758,
+  "fields": {
+    "year": 2013,
+    "vaccine": 2,
+    "country": 37,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7759,
+  "fields": {
+    "year": 2000,
+    "vaccine": 2,
+    "country": 45,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7760,
+  "fields": {
+    "year": 2001,
+    "vaccine": 2,
+    "country": 45,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7761,
+  "fields": {
+    "year": 2002,
+    "vaccine": 2,
+    "country": 45,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7762,
+  "fields": {
+    "year": 2003,
+    "vaccine": 2,
+    "country": 45,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7763,
+  "fields": {
+    "year": 2004,
+    "vaccine": 2,
+    "country": 45,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7764,
+  "fields": {
+    "year": 2005,
+    "vaccine": 2,
+    "country": 45,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7765,
+  "fields": {
+    "year": 2006,
+    "vaccine": 2,
+    "country": 45,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7766,
+  "fields": {
+    "year": 2007,
+    "vaccine": 2,
+    "country": 45,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7767,
+  "fields": {
+    "year": 2008,
+    "vaccine": 2,
+    "country": 45,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7768,
+  "fields": {
+    "year": 2009,
+    "vaccine": 2,
+    "country": 45,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7769,
+  "fields": {
+    "year": 2010,
+    "vaccine": 2,
+    "country": 45,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7770,
+  "fields": {
+    "year": 2011,
+    "vaccine": 2,
+    "country": 45,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7771,
+  "fields": {
+    "year": 2012,
+    "vaccine": 2,
+    "country": 45,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7772,
+  "fields": {
+    "year": 2013,
+    "vaccine": 2,
+    "country": 45,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7773,
+  "fields": {
+    "year": 2000,
+    "vaccine": 2,
+    "country": 46,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7774,
+  "fields": {
+    "year": 2001,
+    "vaccine": 2,
+    "country": 46,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7775,
+  "fields": {
+    "year": 2002,
+    "vaccine": 2,
+    "country": 46,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7776,
+  "fields": {
+    "year": 2003,
+    "vaccine": 2,
+    "country": 46,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7777,
+  "fields": {
+    "year": 2004,
+    "vaccine": 2,
+    "country": 46,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7778,
+  "fields": {
+    "year": 2005,
+    "vaccine": 2,
+    "country": 46,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7779,
+  "fields": {
+    "year": 2006,
+    "vaccine": 2,
+    "country": 46,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7780,
+  "fields": {
+    "year": 2007,
+    "vaccine": 2,
+    "country": 46,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7781,
+  "fields": {
+    "year": 2008,
+    "vaccine": 2,
+    "country": 46,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7782,
+  "fields": {
+    "year": 2009,
+    "vaccine": 2,
+    "country": 46,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7783,
+  "fields": {
+    "year": 2010,
+    "vaccine": 2,
+    "country": 46,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7784,
+  "fields": {
+    "year": 2011,
+    "vaccine": 2,
+    "country": 46,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7785,
+  "fields": {
+    "year": 2012,
+    "vaccine": 2,
+    "country": 46,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7786,
+  "fields": {
+    "year": 2013,
+    "vaccine": 2,
+    "country": 46,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7787,
+  "fields": {
+    "year": 1980,
+    "vaccine": 3,
+    "country": 1,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7788,
+  "fields": {
+    "year": 1981,
+    "vaccine": 3,
+    "country": 1,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7789,
+  "fields": {
+    "year": 1982,
+    "vaccine": 3,
+    "country": 1,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7790,
+  "fields": {
+    "year": 1983,
+    "vaccine": 3,
+    "country": 1,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7791,
+  "fields": {
+    "year": 1984,
+    "vaccine": 3,
+    "country": 1,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7792,
+  "fields": {
+    "year": 1985,
+    "vaccine": 3,
+    "country": 1,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7793,
+  "fields": {
+    "year": 1986,
+    "vaccine": 3,
+    "country": 1,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7794,
+  "fields": {
+    "year": 1987,
+    "vaccine": 3,
+    "country": 1,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7795,
+  "fields": {
+    "year": 1988,
+    "vaccine": 3,
+    "country": 1,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7796,
+  "fields": {
+    "year": 1980,
+    "vaccine": 3,
+    "country": 2,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7797,
+  "fields": {
+    "year": 1981,
+    "vaccine": 3,
+    "country": 2,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7798,
+  "fields": {
+    "year": 1982,
+    "vaccine": 3,
+    "country": 2,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7799,
+  "fields": {
+    "year": 1980,
+    "vaccine": 3,
+    "country": 3,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7800,
+  "fields": {
+    "year": 1981,
+    "vaccine": 3,
+    "country": 3,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7801,
+  "fields": {
+    "year": 1982,
+    "vaccine": 3,
+    "country": 3,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7802,
+  "fields": {
+    "year": 1983,
+    "vaccine": 3,
+    "country": 3,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7803,
+  "fields": {
+    "year": 1984,
+    "vaccine": 3,
+    "country": 3,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7804,
+  "fields": {
+    "year": 1985,
+    "vaccine": 3,
+    "country": 3,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7805,
+  "fields": {
+    "year": 1980,
+    "vaccine": 3,
+    "country": 4,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7806,
+  "fields": {
+    "year": 1980,
+    "vaccine": 3,
+    "country": 5,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7807,
+  "fields": {
+    "year": 1980,
+    "vaccine": 3,
+    "country": 6,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7808,
+  "fields": {
+    "year": 1981,
+    "vaccine": 3,
+    "country": 6,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7809,
+  "fields": {
+    "year": 1982,
+    "vaccine": 3,
+    "country": 6,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7810,
+  "fields": {
+    "year": 1980,
+    "vaccine": 3,
+    "country": 8,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7811,
+  "fields": {
+    "year": 1981,
+    "vaccine": 3,
+    "country": 8,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7812,
+  "fields": {
+    "year": 1982,
+    "vaccine": 3,
+    "country": 8,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7813,
+  "fields": {
+    "year": 1983,
+    "vaccine": 3,
+    "country": 8,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7814,
+  "fields": {
+    "year": 1980,
+    "vaccine": 3,
+    "country": 10,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7815,
+  "fields": {
+    "year": 1981,
+    "vaccine": 3,
+    "country": 10,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7816,
+  "fields": {
+    "year": 1982,
+    "vaccine": 3,
+    "country": 10,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7817,
+  "fields": {
+    "year": 1983,
+    "vaccine": 3,
+    "country": 10,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7818,
+  "fields": {
+    "year": 1984,
+    "vaccine": 3,
+    "country": 10,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7819,
+  "fields": {
+    "year": 1985,
+    "vaccine": 3,
+    "country": 10,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7820,
+  "fields": {
+    "year": 1986,
+    "vaccine": 3,
+    "country": 10,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7821,
+  "fields": {
+    "year": 1980,
+    "vaccine": 3,
+    "country": 11,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7822,
+  "fields": {
+    "year": 1981,
+    "vaccine": 3,
+    "country": 11,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7823,
+  "fields": {
+    "year": 1982,
+    "vaccine": 3,
+    "country": 11,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7824,
+  "fields": {
+    "year": 1983,
+    "vaccine": 3,
+    "country": 11,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7825,
+  "fields": {
+    "year": 1980,
+    "vaccine": 3,
+    "country": 13,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7826,
+  "fields": {
+    "year": 1981,
+    "vaccine": 3,
+    "country": 13,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7827,
+  "fields": {
+    "year": 1982,
+    "vaccine": 3,
+    "country": 13,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7828,
+  "fields": {
+    "year": 1983,
+    "vaccine": 3,
+    "country": 13,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7829,
+  "fields": {
+    "year": 1984,
+    "vaccine": 3,
+    "country": 13,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7830,
+  "fields": {
+    "year": 1985,
+    "vaccine": 3,
+    "country": 13,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7831,
+  "fields": {
+    "year": 1986,
+    "vaccine": 3,
+    "country": 13,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7832,
+  "fields": {
+    "year": 1987,
+    "vaccine": 3,
+    "country": 13,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7833,
+  "fields": {
+    "year": 1988,
+    "vaccine": 3,
+    "country": 13,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7834,
+  "fields": {
+    "year": 1980,
+    "vaccine": 3,
+    "country": 14,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7835,
+  "fields": {
+    "year": 1981,
+    "vaccine": 3,
+    "country": 14,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7836,
+  "fields": {
+    "year": 1982,
+    "vaccine": 3,
+    "country": 14,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7837,
+  "fields": {
+    "year": 1983,
+    "vaccine": 3,
+    "country": 14,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7838,
+  "fields": {
+    "year": 1980,
+    "vaccine": 3,
+    "country": 15,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7839,
+  "fields": {
+    "year": 1981,
+    "vaccine": 3,
+    "country": 15,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7840,
+  "fields": {
+    "year": 1982,
+    "vaccine": 3,
+    "country": 15,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7841,
+  "fields": {
+    "year": 1983,
+    "vaccine": 3,
+    "country": 15,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7842,
+  "fields": {
+    "year": 1984,
+    "vaccine": 3,
+    "country": 15,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7843,
+  "fields": {
+    "year": 1980,
+    "vaccine": 3,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7844,
+  "fields": {
+    "year": 1981,
+    "vaccine": 3,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7845,
+  "fields": {
+    "year": 1982,
+    "vaccine": 3,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7846,
+  "fields": {
+    "year": 1983,
+    "vaccine": 3,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7847,
+  "fields": {
+    "year": 1984,
+    "vaccine": 3,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7848,
+  "fields": {
+    "year": 1985,
+    "vaccine": 3,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7849,
+  "fields": {
+    "year": 1986,
+    "vaccine": 3,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7850,
+  "fields": {
+    "year": 1987,
+    "vaccine": 3,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7851,
+  "fields": {
+    "year": 1988,
+    "vaccine": 3,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7852,
+  "fields": {
+    "year": 1989,
+    "vaccine": 3,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7853,
+  "fields": {
+    "year": 1990,
+    "vaccine": 3,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7854,
+  "fields": {
+    "year": 1991,
+    "vaccine": 3,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7855,
+  "fields": {
+    "year": 1992,
+    "vaccine": 3,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7856,
+  "fields": {
+    "year": 1980,
+    "vaccine": 3,
+    "country": 17,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7857,
+  "fields": {
+    "year": 1980,
+    "vaccine": 3,
+    "country": 18,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7858,
+  "fields": {
+    "year": 1981,
+    "vaccine": 3,
+    "country": 18,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7859,
+  "fields": {
+    "year": 1982,
+    "vaccine": 3,
+    "country": 18,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7860,
+  "fields": {
+    "year": 1983,
+    "vaccine": 3,
+    "country": 18,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7861,
+  "fields": {
+    "year": 1984,
+    "vaccine": 3,
+    "country": 18,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7862,
+  "fields": {
+    "year": 1980,
+    "vaccine": 3,
+    "country": 21,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7863,
+  "fields": {
+    "year": 1981,
+    "vaccine": 3,
+    "country": 21,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7864,
+  "fields": {
+    "year": 1982,
+    "vaccine": 3,
+    "country": 21,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7865,
+  "fields": {
+    "year": 1983,
+    "vaccine": 3,
+    "country": 21,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7866,
+  "fields": {
+    "year": 1984,
+    "vaccine": 3,
+    "country": 21,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7867,
+  "fields": {
+    "year": 1985,
+    "vaccine": 3,
+    "country": 21,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7868,
+  "fields": {
+    "year": 1980,
+    "vaccine": 3,
+    "country": 22,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7869,
+  "fields": {
+    "year": 1981,
+    "vaccine": 3,
+    "country": 22,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7870,
+  "fields": {
+    "year": 1982,
+    "vaccine": 3,
+    "country": 22,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7871,
+  "fields": {
+    "year": 1983,
+    "vaccine": 3,
+    "country": 22,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7872,
+  "fields": {
+    "year": 1980,
+    "vaccine": 3,
+    "country": 23,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7873,
+  "fields": {
+    "year": 1981,
+    "vaccine": 3,
+    "country": 23,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7874,
+  "fields": {
+    "year": 1982,
+    "vaccine": 3,
+    "country": 23,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7875,
+  "fields": {
+    "year": 1983,
+    "vaccine": 3,
+    "country": 23,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7876,
+  "fields": {
+    "year": 1984,
+    "vaccine": 3,
+    "country": 23,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7877,
+  "fields": {
+    "year": 1980,
+    "vaccine": 3,
+    "country": 24,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7878,
+  "fields": {
+    "year": 1981,
+    "vaccine": 3,
+    "country": 24,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7879,
+  "fields": {
+    "year": 1982,
+    "vaccine": 3,
+    "country": 24,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7880,
+  "fields": {
+    "year": 1983,
+    "vaccine": 3,
+    "country": 24,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7881,
+  "fields": {
+    "year": 1984,
+    "vaccine": 3,
+    "country": 24,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7882,
+  "fields": {
+    "year": 1985,
+    "vaccine": 3,
+    "country": 24,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7883,
+  "fields": {
+    "year": 1986,
+    "vaccine": 3,
+    "country": 24,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7884,
+  "fields": {
+    "year": 1987,
+    "vaccine": 3,
+    "country": 24,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7885,
+  "fields": {
+    "year": 1988,
+    "vaccine": 3,
+    "country": 24,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7886,
+  "fields": {
+    "year": 1989,
+    "vaccine": 3,
+    "country": 24,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7887,
+  "fields": {
+    "year": 1990,
+    "vaccine": 3,
+    "country": 24,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7888,
+  "fields": {
+    "year": 1980,
+    "vaccine": 3,
+    "country": 26,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7889,
+  "fields": {
+    "year": 1981,
+    "vaccine": 3,
+    "country": 26,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7890,
+  "fields": {
+    "year": 1980,
+    "vaccine": 3,
+    "country": 27,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7891,
+  "fields": {
+    "year": 1981,
+    "vaccine": 3,
+    "country": 27,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7892,
+  "fields": {
+    "year": 1982,
+    "vaccine": 3,
+    "country": 27,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7893,
+  "fields": {
+    "year": 1980,
+    "vaccine": 3,
+    "country": 28,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7894,
+  "fields": {
+    "year": 1980,
+    "vaccine": 3,
+    "country": 29,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7895,
+  "fields": {
+    "year": 1980,
+    "vaccine": 3,
+    "country": 31,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7896,
+  "fields": {
+    "year": 1981,
+    "vaccine": 3,
+    "country": 31,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7897,
+  "fields": {
+    "year": 1980,
+    "vaccine": 3,
+    "country": 32,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7898,
+  "fields": {
+    "year": 1981,
+    "vaccine": 3,
+    "country": 32,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7899,
+  "fields": {
+    "year": 1982,
+    "vaccine": 3,
+    "country": 32,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7900,
+  "fields": {
+    "year": 1983,
+    "vaccine": 3,
+    "country": 32,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7901,
+  "fields": {
+    "year": 1984,
+    "vaccine": 3,
+    "country": 32,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7902,
+  "fields": {
+    "year": 1985,
+    "vaccine": 3,
+    "country": 32,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7903,
+  "fields": {
+    "year": 1986,
+    "vaccine": 3,
+    "country": 32,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7904,
+  "fields": {
+    "year": 1987,
+    "vaccine": 3,
+    "country": 32,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7905,
+  "fields": {
+    "year": 1988,
+    "vaccine": 3,
+    "country": 32,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7906,
+  "fields": {
+    "year": 1989,
+    "vaccine": 3,
+    "country": 32,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7907,
+  "fields": {
+    "year": 1990,
+    "vaccine": 3,
+    "country": 32,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7908,
+  "fields": {
+    "year": 1980,
+    "vaccine": 3,
+    "country": 33,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7909,
+  "fields": {
+    "year": 1980,
+    "vaccine": 3,
+    "country": 34,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7910,
+  "fields": {
+    "year": 1980,
+    "vaccine": 3,
+    "country": 35,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7911,
+  "fields": {
+    "year": 1980,
+    "vaccine": 3,
+    "country": 37,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7912,
+  "fields": {
+    "year": 1981,
+    "vaccine": 3,
+    "country": 37,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7913,
+  "fields": {
+    "year": 1982,
+    "vaccine": 3,
+    "country": 37,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7914,
+  "fields": {
+    "year": 1983,
+    "vaccine": 3,
+    "country": 37,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7915,
+  "fields": {
+    "year": 1984,
+    "vaccine": 3,
+    "country": 37,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7916,
+  "fields": {
+    "year": 1980,
+    "vaccine": 3,
+    "country": 40,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7917,
+  "fields": {
+    "year": 1981,
+    "vaccine": 3,
+    "country": 40,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7918,
+  "fields": {
+    "year": 1982,
+    "vaccine": 3,
+    "country": 40,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7919,
+  "fields": {
+    "year": 1983,
+    "vaccine": 3,
+    "country": 40,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7920,
+  "fields": {
+    "year": 1984,
+    "vaccine": 3,
+    "country": 40,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7921,
+  "fields": {
+    "year": 1985,
+    "vaccine": 3,
+    "country": 40,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7922,
+  "fields": {
+    "year": 1986,
+    "vaccine": 3,
+    "country": 40,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7923,
+  "fields": {
+    "year": 1987,
+    "vaccine": 3,
+    "country": 40,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7924,
+  "fields": {
+    "year": 1988,
+    "vaccine": 3,
+    "country": 40,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7925,
+  "fields": {
+    "year": 1989,
+    "vaccine": 3,
+    "country": 40,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7926,
+  "fields": {
+    "year": 1990,
+    "vaccine": 3,
+    "country": 40,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7927,
+  "fields": {
+    "year": 1991,
+    "vaccine": 3,
+    "country": 40,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7928,
+  "fields": {
+    "year": 1980,
+    "vaccine": 3,
+    "country": 44,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7929,
+  "fields": {
+    "year": 1980,
+    "vaccine": 3,
+    "country": 46,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7930,
+  "fields": {
+    "year": 1981,
+    "vaccine": 3,
+    "country": 46,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7931,
+  "fields": {
+    "year": 1982,
+    "vaccine": 3,
+    "country": 46,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7932,
+  "fields": {
+    "year": 1983,
+    "vaccine": 3,
+    "country": 46,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7933,
+  "fields": {
+    "year": 1984,
+    "vaccine": 3,
+    "country": 46,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7934,
+  "fields": {
+    "year": 1985,
+    "vaccine": 3,
+    "country": 46,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7935,
+  "fields": {
+    "year": 1980,
+    "vaccine": 3,
+    "country": 47,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7936,
+  "fields": {
+    "year": 1981,
+    "vaccine": 3,
+    "country": 47,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7937,
+  "fields": {
+    "year": 1982,
+    "vaccine": 3,
+    "country": 47,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7938,
+  "fields": {
+    "year": 1983,
+    "vaccine": 3,
+    "country": 47,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7939,
+  "fields": {
+    "year": 1980,
+    "vaccine": 4,
+    "country": 2,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7940,
+  "fields": {
+    "year": 1981,
+    "vaccine": 4,
+    "country": 2,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7941,
+  "fields": {
+    "year": 1982,
+    "vaccine": 4,
+    "country": 2,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7942,
+  "fields": {
+    "year": 1980,
+    "vaccine": 4,
+    "country": 3,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7943,
+  "fields": {
+    "year": 1981,
+    "vaccine": 4,
+    "country": 3,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7944,
+  "fields": {
+    "year": 1982,
+    "vaccine": 4,
+    "country": 3,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7945,
+  "fields": {
+    "year": 1983,
+    "vaccine": 4,
+    "country": 3,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7946,
+  "fields": {
+    "year": 1984,
+    "vaccine": 4,
+    "country": 3,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7947,
+  "fields": {
+    "year": 1980,
+    "vaccine": 4,
+    "country": 5,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7948,
+  "fields": {
+    "year": 1981,
+    "vaccine": 4,
+    "country": 5,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7949,
+  "fields": {
+    "year": 1982,
+    "vaccine": 4,
+    "country": 5,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7950,
+  "fields": {
+    "year": 1983,
+    "vaccine": 4,
+    "country": 5,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7951,
+  "fields": {
+    "year": 1984,
+    "vaccine": 4,
+    "country": 5,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7952,
+  "fields": {
+    "year": 1980,
+    "vaccine": 4,
+    "country": 7,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7953,
+  "fields": {
+    "year": 1981,
+    "vaccine": 4,
+    "country": 7,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7954,
+  "fields": {
+    "year": 1982,
+    "vaccine": 4,
+    "country": 7,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7955,
+  "fields": {
+    "year": 1980,
+    "vaccine": 4,
+    "country": 8,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7956,
+  "fields": {
+    "year": 1980,
+    "vaccine": 4,
+    "country": 10,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7957,
+  "fields": {
+    "year": 1981,
+    "vaccine": 4,
+    "country": 10,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7958,
+  "fields": {
+    "year": 1982,
+    "vaccine": 4,
+    "country": 10,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7959,
+  "fields": {
+    "year": 1980,
+    "vaccine": 4,
+    "country": 13,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7960,
+  "fields": {
+    "year": 1981,
+    "vaccine": 4,
+    "country": 13,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7961,
+  "fields": {
+    "year": 1982,
+    "vaccine": 4,
+    "country": 13,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7962,
+  "fields": {
+    "year": 1983,
+    "vaccine": 4,
+    "country": 13,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7963,
+  "fields": {
+    "year": 1980,
+    "vaccine": 4,
+    "country": 14,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7964,
+  "fields": {
+    "year": 1980,
+    "vaccine": 4,
+    "country": 15,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7965,
+  "fields": {
+    "year": 1981,
+    "vaccine": 4,
+    "country": 15,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7966,
+  "fields": {
+    "year": 1982,
+    "vaccine": 4,
+    "country": 15,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7967,
+  "fields": {
+    "year": 1983,
+    "vaccine": 4,
+    "country": 15,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7968,
+  "fields": {
+    "year": 1984,
+    "vaccine": 4,
+    "country": 15,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7969,
+  "fields": {
+    "year": 1980,
+    "vaccine": 4,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7970,
+  "fields": {
+    "year": 1981,
+    "vaccine": 4,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7971,
+  "fields": {
+    "year": 1982,
+    "vaccine": 4,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7972,
+  "fields": {
+    "year": 1983,
+    "vaccine": 4,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7973,
+  "fields": {
+    "year": 1984,
+    "vaccine": 4,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7974,
+  "fields": {
+    "year": 1985,
+    "vaccine": 4,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7975,
+  "fields": {
+    "year": 1986,
+    "vaccine": 4,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7976,
+  "fields": {
+    "year": 1987,
+    "vaccine": 4,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7977,
+  "fields": {
+    "year": 1988,
+    "vaccine": 4,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7978,
+  "fields": {
+    "year": 1989,
+    "vaccine": 4,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7979,
+  "fields": {
+    "year": 1990,
+    "vaccine": 4,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7980,
+  "fields": {
+    "year": 1991,
+    "vaccine": 4,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7981,
+  "fields": {
+    "year": 1992,
+    "vaccine": 4,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7982,
+  "fields": {
+    "year": 1980,
+    "vaccine": 4,
+    "country": 17,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7983,
+  "fields": {
+    "year": 1980,
+    "vaccine": 4,
+    "country": 18,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7984,
+  "fields": {
+    "year": 1981,
+    "vaccine": 4,
+    "country": 18,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7985,
+  "fields": {
+    "year": 1982,
+    "vaccine": 4,
+    "country": 18,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7986,
+  "fields": {
+    "year": 1980,
+    "vaccine": 4,
+    "country": 21,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7987,
+  "fields": {
+    "year": 1981,
+    "vaccine": 4,
+    "country": 21,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7988,
+  "fields": {
+    "year": 1980,
+    "vaccine": 4,
+    "country": 22,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7989,
+  "fields": {
+    "year": 1981,
+    "vaccine": 4,
+    "country": 22,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7990,
+  "fields": {
+    "year": 1982,
+    "vaccine": 4,
+    "country": 22,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7991,
+  "fields": {
+    "year": 1980,
+    "vaccine": 4,
+    "country": 26,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7992,
+  "fields": {
+    "year": 1981,
+    "vaccine": 4,
+    "country": 26,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7993,
+  "fields": {
+    "year": 1980,
+    "vaccine": 4,
+    "country": 28,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7994,
+  "fields": {
+    "year": 1981,
+    "vaccine": 4,
+    "country": 28,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7995,
+  "fields": {
+    "year": 1982,
+    "vaccine": 4,
+    "country": 28,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7996,
+  "fields": {
+    "year": 1983,
+    "vaccine": 4,
+    "country": 28,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7997,
+  "fields": {
+    "year": 1984,
+    "vaccine": 4,
+    "country": 28,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7998,
+  "fields": {
+    "year": 1980,
+    "vaccine": 4,
+    "country": 29,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 7999,
+  "fields": {
+    "year": 1980,
+    "vaccine": 4,
+    "country": 33,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8000,
+  "fields": {
+    "year": 1980,
+    "vaccine": 4,
+    "country": 34,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8001,
+  "fields": {
+    "year": 1981,
+    "vaccine": 4,
+    "country": 34,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8002,
+  "fields": {
+    "year": 1982,
+    "vaccine": 4,
+    "country": 34,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8003,
+  "fields": {
+    "year": 1983,
+    "vaccine": 4,
+    "country": 34,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8004,
+  "fields": {
+    "year": 1980,
+    "vaccine": 4,
+    "country": 35,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8005,
+  "fields": {
+    "year": 1980,
+    "vaccine": 4,
+    "country": 38,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8006,
+  "fields": {
+    "year": 1980,
+    "vaccine": 4,
+    "country": 43,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8007,
+  "fields": {
+    "year": 1980,
+    "vaccine": 4,
+    "country": 44,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8008,
+  "fields": {
+    "year": 1980,
+    "vaccine": 5,
+    "country": 2,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8009,
+  "fields": {
+    "year": 1981,
+    "vaccine": 5,
+    "country": 2,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8010,
+  "fields": {
+    "year": 1982,
+    "vaccine": 5,
+    "country": 2,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8011,
+  "fields": {
+    "year": 1980,
+    "vaccine": 5,
+    "country": 3,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8012,
+  "fields": {
+    "year": 1981,
+    "vaccine": 5,
+    "country": 3,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8013,
+  "fields": {
+    "year": 1982,
+    "vaccine": 5,
+    "country": 3,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8014,
+  "fields": {
+    "year": 1983,
+    "vaccine": 5,
+    "country": 3,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8015,
+  "fields": {
+    "year": 1984,
+    "vaccine": 5,
+    "country": 3,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8016,
+  "fields": {
+    "year": 1980,
+    "vaccine": 5,
+    "country": 5,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8017,
+  "fields": {
+    "year": 1981,
+    "vaccine": 5,
+    "country": 5,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8018,
+  "fields": {
+    "year": 1982,
+    "vaccine": 5,
+    "country": 5,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8019,
+  "fields": {
+    "year": 1983,
+    "vaccine": 5,
+    "country": 5,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8020,
+  "fields": {
+    "year": 1984,
+    "vaccine": 5,
+    "country": 5,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8021,
+  "fields": {
+    "year": 1980,
+    "vaccine": 5,
+    "country": 6,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8022,
+  "fields": {
+    "year": 1980,
+    "vaccine": 5,
+    "country": 7,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8023,
+  "fields": {
+    "year": 1981,
+    "vaccine": 5,
+    "country": 7,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8024,
+  "fields": {
+    "year": 1982,
+    "vaccine": 5,
+    "country": 7,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8025,
+  "fields": {
+    "year": 1980,
+    "vaccine": 5,
+    "country": 8,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8026,
+  "fields": {
+    "year": 1980,
+    "vaccine": 5,
+    "country": 10,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8027,
+  "fields": {
+    "year": 1981,
+    "vaccine": 5,
+    "country": 10,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8028,
+  "fields": {
+    "year": 1982,
+    "vaccine": 5,
+    "country": 10,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8029,
+  "fields": {
+    "year": 1980,
+    "vaccine": 5,
+    "country": 11,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8030,
+  "fields": {
+    "year": 1981,
+    "vaccine": 5,
+    "country": 11,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8031,
+  "fields": {
+    "year": 1982,
+    "vaccine": 5,
+    "country": 11,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8032,
+  "fields": {
+    "year": 1983,
+    "vaccine": 5,
+    "country": 11,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8033,
+  "fields": {
+    "year": 1980,
+    "vaccine": 5,
+    "country": 13,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8034,
+  "fields": {
+    "year": 1981,
+    "vaccine": 5,
+    "country": 13,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8035,
+  "fields": {
+    "year": 1982,
+    "vaccine": 5,
+    "country": 13,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8036,
+  "fields": {
+    "year": 1983,
+    "vaccine": 5,
+    "country": 13,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8037,
+  "fields": {
+    "year": 1980,
+    "vaccine": 5,
+    "country": 14,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8038,
+  "fields": {
+    "year": 1980,
+    "vaccine": 5,
+    "country": 15,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8039,
+  "fields": {
+    "year": 1981,
+    "vaccine": 5,
+    "country": 15,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8040,
+  "fields": {
+    "year": 1982,
+    "vaccine": 5,
+    "country": 15,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8041,
+  "fields": {
+    "year": 1983,
+    "vaccine": 5,
+    "country": 15,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8042,
+  "fields": {
+    "year": 1984,
+    "vaccine": 5,
+    "country": 15,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8043,
+  "fields": {
+    "year": 1980,
+    "vaccine": 5,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8044,
+  "fields": {
+    "year": 1981,
+    "vaccine": 5,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8045,
+  "fields": {
+    "year": 1982,
+    "vaccine": 5,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8046,
+  "fields": {
+    "year": 1983,
+    "vaccine": 5,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8047,
+  "fields": {
+    "year": 1984,
+    "vaccine": 5,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8048,
+  "fields": {
+    "year": 1985,
+    "vaccine": 5,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8049,
+  "fields": {
+    "year": 1986,
+    "vaccine": 5,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8050,
+  "fields": {
+    "year": 1987,
+    "vaccine": 5,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8051,
+  "fields": {
+    "year": 1988,
+    "vaccine": 5,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8052,
+  "fields": {
+    "year": 1989,
+    "vaccine": 5,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8053,
+  "fields": {
+    "year": 1990,
+    "vaccine": 5,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8054,
+  "fields": {
+    "year": 1991,
+    "vaccine": 5,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8055,
+  "fields": {
+    "year": 1992,
+    "vaccine": 5,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8056,
+  "fields": {
+    "year": 1980,
+    "vaccine": 5,
+    "country": 17,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8057,
+  "fields": {
+    "year": 1980,
+    "vaccine": 5,
+    "country": 18,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8058,
+  "fields": {
+    "year": 1981,
+    "vaccine": 5,
+    "country": 18,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8059,
+  "fields": {
+    "year": 1982,
+    "vaccine": 5,
+    "country": 18,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8060,
+  "fields": {
+    "year": 1980,
+    "vaccine": 5,
+    "country": 21,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8061,
+  "fields": {
+    "year": 1981,
+    "vaccine": 5,
+    "country": 21,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8062,
+  "fields": {
+    "year": 1980,
+    "vaccine": 5,
+    "country": 22,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8063,
+  "fields": {
+    "year": 1981,
+    "vaccine": 5,
+    "country": 22,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8064,
+  "fields": {
+    "year": 1982,
+    "vaccine": 5,
+    "country": 22,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8065,
+  "fields": {
+    "year": 1980,
+    "vaccine": 5,
+    "country": 26,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8066,
+  "fields": {
+    "year": 1981,
+    "vaccine": 5,
+    "country": 26,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8067,
+  "fields": {
+    "year": 1980,
+    "vaccine": 5,
+    "country": 28,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8068,
+  "fields": {
+    "year": 1981,
+    "vaccine": 5,
+    "country": 28,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8069,
+  "fields": {
+    "year": 1982,
+    "vaccine": 5,
+    "country": 28,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8070,
+  "fields": {
+    "year": 1983,
+    "vaccine": 5,
+    "country": 28,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8071,
+  "fields": {
+    "year": 1984,
+    "vaccine": 5,
+    "country": 28,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8072,
+  "fields": {
+    "year": 1980,
+    "vaccine": 5,
+    "country": 29,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8073,
+  "fields": {
+    "year": 1980,
+    "vaccine": 5,
+    "country": 33,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8074,
+  "fields": {
+    "year": 1980,
+    "vaccine": 5,
+    "country": 34,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8075,
+  "fields": {
+    "year": 1981,
+    "vaccine": 5,
+    "country": 34,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8076,
+  "fields": {
+    "year": 1982,
+    "vaccine": 5,
+    "country": 34,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8077,
+  "fields": {
+    "year": 1983,
+    "vaccine": 5,
+    "country": 34,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8078,
+  "fields": {
+    "year": 1980,
+    "vaccine": 5,
+    "country": 35,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8079,
+  "fields": {
+    "year": 1980,
+    "vaccine": 5,
+    "country": 36,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8080,
+  "fields": {
+    "year": 1980,
+    "vaccine": 5,
+    "country": 38,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8081,
+  "fields": {
+    "year": 1980,
+    "vaccine": 5,
+    "country": 39,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8082,
+  "fields": {
+    "year": 1981,
+    "vaccine": 5,
+    "country": 39,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8083,
+  "fields": {
+    "year": 1982,
+    "vaccine": 5,
+    "country": 39,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8084,
+  "fields": {
+    "year": 1983,
+    "vaccine": 5,
+    "country": 39,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8085,
+  "fields": {
+    "year": 1984,
+    "vaccine": 5,
+    "country": 39,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8086,
+  "fields": {
+    "year": 1985,
+    "vaccine": 5,
+    "country": 39,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8087,
+  "fields": {
+    "year": 1986,
+    "vaccine": 5,
+    "country": 39,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8088,
+  "fields": {
+    "year": 1987,
+    "vaccine": 5,
+    "country": 39,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8089,
+  "fields": {
+    "year": 1988,
+    "vaccine": 5,
+    "country": 39,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8090,
+  "fields": {
+    "year": 1989,
+    "vaccine": 5,
+    "country": 39,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8091,
+  "fields": {
+    "year": 1990,
+    "vaccine": 5,
+    "country": 39,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8092,
+  "fields": {
+    "year": 1991,
+    "vaccine": 5,
+    "country": 39,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8093,
+  "fields": {
+    "year": 1992,
+    "vaccine": 5,
+    "country": 39,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8094,
+  "fields": {
+    "year": 1993,
+    "vaccine": 5,
+    "country": 39,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8095,
+  "fields": {
+    "year": 1994,
+    "vaccine": 5,
+    "country": 39,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8096,
+  "fields": {
+    "year": 1995,
+    "vaccine": 5,
+    "country": 39,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8097,
+  "fields": {
+    "year": 1996,
+    "vaccine": 5,
+    "country": 39,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8098,
+  "fields": {
+    "year": 1997,
+    "vaccine": 5,
+    "country": 39,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8099,
+  "fields": {
+    "year": 1998,
+    "vaccine": 5,
+    "country": 39,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8100,
+  "fields": {
+    "year": 1980,
+    "vaccine": 5,
+    "country": 42,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8101,
+  "fields": {
+    "year": 1980,
+    "vaccine": 5,
+    "country": 43,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8102,
+  "fields": {
+    "year": 1980,
+    "vaccine": 5,
+    "country": 44,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8103,
+  "fields": {
+    "year": 1980,
+    "vaccine": 5,
+    "country": 46,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8104,
+  "fields": {
+    "year": 1981,
+    "vaccine": 5,
+    "country": 46,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8105,
+  "fields": {
+    "year": 1982,
+    "vaccine": 5,
+    "country": 46,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8106,
+  "fields": {
+    "year": 1980,
+    "vaccine": 5,
+    "country": 47,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8107,
+  "fields": {
+    "year": 1980,
+    "vaccine": 6,
+    "country": 1,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8108,
+  "fields": {
+    "year": 1980,
+    "vaccine": 6,
+    "country": 2,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8109,
+  "fields": {
+    "year": 1981,
+    "vaccine": 6,
+    "country": 2,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8110,
+  "fields": {
+    "year": 1982,
+    "vaccine": 6,
+    "country": 2,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8111,
+  "fields": {
+    "year": 1983,
+    "vaccine": 6,
+    "country": 2,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8112,
+  "fields": {
+    "year": 1984,
+    "vaccine": 6,
+    "country": 2,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8113,
+  "fields": {
+    "year": 1980,
+    "vaccine": 6,
+    "country": 3,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8114,
+  "fields": {
+    "year": 1981,
+    "vaccine": 6,
+    "country": 3,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8115,
+  "fields": {
+    "year": 1982,
+    "vaccine": 6,
+    "country": 3,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8116,
+  "fields": {
+    "year": 1983,
+    "vaccine": 6,
+    "country": 3,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8117,
+  "fields": {
+    "year": 1984,
+    "vaccine": 6,
+    "country": 3,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8118,
+  "fields": {
+    "year": 1980,
+    "vaccine": 6,
+    "country": 5,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8119,
+  "fields": {
+    "year": 1981,
+    "vaccine": 6,
+    "country": 5,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8120,
+  "fields": {
+    "year": 1982,
+    "vaccine": 6,
+    "country": 5,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8121,
+  "fields": {
+    "year": 1983,
+    "vaccine": 6,
+    "country": 5,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8122,
+  "fields": {
+    "year": 1984,
+    "vaccine": 6,
+    "country": 5,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8123,
+  "fields": {
+    "year": 1980,
+    "vaccine": 6,
+    "country": 6,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8124,
+  "fields": {
+    "year": 1980,
+    "vaccine": 6,
+    "country": 7,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8125,
+  "fields": {
+    "year": 1981,
+    "vaccine": 6,
+    "country": 7,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8126,
+  "fields": {
+    "year": 1982,
+    "vaccine": 6,
+    "country": 7,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8127,
+  "fields": {
+    "year": 1980,
+    "vaccine": 6,
+    "country": 8,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8128,
+  "fields": {
+    "year": 1980,
+    "vaccine": 6,
+    "country": 10,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8129,
+  "fields": {
+    "year": 1981,
+    "vaccine": 6,
+    "country": 10,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8130,
+  "fields": {
+    "year": 1982,
+    "vaccine": 6,
+    "country": 10,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8131,
+  "fields": {
+    "year": 1983,
+    "vaccine": 6,
+    "country": 10,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8132,
+  "fields": {
+    "year": 1980,
+    "vaccine": 6,
+    "country": 11,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8133,
+  "fields": {
+    "year": 1981,
+    "vaccine": 6,
+    "country": 11,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8134,
+  "fields": {
+    "year": 1982,
+    "vaccine": 6,
+    "country": 11,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8135,
+  "fields": {
+    "year": 1983,
+    "vaccine": 6,
+    "country": 11,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8136,
+  "fields": {
+    "year": 1980,
+    "vaccine": 6,
+    "country": 13,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8137,
+  "fields": {
+    "year": 1981,
+    "vaccine": 6,
+    "country": 13,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8138,
+  "fields": {
+    "year": 1982,
+    "vaccine": 6,
+    "country": 13,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8139,
+  "fields": {
+    "year": 1983,
+    "vaccine": 6,
+    "country": 13,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8140,
+  "fields": {
+    "year": 1980,
+    "vaccine": 6,
+    "country": 15,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8141,
+  "fields": {
+    "year": 1981,
+    "vaccine": 6,
+    "country": 15,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8142,
+  "fields": {
+    "year": 1982,
+    "vaccine": 6,
+    "country": 15,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8143,
+  "fields": {
+    "year": 1983,
+    "vaccine": 6,
+    "country": 15,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8144,
+  "fields": {
+    "year": 1984,
+    "vaccine": 6,
+    "country": 15,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8145,
+  "fields": {
+    "year": 1980,
+    "vaccine": 6,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8146,
+  "fields": {
+    "year": 1981,
+    "vaccine": 6,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8147,
+  "fields": {
+    "year": 1982,
+    "vaccine": 6,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8148,
+  "fields": {
+    "year": 1983,
+    "vaccine": 6,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8149,
+  "fields": {
+    "year": 1984,
+    "vaccine": 6,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8150,
+  "fields": {
+    "year": 1985,
+    "vaccine": 6,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8151,
+  "fields": {
+    "year": 1986,
+    "vaccine": 6,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8152,
+  "fields": {
+    "year": 1987,
+    "vaccine": 6,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8153,
+  "fields": {
+    "year": 1988,
+    "vaccine": 6,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8154,
+  "fields": {
+    "year": 1989,
+    "vaccine": 6,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8155,
+  "fields": {
+    "year": 1990,
+    "vaccine": 6,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8156,
+  "fields": {
+    "year": 1991,
+    "vaccine": 6,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8157,
+  "fields": {
+    "year": 1992,
+    "vaccine": 6,
+    "country": 16,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8158,
+  "fields": {
+    "year": 1980,
+    "vaccine": 6,
+    "country": 18,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8159,
+  "fields": {
+    "year": 1981,
+    "vaccine": 6,
+    "country": 18,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8160,
+  "fields": {
+    "year": 1982,
+    "vaccine": 6,
+    "country": 18,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8161,
+  "fields": {
+    "year": 1983,
+    "vaccine": 6,
+    "country": 18,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8162,
+  "fields": {
+    "year": 1984,
+    "vaccine": 6,
+    "country": 18,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8163,
+  "fields": {
+    "year": 1980,
+    "vaccine": 6,
+    "country": 21,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8164,
+  "fields": {
+    "year": 1981,
+    "vaccine": 6,
+    "country": 21,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8165,
+  "fields": {
+    "year": 1980,
+    "vaccine": 6,
+    "country": 22,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8166,
+  "fields": {
+    "year": 1981,
+    "vaccine": 6,
+    "country": 22,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8167,
+  "fields": {
+    "year": 1982,
+    "vaccine": 6,
+    "country": 22,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8168,
+  "fields": {
+    "year": 1980,
+    "vaccine": 6,
+    "country": 26,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8169,
+  "fields": {
+    "year": 1981,
+    "vaccine": 6,
+    "country": 26,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8170,
+  "fields": {
+    "year": 1980,
+    "vaccine": 6,
+    "country": 28,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8171,
+  "fields": {
+    "year": 1981,
+    "vaccine": 6,
+    "country": 28,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8172,
+  "fields": {
+    "year": 1982,
+    "vaccine": 6,
+    "country": 28,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8173,
+  "fields": {
+    "year": 1983,
+    "vaccine": 6,
+    "country": 28,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8174,
+  "fields": {
+    "year": 1984,
+    "vaccine": 6,
+    "country": 28,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8175,
+  "fields": {
+    "year": 1980,
+    "vaccine": 6,
+    "country": 29,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8176,
+  "fields": {
+    "year": 1980,
+    "vaccine": 6,
+    "country": 31,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8177,
+  "fields": {
+    "year": 1980,
+    "vaccine": 6,
+    "country": 33,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8178,
+  "fields": {
+    "year": 1980,
+    "vaccine": 6,
+    "country": 34,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8179,
+  "fields": {
+    "year": 1981,
+    "vaccine": 6,
+    "country": 34,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8180,
+  "fields": {
+    "year": 1982,
+    "vaccine": 6,
+    "country": 34,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8181,
+  "fields": {
+    "year": 1983,
+    "vaccine": 6,
+    "country": 34,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8182,
+  "fields": {
+    "year": 1980,
+    "vaccine": 6,
+    "country": 35,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8183,
+  "fields": {
+    "year": 1980,
+    "vaccine": 6,
+    "country": 36,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8184,
+  "fields": {
+    "year": 1980,
+    "vaccine": 6,
+    "country": 38,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8185,
+  "fields": {
+    "year": 1980,
+    "vaccine": 6,
+    "country": 42,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8186,
+  "fields": {
+    "year": 1980,
+    "vaccine": 6,
+    "country": 43,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8187,
+  "fields": {
+    "year": 1980,
+    "vaccine": 6,
+    "country": 44,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8188,
+  "fields": {
+    "year": 1980,
+    "vaccine": 6,
+    "country": 46,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8189,
+  "fields": {
+    "year": 1981,
+    "vaccine": 6,
+    "country": 46,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8190,
+  "fields": {
+    "year": 1982,
+    "vaccine": 6,
+    "country": 46,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8191,
+  "fields": {
+    "year": 1980,
+    "vaccine": 6,
+    "country": 47,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8192,
+  "fields": {
+    "year": 1997,
+    "vaccine": 7,
+    "country": 3,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8193,
+  "fields": {
+    "year": 1998,
+    "vaccine": 7,
+    "country": 3,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8194,
+  "fields": {
+    "year": 1999,
+    "vaccine": 7,
+    "country": 3,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8195,
+  "fields": {
+    "year": 2000,
+    "vaccine": 7,
+    "country": 3,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8196,
+  "fields": {
+    "year": 2001,
+    "vaccine": 7,
+    "country": 3,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8197,
+  "fields": {
+    "year": 1997,
+    "vaccine": 7,
+    "country": 5,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8198,
+  "fields": {
+    "year": 1998,
+    "vaccine": 7,
+    "country": 5,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8199,
+  "fields": {
+    "year": 1997,
+    "vaccine": 7,
+    "country": 12,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8200,
+  "fields": {
+    "year": 1998,
+    "vaccine": 7,
+    "country": 12,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8201,
+  "fields": {
+    "year": 1999,
+    "vaccine": 7,
+    "country": 12,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8202,
+  "fields": {
+    "year": 2000,
+    "vaccine": 7,
+    "country": 12,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8203,
+  "fields": {
+    "year": 2001,
+    "vaccine": 7,
+    "country": 12,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8204,
+  "fields": {
+    "year": 2002,
+    "vaccine": 7,
+    "country": 12,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8205,
+  "fields": {
+    "year": 2003,
+    "vaccine": 7,
+    "country": 12,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8206,
+  "fields": {
+    "year": 1997,
+    "vaccine": 7,
+    "country": 14,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8207,
+  "fields": {
+    "year": 1998,
+    "vaccine": 7,
+    "country": 14,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8208,
+  "fields": {
+    "year": 1999,
+    "vaccine": 7,
+    "country": 14,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8209,
+  "fields": {
+    "year": 2000,
+    "vaccine": 7,
+    "country": 14,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8210,
+  "fields": {
+    "year": 2001,
+    "vaccine": 7,
+    "country": 14,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8211,
+  "fields": {
+    "year": 2002,
+    "vaccine": 7,
+    "country": 14,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8212,
+  "fields": {
+    "year": 1997,
+    "vaccine": 7,
+    "country": 18,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8213,
+  "fields": {
+    "year": 1998,
+    "vaccine": 7,
+    "country": 18,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8214,
+  "fields": {
+    "year": 1999,
+    "vaccine": 7,
+    "country": 18,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8215,
+  "fields": {
+    "year": 2000,
+    "vaccine": 7,
+    "country": 18,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8216,
+  "fields": {
+    "year": 2001,
+    "vaccine": 7,
+    "country": 18,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8217,
+  "fields": {
+    "year": 2002,
+    "vaccine": 7,
+    "country": 18,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8218,
+  "fields": {
+    "year": 1997,
+    "vaccine": 7,
+    "country": 21,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8219,
+  "fields": {
+    "year": 1998,
+    "vaccine": 7,
+    "country": 21,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8220,
+  "fields": {
+    "year": 1999,
+    "vaccine": 7,
+    "country": 21,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8221,
+  "fields": {
+    "year": 2000,
+    "vaccine": 7,
+    "country": 21,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8222,
+  "fields": {
+    "year": 2001,
+    "vaccine": 7,
+    "country": 21,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8223,
+  "fields": {
+    "year": 1997,
+    "vaccine": 7,
+    "country": 22,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8224,
+  "fields": {
+    "year": 1998,
+    "vaccine": 7,
+    "country": 22,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8225,
+  "fields": {
+    "year": 1999,
+    "vaccine": 7,
+    "country": 22,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8226,
+  "fields": {
+    "year": 2000,
+    "vaccine": 7,
+    "country": 22,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8227,
+  "fields": {
+    "year": 2001,
+    "vaccine": 7,
+    "country": 22,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8228,
+  "fields": {
+    "year": 2002,
+    "vaccine": 7,
+    "country": 22,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8229,
+  "fields": {
+    "year": 2003,
+    "vaccine": 7,
+    "country": 22,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8230,
+  "fields": {
+    "year": 2004,
+    "vaccine": 7,
+    "country": 22,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8231,
+  "fields": {
+    "year": 2005,
+    "vaccine": 7,
+    "country": 22,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8232,
+  "fields": {
+    "year": 2006,
+    "vaccine": 7,
+    "country": 22,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8233,
+  "fields": {
+    "year": 2007,
+    "vaccine": 7,
+    "country": 22,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8234,
+  "fields": {
+    "year": 1997,
+    "vaccine": 7,
+    "country": 23,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8235,
+  "fields": {
+    "year": 1998,
+    "vaccine": 7,
+    "country": 23,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8236,
+  "fields": {
+    "year": 1999,
+    "vaccine": 7,
+    "country": 23,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8237,
+  "fields": {
+    "year": 2000,
+    "vaccine": 7,
+    "country": 23,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8238,
+  "fields": {
+    "year": 2001,
+    "vaccine": 7,
+    "country": 23,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8239,
+  "fields": {
+    "year": 1997,
+    "vaccine": 7,
+    "country": 28,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8240,
+  "fields": {
+    "year": 1997,
+    "vaccine": 7,
+    "country": 33,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8241,
+  "fields": {
+    "year": 1998,
+    "vaccine": 7,
+    "country": 33,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8242,
+  "fields": {
+    "year": 1999,
+    "vaccine": 7,
+    "country": 33,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8243,
+  "fields": {
+    "year": 1997,
+    "vaccine": 7,
+    "country": 34,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8244,
+  "fields": {
+    "year": 1998,
+    "vaccine": 7,
+    "country": 34,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8245,
+  "fields": {
+    "year": 1999,
+    "vaccine": 7,
+    "country": 34,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8246,
+  "fields": {
+    "year": 2000,
+    "vaccine": 7,
+    "country": 34,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8247,
+  "fields": {
+    "year": 2001,
+    "vaccine": 7,
+    "country": 34,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8248,
+  "fields": {
+    "year": 2002,
+    "vaccine": 7,
+    "country": 34,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8249,
+  "fields": {
+    "year": 2003,
+    "vaccine": 7,
+    "country": 34,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8250,
+  "fields": {
+    "year": 1997,
+    "vaccine": 7,
+    "country": 36,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8251,
+  "fields": {
+    "year": 1998,
+    "vaccine": 7,
+    "country": 36,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8252,
+  "fields": {
+    "year": 1999,
+    "vaccine": 7,
+    "country": 36,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8253,
+  "fields": {
+    "year": 2000,
+    "vaccine": 7,
+    "country": 36,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8254,
+  "fields": {
+    "year": 2001,
+    "vaccine": 7,
+    "country": 36,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8255,
+  "fields": {
+    "year": 2002,
+    "vaccine": 7,
+    "country": 36,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8256,
+  "fields": {
+    "year": 1997,
+    "vaccine": 7,
+    "country": 43,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8257,
+  "fields": {
+    "year": 1998,
+    "vaccine": 7,
+    "country": 43,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8258,
+  "fields": {
+    "year": 1999,
+    "vaccine": 7,
+    "country": 43,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8259,
+  "fields": {
+    "year": 2000,
+    "vaccine": 7,
+    "country": 43,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8260,
+  "fields": {
+    "year": 2001,
+    "vaccine": 7,
+    "country": 43,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8261,
+  "fields": {
+    "year": 2002,
+    "vaccine": 7,
+    "country": 43,
+    "coverage": 0
+  }
+},
+{
+  "model": "core.vaccinationestimate",
+  "pk": 8262,
+  "fields": {
+    "year": 2003,
+    "vaccine": 7,
+    "country": 43,
+    "coverage": 0
+  }
 }
 ]
