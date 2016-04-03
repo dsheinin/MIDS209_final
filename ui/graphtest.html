@@ -66,14 +66,24 @@
 
         $.getJSON( apiBaseUrl + "fetch/coverage/dpt/", function( data ) {
 
-            var country = svg.selectAll(".country")
+            // country lines
+            countryContainer.selectAll(".country")
                     .data(data["countries"])
-                    .enter().append("g")
-                    .attr("class", "country");
-
-            country.append("path")
+                    .enter()
+                    .append("g")
+                    .attr("class", "country")
+                    .append("path")
                     .attr("d", function(d){return lineFunction(d["years"]);})
                     .attr("stroke", "lightgrey")
+                    .attr("stroke-width", 2)
+                    .attr("fill", "none");
+
+            // average line
+            average
+                    .datum(data["average_years"])
+                    .append("path")
+                    .attr("d", function(d){return lineFunction(d);})
+                    .attr("stroke", "black")
                     .attr("stroke-width", 2)
                     .attr("fill", "none");
 
