@@ -28,416 +28,25 @@
 
     <!-- Custom styles for this template -->
     <link href="css/carousel.css" rel="stylesheet">
+    <link href="css/immunization.css" rel="stylesheet">
     
     <script src="js/jquery.min.js"></script>
     <script src="js/d3.min.js"></script>
+    <script src="js/holder.min.js"></script>
+    <script src="http://d3js.org/queue.v1.min.js"></script>
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
+    <script src="js/colorbrewer.js"></script>
+    <script src="js/africamap.js"></script>
+    <script src="js/africamap_draw.js"></script>
     
-    <style>
-    #mapdiv {
-        margin-left: 20px;
-    }
-    </style>
-    
-        
-    <!-- For the amchart map -->      
-    <link rel="stylesheet" href="css/ammap.css" type="text/css">
-     <script src="js/ammap.js" type="text/javascript"></script>
-     <script src="js/worldLow.js" type="text/javascript"></script>
-     <script src="js/light.js" type="text/javascript"></script>
-     <script>
-        /**
-         * We're using zoomLevel, zoomLatitude and zoomLongitude to set initial zoom
-         * position and level opf the map
-         */
-        
-        var map = AmCharts.makeChart("mapdiv", {
-          "type": "map",
-          "theme": "none",
-          "pathToImages": "http://www.amcharts.com/lib/3/images/",
-          "dataProvider": {
-            "map": "worldLow",
-            "getAreasFromMap": true,
-            "zoomLevel": 4.6,
-            "zoomLatitude": -1.626942,
-            "zoomLongitude": 20.373778,
-            "areas": [{
-              "id": "AB",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-            }, {
-              "id": "AE",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-        
-            }, {
-              "id": "AF",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-        
-            }, {
-              "id": "AL",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-        
-            }, {
-              "id": "AM",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-        
-            }, {
-        
-              "id": "AZ",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-        
-            }, {
-              "id": "BG",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-        
-            }, {
-              "id": "BR",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-        
-            }, {
-              "id": "CN",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-        
-            }, {
-              "id": "CY",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-        
-            }, {
-              "id": "ES",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-        
-            }, {
-              "id": "FR",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-        
-            }, {
-              "id": "GR",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-        
-            }, {
-              "id": "GE",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-        
-            }, {
-              "id": "IL",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-        
-            }, {
-              "id": "IN",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-        
-            }, {
-              "id": "IT",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-        
-            }, {
-              "id": "IR",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-        
-            }, {
-              "id": "IQ",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-        
-            }, {
-              "id": "JO",
-              "selectable": false,
-              "balloonText": ""
-        
-            }, {
-              "id": "KG",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-        
-            }, {
-              "id": "KW",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-        
-            }, {
-              "id": "KZ",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-        
-            }, {
-              "id": "LB",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-        
-            }, {
-              "id": "LK",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-        
-            }, {
-              "id": "ME",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-        
-            }, {
-              "id": "MK",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-        
-            }, {
-              "id": "NP",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-        
-            }, {
-              "id": "OM",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-        
-            }, {
-              "id": "PK",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-        
-            }, {
-              "id": "PT",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-        
-            }, {
-              "id": "QA",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-        
-            }, {
-              "id": "RU",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-        
-            }, {
-              "id": "SA",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-        
-            }, {
-              "id": "SY",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-        
-            }, {
-              "id": "TJ",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-        
-            }, {
-              "id": "TM",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-        
-            }, {
-              "id": "TR",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-        
-            }, {
-              "id": "UZ",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-        
-            }, {
-              "id": "YE",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-             
-            }, {
-                  "id": "BA",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-            },{
-              "id": "HR",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-            },{
-                "id": "ME",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-            },{
-                "id": "RS",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-            },{
-                "id": "XK",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-            },{
-                "id": "JO",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-            },{
-                "id": "PS",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-            },{
-                "id": "RO",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-            },{
-                "id": "UA",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-            },{
-                "id": "MD",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-            },{
-                "id": "HU",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-            },{
-                "id": "AT",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-            },{
-                "id": "SI",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-            },{
-                "id": "DE",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-            },{
-                "id": "CH",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-            },{
-                "id": "BE",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-            },{
-                "id": "LU",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-            },{
-                "id": "GB",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-            },{
-                "id": "SK",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-            },{
-                "id": "CZ",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-            },{
-                "id": "PL",
-              "selectable": false,
-              "balloonText": "",
-              "alpha": 0
-            }],
-          },
-          "areasSettings": {
-            "autoZoom": true,
-            "color": "#11BBEE",
-            "selectable": true,
-            "outlineAlpha":0
-          },
-        
-          "zoomControl": {
-            zoomControlEnabled: false,
-            homeButtonEnabled: true,
-            panControlEnabled: false
-          },
-          dragMap: false,
-          zoomOnDoubleClick: false
-        });
-        
-        //******* listener for click event *******//
-        map.addListener("clickMapObject", function(event) {
-          alert("Map object id: " + event.mapObject.id + "\nMap object title: " + event.mapObject.title)
-          
-          if (event.mapObject.id == "SD") {
-			
-          }   
-          
-          
-        });
+    <script>
       
-     </script>
-     
-    
-    <script type="text/javascript" src="d3/d3.min.js"></script>  
-        
+      $(document).ready(function(){  
+          draw_africa();
+      })
+      
+    </script>
+
   </head>
 <!-- NAVBAR
 ================================================== -->
@@ -536,73 +145,29 @@
     <h1 id="myDashboard" style="text-align:center">Immunization Effectiveness Dashboard</h1></br>
 
     <div class="btn-group btn-group-justified">
-      <div class="btn-group">
-        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-        Measles<span class="caret"></span></button>
-        <ul class="dropdown-menu" role="menu">
-          <!--li><a href="#">Both</a></li-->
-          <li id='MeaslesB'><a>Both</a></li>
-          <li id='Measles1'><a>MCV1</a></li>
-          <li id='Measles2'><a>MCV2</a></li>
-        </ul>
-      </div>
-      <div class="btn-group">
-        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-        Diphtheria, Tetanus, Pertussis<span class="caret"></span></button>
-        <ul class="dropdown-menu" role="menu">
-          <li id='DPTB'><a>Both</a></li>
-          <li id='DPT1'><a>DPT1</a></li>
-          <li id='DPT3'><a>DPT3</a></li>
-        </ul>
-      </div>      
-      <div class="btn-group">
-        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-        Neonatal Tetenus<span class="caret"></span></button>
-        <ul class="dropdown-menu" role="menu">
-          <li id='NTet'><a>PAB</a></li>
-        </ul>
-      </div>
-      <!--a href="#" class="btn btn-primary">Polio</a-->
-      <div class="btn-group">
-        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-        Polio<span class="caret"></span></button>
-        <ul class="dropdown-menu" role="menu">
-          <li id='Polio'><a>Pol3</a></li>
-        </ul>
-      </div> 
-       <div class="btn-group">
-        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-        Yellow Fever<span class="caret"></span></button>
-        <ul class="dropdown-menu" role="menu">
-          <li id='YFev'><a>YFV</a></li>
-        </ul>
-      </div>   
+      <a class="btn btn-primary" id='Measles'>Measles</a>
+      <a class="btn btn-primary" id='DTP'>Diphtheria, Tetanus, Pertussis</a>
+      <a class="btn btn-primary" id='NTet'>Neonatal Tetenus</a>
+      <a class="btn btn-primary" id='Polio'>Polio</a>
+      <a class="btn btn-primary" id='YFev'>Yellow Fever</a>
     </div>
     
     <script>
-
-      $('#MeaslesB').on('click', function (e) {
-        console.log('#MeaslesB was clicked'); // points to the clicked input button
+      
+      $('#Measles').on('click', function (e) {
+        console.log('#Measles was clicked'); // points to the clicked input button
       //your awesome code here
       });
-      $('#Measles1').on('click', function (e) {
-        console.log('#Measles1 was clicked'); // points to the clicked input button
-      //your awesome code here
-      });
-      $('#Measles2').on('click', function (e) {
-        console.log('#Measles2 was clicked'); // points to the clicked input button
-      //your awesome code here
-      });
-      $('#DPTB').on('click', function (e) {
-        console.log('#DPTB was clicked'); // points to the clicked input button
-      //your awesome code here
-      });
-      $('#DPT1').on('click', function (e) {
-        console.log('#DPT1 was clicked'); // points to the clicked input button
-      //your awesome code here
-      });
-      $('#DPT3').on('click', function (e) {
-        console.log('#DPT3 was clicked'); // points to the clicked input button
+      $('#DTP').on('click', function (e) {
+        console.log('#DTP was clicked'); // points to the clicked input button
+        
+        var user_year1 = 1990;   //******************************** user will select years
+        var user_year2 = 2010;
+        var user_disease_group = 'dpt'     /////************************** need to account for change in disease group
+        var state = 1;
+        color_africa(user_year1, user_year2, user_disease_group, state);
+        
+        
       //your awesome code here
       });
       $('#NTet').on('click', function (e) {
@@ -623,49 +188,33 @@
     <div class="dashboard">
       <!-- Indicators -->
       <div class="row">
+        
         <div class="col-md-4">
+          
           <!--img data-src="holder.js/100%x500/white"-->
           
-          <div id="mapdiv" style="width: 100%; background-color:#EEEEEE; height: 500px;"></div>
-          
-        </div>
-        <div class="col-md-8">
-          <!--div class="dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-              Dropdown
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-            </ul>
-          </div-->
-          <ul class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" href="#home">Immunization Coverage vs Time</a></li>
-            <li><a data-toggle="tab" href="#menu1">Disease Incidence vs Time </a></li>
-            <li><a data-toggle="tab" href="#menu2">Coverage / Incidence vs Time</a></li>
-          </ul>
-          
-          <div class="tab-content">
-            <div id="home" class="tab-pane fade in active">
-              <p><strong>Chart Title</strong></p>
-              <p>Some explanatory text for this chart.</p>
-              <div id="graphtest"></div>
-              <script src="js/graphtest.js"></script>
-            </div>
-            <div id="menu1" class="tab-pane fade">
-              <p><strong>Chart Title</strong></p>
-              <p>Some explanatory text for this chart.</p>
-            </div>
-            <div id="menu2" class="tab-pane fade">
-              <p><strong>Chart Title</strong></p>
-              <p>Some explanatory text for this chart.</p>
+          <div class="row">
+            <div class="col-md-12">
+              
+              <div class="africamap"></div>
+
             </div>
           </div>
           
+          <div class="row">
+            <div class="col-md-12">
+              
+              <img data-src="holder.js/100%x140/white">
+              
+            </div>
+          </div>          
+          
+        </div>
+        <div class="col-md-8">
+          <h5>Line Chart - Immunization Rate over Time</h5>
+          <div id="graphtest"></div>
+          <script src="js/graphtest.js"></script>
+
           <!--img data-src="holder.js/100%x500/white"-->
           
         </div>
