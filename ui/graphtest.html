@@ -16,7 +16,7 @@
             font-size: 11px;
         }
         .country-label {
-            font-size: 11px;
+            font-size: 12px;
             text-align: right;
         }
 
@@ -27,9 +27,16 @@
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <script type="text/javascript">
-        var width = 1000
-        var height = 1000;
-        var padding = 200;
+        var width = 1100
+        var height = 1100;
+        var padding = 150;
+        var defaultTransitionTime = 0;
+        var defaultLineColor = "lightgrey";
+        var defaultTextColor = "darkgrey";
+        var highlightColor = "steelblue";
+        var defaultLineStrokeWidth = 1;
+        var highlightLineStrokeWidth = 2;
+
         // For testing with a local Django installation
         //var apiBaseUrl = "http://localhost:8000/api/"
 
@@ -68,7 +75,7 @@
 
         // Function to create spacing between labels
         // See https://www.safaribooksonline.com/blog/2014/03/11/solving-d3-label-placement-constraint-relaxing/
-        var labelSpacing = 10;
+        var labelSpacing = 8;
         function relax(selector) {
             again = false;
             textLabels = countryContainer.selectAll(selector);
@@ -147,11 +154,11 @@
             countries
                     .append("path")
                     .attr("d", function(d){return lineFunction(d["years"]);})
-                    .attr("stroke", "lightgrey")
-                    .attr("stroke-width", 1)
+                    .attr("stroke", defaultLineColor)
+                    .attr("stroke-width", defaultLineStrokeWidth)
                     .attr("fill", "none");
 
-            // add left country labels
+                // add left country labels
             countries
                     .append("text")
                     .attr({
@@ -160,7 +167,8 @@
                         },
                         "x": padding - 20,
                         "text-anchor": "end",
-                        "class": "country-label country-label-start"
+                        "class": "country-label country-label-start",
+                        "fill": defaultTextColor
                     })
                     .text(function(d) { return d["name"]; });
 
@@ -173,7 +181,8 @@
                             return path.getPointAtLength(path.getTotalLength()).y;
                         },
                         "x": width - padding + 20,
-                        "class": "country-label country-label-end"
+                        "class": "country-label country-label-end",
+                        "fill": defaultTextColor
                     })
                     .text(function(d) { return d["name"]; });
 
@@ -181,13 +190,49 @@
             relax(".country-label-start");
             relax(".country-label-end");
 
+            // hover behaviour
+            countries.selectAll("*")
+                    .on("mouseover", function(d){
+                        countries.selectAll("path")
+                                .transition()
+                                .duration(0)
+                                .attr({
+                                    "stroke": defaultLineColor,
+                                    "stroke-width": defaultLineStrokeWidth,
+                                });
+                        countries.selectAll("text")
+                                .transition()
+                                .duration(0)
+                                .attr({
+                                    "fill": defaultTextColor
+                                });
+                        d3.select(this.parentNode).select("path")
+                                .transition()
+                                .duration(defaultTransitionTime)
+                                .attr({
+                                    "stroke": highlightColor,
+                                    "stroke-width": highlightLineStrokeWidth,
+                                });
+                        d3.select(this.parentNode).selectAll("text")
+                                .transition()
+                                .duration(defaultTransitionTime)
+                                .attr({
+                                    "fill": highlightColor,
+                                });
+                        countries.sort(function (a, b) { // select the parent and sort the path's
+                            if (a != d) return -1;               // a is not the hovered element, send "a" to the back
+                            else return 1;                             // a is the hovered element, bring "a" to the front
+                        });
+                    });
+
+
             // average line
             average
                     .datum(data["average_years"])
                     .append("path")
                     .attr("d", function(d){return lineFunction(d);})
                     .attr("stroke", "black")
-                    .attr("stroke-width", 2)
+                    .attr("stroke-width", highlightLineStrokeWidth)
                     .attr("fill", "none");
 
 
