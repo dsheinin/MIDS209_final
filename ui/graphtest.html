@@ -13,11 +13,17 @@
 
         .axis text {
             font-size: 11px;
+            opacity: 0.5;
         }
 
         .country-label {
             font-size: 12px;
             text-align: right;
+        }
+
+        .country-label.selected {
+            font-size: 18px;
+            font-weight: bold;
         }
 
         .brush .extent {
@@ -41,11 +47,13 @@
 
         var defaultTransitionTime = 0;
         var defaultLineColor = "lightgrey";
-        var defaultTextColor = "darkgrey";
+        var defaultTextColor = "lightgrey";
         var highlightColor = "steelblue";
+        var defaultLabelOpacity = "0.5"
         var defaultLineStrokeWidth = 1;
         var highlightLineStrokeWidth = 2;
 
+        var apiBaseUrl = "https://demo.sheinin.ca/w209/api/"
         // For testing with a local Django installation
         //var apiBaseUrl = "http://localhost:8000/api/"
 
@@ -202,6 +210,24 @@
                     y: padding.top,
                 });
 
+        // binary search function to get the y position of a path with a given x position
+        // (adapted from http://stackoverflow.com/a/12541696)
+        function getPathYCoord(path, x){
+            var pathLength = path.getTotalLength();
+            var beginning = x, end = pathLength, target, pos;
+            while (true) {
+                target = Math.floor((beginning + end) / 2);
+                pos = path.getPointAtLength(target);
+                if ((target === end || target === beginning) && pos.x !== x) {
+                    break;
+                }
+                if (pos.x > x)      end = target;
+                else if (pos.x < x) beginning = target;
+                else                break; //position found
+            }
+            return pos.y;
+        }
+
         $.getJSON( apiBaseUrl + "fetch/coverage/dpt/", function( data ) {
 
             // create country groups
@@ -227,13 +253,14 @@
             countries
                     .append("text")
                     .attr({
-                        "y": function(d){
+                        y: function(d){
                             return d3.select(this.parentNode).select("path").node().getPointAtLength(0).y;
                         },
-                        "x": padding.left - 20,
+                        x: padding.left - 20,
                         "text-anchor": "end",
-                        "class": "country-label country-label-start",
-                        "fill": defaultTextColor
+                        class: "country-label country-label-start",
+                        fill: defaultTextColor,
+                        opacity: defaultLabelOpacity
                     })
                     .text(function(d) { return d["name"]; });
 
@@ -241,13 +268,14 @@
             countries
                     .append("text")
                     .attr({
-                        "y": function(d){
+                        y: function(d){
                             var path = d3.select(this.parentNode).select("path").node();
                             return path.getPointAtLength(path.getTotalLength()).y;
                         },
-                        "x": width - padding.right + 20,
-                        "class": "country-label country-label-end",
-                        "fill": defaultTextColor
+                        x: width - padding.right + 20,
+                        class: "country-label country-label-end",
+                        fill: defaultTextColor,
+                        opacity: defaultLabelOpacity
                     })
                     .text(function(d) { return d["name"]; });
 
@@ -266,10 +294,12 @@
                                     "stroke-width": defaultLineStrokeWidth,
                                 });
                         countries.selectAll("text")
+                                .classed("selected", false)
                                 .transition()
                                 .duration(0)
                                 .attr({
-                                    "fill": defaultTextColor
+                                    "fill": defaultTextColor,
+                                    "opacity": defaultLabelOpacity
                                 });
                         d3.select(this.parentNode).select("path")
                                 .transition()
@@ -279,10 +309,12 @@
                                     "stroke-width": highlightLineStrokeWidth,
                                 });
                         d3.select(this.parentNode).selectAll("text")
+                                .classed("selected", true)
                                 .transition()
                                 .duration(defaultTransitionTime)
                                 .attr({
                                     "fill": highlightColor,
+                                    "opacity": 1.0
                                 });
                         countries.sort(function (a, b) { // select the parent and sort the path's
                             if (a != d) return -1;               // a is not the hovered element, send "a" to the back
@@ -335,7 +367,10 @@
             svg.selectAll("path.country-line").attr("d", function(d){return lineFunction(d["years"]);});
             svg.selectAll("path.average-line").attr("d", function(d){return lineFunction(d);});
             svg.selectAll("text.country-label-start").attr("y", function(d){
-                return d3.select(this.parentNode).select("path").node().getPointAtLength(0).y;
+                return getPathYCoord(d3.select(this.parentNode).select("path").node(), padding.left);
+            });
+            svg.selectAll("text.country-label-end").attr("y", function(d){
+                return getPathYCoord(d3.select(this.parentNode).select("path").node(), width - padding.right);
             });
             svg.select("#x-axis-main").call(xAxis);
         }
