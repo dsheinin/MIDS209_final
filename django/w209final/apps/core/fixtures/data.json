@@ -68,7 +68,7 @@
   "pk": 9,
   "fields": {
     "iso_code": "CAF",
-    "name": "Central African Republic (the)"
+    "name": "CAR"
   }
 },
 {
@@ -84,7 +84,7 @@
   "pk": 11,
   "fields": {
     "iso_code": "COM",
-    "name": "Comoros (the)"
+    "name": "Comoros"
   }
 },
 {
@@ -92,7 +92,7 @@
   "pk": 12,
   "fields": {
     "iso_code": "COG",
-    "name": "Congo (the)"
+    "name": "Congo"
   }
 },
 {
@@ -108,7 +108,7 @@
   "pk": 14,
   "fields": {
     "iso_code": "COD",
-    "name": "Democratic Republic of the Congo (the)"
+    "name": "DR Congo"
   }
 },
 {
@@ -148,7 +148,7 @@
   "pk": 19,
   "fields": {
     "iso_code": "GMB",
-    "name": "Gambia (the)"
+    "name": "Gambia"
   }
 },
 {
@@ -260,7 +260,7 @@
   "pk": 33,
   "fields": {
     "iso_code": "NER",
-    "name": "Niger (the)"
+    "name": "Niger"
   }
 },
 {
@@ -356,7 +356,7 @@
   "pk": 45,
   "fields": {
     "iso_code": "TZA",
-    "name": "United Republic of Tanzania"
+    "name": "Tanzania"
   }
 },
 {
