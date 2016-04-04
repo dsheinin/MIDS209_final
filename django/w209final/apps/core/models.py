@@ -6,6 +6,12 @@ class Country(models.Model):
     iso_code = models.CharField(max_length=3)
     name = models.CharField(max_length=100)
 
+    class Meta:
+        verbose_name_plural = "Countries"
+
+    def __unicode__(self):
+        return self.name
+
 class PopulationMeasurement(models.Model):
     year = models.IntegerField()
     country = models.ForeignKey(Country)
