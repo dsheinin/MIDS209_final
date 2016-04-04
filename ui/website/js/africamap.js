@@ -44,7 +44,7 @@ function color_africa(user_year1, user_year2, user_disease_group) {
     
       });
     };
-     
+
     
     //d3.json("js/africaTopoMap.json", function(error, data) {
     //  if (error) return console.error(error);
@@ -235,6 +235,13 @@ function color_africa(user_year1, user_year2, user_disease_group) {
       tooltip.show("<b>" + d.properties.subunit  + "</b>" + "<br>" + "Rate: " + d.properties.pop_est);
       //console.log(d.properties.pop_est)
       //toGreyExcept(this);
+      
+    });
+        
+    countries.on('click', function(d,i){   //****************** this is the part where the map is clicked
+        
+        alert("Country: " + d.properties.subunit  + " was clicked");
+    
     });
     
     countries.on("mousemove", function (d, i) {   
