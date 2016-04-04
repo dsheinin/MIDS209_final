@@ -10,6 +10,7 @@ def fetch_coverage(request, group_slug):
         'countries': [
             {
                 'name':'Algeria',
+                'iso_code':'DZA',
                 'years': [
                     {
                         'year': 1984,
@@ -49,7 +50,11 @@ def fetch_coverage(request, group_slug):
         #    country_data['years'].append(year_data)
 
         # This is faster--ony 1 DB query per country. Requires that estimates and years be ordered by year
-        country_data = {'name': country.name, 'years':[{'year':year, 'coverage':{}} for year in years]}
+        country_data = {
+            'name': country.name,
+            'iso_code': country.iso_code,
+            'years':[{'year':year, 'coverage':{}} for year in years]
+        }
         for estimate in estimate_qs.filter(country=country):
             vac_code = estimate.vaccine.code
             year_index = years.index(estimate.year)
