@@ -39,10 +39,12 @@
     <script src="js/africamap.js"></script>
     <script src="js/africamap_draw.js"></script>
     
+    
     <script>
       
       $(document).ready(function(){  
           draw_africa();
+          onload_immunization_chart();
       })
       
     </script>
@@ -155,32 +157,54 @@
     <script>
       
       $('#Measles').on('click', function (e) {
-        console.log('#Measles was clicked'); // points to the clicked input button
-      //your awesome code here
+        console.log('#Measles was clicked'); 
+      
+        var user_year1 = 2014;   
+        var user_year2 = 2014;
+        var user_disease_group = 'measles';     
+        color_africa(user_year1, user_year2, user_disease_group);
+        
+        draw_immunization_chart(user_disease_group);
       });
       $('#DTP').on('click', function (e) {
-        console.log('#DTP was clicked'); // points to the clicked input button
+        console.log('#DTP was clicked'); 
         
-        var user_year1 = 1990;   //******************************** user will select years
-        var user_year2 = 2010;
-        var user_disease_group = 'dpt'     /////************************** need to account for change in disease group
-        var state = 1;
-        color_africa(user_year1, user_year2, user_disease_group, state);
+        var user_year1 = 2014;   
+        var user_year2 = 2014;
+        var user_disease_group = 'dpt';     
+        color_africa(user_year1, user_year2, user_disease_group);
         
-        
-      //your awesome code here
+        draw_immunization_chart(user_disease_group);
       });
       $('#NTet').on('click', function (e) {
-        console.log('#NTet was clicked'); // points to the clicked input button
-      //your awesome code here
+        console.log('#NTet was clicked'); 
+      
+        var user_year1 = 2014;   
+        var user_year2 = 2014;
+        var user_disease_group = 'pab';     
+        color_africa(user_year1, user_year2, user_disease_group);
+        
+        draw_immunization_chart(user_disease_group);
       });
       $('#Polio').on('click', function (e) {
-        console.log('#Polio was clicked'); // points to the clicked input button
-      //your awesome code here
+        console.log('#Polio was clicked'); 
+      
+        var user_year1 = 2014;   
+        var user_year2 = 2014;
+        var user_disease_group = 'polio';     
+        color_africa(user_year1, user_year2, user_disease_group);
+        
+        draw_immunization_chart(user_disease_group);
       });
       $('#YFev').on('click', function (e) {
-        console.log('#YFev was clicked'); // points to the clicked input button
-      //your awesome code here
+        console.log('#YFev was clicked'); 
+      
+        var user_year1 = 2014;   
+        var user_year2 = 2014;
+        var user_disease_group = 'yfv';     
+        color_africa(user_year1, user_year2, user_disease_group);
+        
+        draw_immunization_chart(user_disease_group);      
       });
     </script>
 
@@ -214,8 +238,7 @@
           <h5>Line Chart - Immunization Rate over Time</h5>
           <div id="graphtest"></div>
           <script src="js/graphtest.js"></script>
-
-          <!--img data-src="holder.js/100%x500/white"-->
+          <script src="js/graphtest_onload.js"></script>
           
         </div>
       </div>

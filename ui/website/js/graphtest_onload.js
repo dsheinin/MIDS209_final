@@ -1,4 +1,4 @@
-function draw_immunization_chart(user_disease_group) {
+function onload_immunization_chart() {
 
     var width = 800;
     var height = 500;
@@ -36,8 +36,6 @@ function draw_immunization_chart(user_disease_group) {
             .range([height - padding.bottom, height - padding.bottom - navGraphHeight]);
     
     // Create svg element
-    d3.selectAll("#graphtest").select("svg").remove() //redraw
-    
     var svg = d3.select("#graphtest")
             .append("svg")
             .attr({
@@ -194,7 +192,7 @@ function draw_immunization_chart(user_disease_group) {
         return pos.y;
     }
     
-    $.getJSON( apiBaseUrl + "fetch/coverage/" + user_disease_group + "/", function( data ) {
+    $.getJSON( apiBaseUrl + "fetch/coverage/dpt/", function( data ) {
     
         // create country groups
         var countries = countryContainer.selectAll(".country")

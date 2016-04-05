@@ -48,7 +48,7 @@
     "Country_Map": "Cape Verde"
   },
   {
-    "Country_Django": "Central African Republic (the)",
+    "Country_Django": "CAR",
     "Country_Map": "Central African Republic"
   },
   {
@@ -60,11 +60,11 @@
     "Country_Map": "Chad"
   },
   {
-    "Country_Django": "Comoros (the)",
+    "Country_Django": "Comoros",
     "Country_Map": "Comoros"
   },
   {
-    "Country_Django": "Democratic Republic of the Congo (the)",
+    "Country_Django": "DR Congo",
     "Country_Map": "Democratic Republic of the Congo"
   },
   {
@@ -92,7 +92,7 @@
     "Country_Map": "Gabon"
   },
   {
-    "Country_Django": "Gambia (the)",
+    "Country_Django": "Gambia",
     "Country_Map": "Gambia"
   },
   {
@@ -172,7 +172,7 @@
     "Country_Map": "Namibia"
   },
   {
-    "Country_Django": "Niger (the)",
+    "Country_Django": "Niger",
     "Country_Map": "Niger"
   },
   {
@@ -188,7 +188,7 @@
     "Country_Map": "Puntland"
   },
   {
-    "Country_Django": "Congo (the)",
+    "Country_Django": "Congo",
     "Country_Map": "Republic of Congo"
   },
   {
@@ -236,7 +236,7 @@
     "Country_Map": "Swaziland"
   },
   {
-    "Country_Django": "United Republic of Tanzania",
+    "Country_Django": "Tanzania",
     "Country_Map": "Tanzania"
   },
   {

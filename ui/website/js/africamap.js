@@ -106,21 +106,48 @@ function color_africa(user_year1, user_year2, user_disease_group) {
     }
     
     for (i = 0; i < coverage_year1.length; i++) {
-        if (user_year1 == user_year2) {
-            coverage_final.push(coverage_year1[i].DTP1); //************************** edit out this part for other cases !!!
-        }
-        else {
-            if (isNaN(user_year1)){
-                coverage_final.push(user_year2);
-            }
-            else if (isNaN(user_year2)){
-                coverage_final.push(user_year1);
+        
+        if (user_disease_group=='dpt') {
+            if (user_year1 == user_year2) {
+                coverage_final.push((coverage_year1[i].DTP1 + coverage_year1[i].DTP3)/2); 
             }
             else {
-                var cov_ave = (coverage_year2[i].DTP1 + coverage_year1[i].DTP1) / 2;      //************************** edit out this part for other cases !!!
+                var cov_ave = (coverage_year2[i].DTP1 + coverage_year1[i].DTP1 + coverage_year2[i].DTP3 + coverage_year1[i].DTP3) / 4;      
                 coverage_final.push(cov_ave);    
-            } 
-        }
+            }
+        } else if (user_disease_group=='measles') {
+            if (user_year1 == user_year2) {
+                coverage_final.push(coverage_year1[i].MCV1); 
+            }
+            else {
+                var cov_ave = (coverage_year2[i].MCV1 + coverage_year1[i].MCV1) / 2;      
+                coverage_final.push(cov_ave);    
+            }
+        } else if (user_disease_group=='pab') {
+            if (user_year1 == user_year2) {
+                coverage_final.push(coverage_year1[i].PAB); 
+            }
+            else {
+                var cov_ave = (coverage_year2[i].PAB + coverage_year1[i].PAB) / 2;      
+                coverage_final.push(cov_ave);    
+            }
+        } else if (user_disease_group=='polio') {   
+            if (user_year1 == user_year2) {
+                coverage_final.push(coverage_year1[i].Pol3); 
+            }
+            else {
+                var cov_ave = (coverage_year2[i].Pol3 + coverage_year1[i].Pol3) / 2;      
+                coverage_final.push(cov_ave);    
+            }
+        } else if (user_disease_group=='yfv') {
+            if (user_year1 == user_year2) {
+                coverage_final.push(coverage_year1[i].YFV); 
+            }
+            else {
+                var cov_ave = (coverage_year2[i].YFV + coverage_year1[i].YFV) / 2;      
+                coverage_final.push(cov_ave);    
+            }
+        } 
     }
     //console.log(coverage_final)
     //document.getElementById("testarea").innerHTML = text;
@@ -138,7 +165,7 @@ function color_africa(user_year1, user_year2, user_disease_group) {
         });
         return json;
     })();
-    //console.log(country_pair)
+    
     
     ///************************* end api call for data  *********************************************************************
       
@@ -261,6 +288,5 @@ function color_africa(user_year1, user_year2, user_disease_group) {
     
     // bl.ocks resize
     d3.select(self.frameElement).style("height", height + 70 + "px");
-
 
 };

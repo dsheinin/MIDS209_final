@@ -1,3 +1,5 @@
+/*********** map ***********/
+
 #mapdiv {
     margin-left: 20px;
 }
@@ -68,4 +70,33 @@ div.tooltip {
 
 .africamap {
   margin: 0 auto;
+}
+
+/*********** graphtest ***********/
+.axis path,
+.axis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    font-size: 11px;
+    opacity: 0.5;
+}
+
+.country-label {
+    font-size: 12px;
+    text-align: right;
+}
+
+.country-label.selected {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.brush .extent {
+    stroke: #fff;
+    fill-opacity: .125;
+    shape-rendering: crispEdges;
 }
