@@ -41,10 +41,29 @@
     
     
     <script>
-      
-      $(document).ready(function(){  
-          draw_africa();
-          onload_immunization_chart();
+
+      $(document).ready(function(){
+        draw_africa();
+        //onload_immunization_chart();
+
+        var updateLineChart = initializeLineChart();
+
+        $('.vac-group-btn').on('click', function (e) {
+          var user_year1 = 2014;
+          var user_year2 = 2014;
+          var user_disease_group = $(this).attr("id");
+
+          var apiBaseUrl = "https://demo.sheinin.ca/w209/api/"
+          // For testing with a local Django installation
+          //var apiBaseUrl = "http://localhost:8000/api/"
+
+          $.getJSON( apiBaseUrl + "fetch/coverage/" + user_disease_group + "/", function( data ) {
+            updateLineChart(data);
+            color_africa(user_year1, user_year2, data);
+          });
+
+
+        });
       })
       
     </script>
@@ -147,66 +166,12 @@
     <h1 id="myDashboard" style="text-align:center">Immunization Effectiveness Dashboard</h1></br>
 
     <div class="btn-group btn-group-justified">
-      <a class="btn btn-primary" id='Measles'>Measles</a>
-      <a class="btn btn-primary" id='DTP'>Diphtheria, Tetanus, Pertussis</a>
-      <a class="btn btn-primary" id='NTet'>Neonatal Tetenus</a>
-      <a class="btn btn-primary" id='Polio'>Polio</a>
-      <a class="btn btn-primary" id='YFev'>Yellow Fever</a>
+      <a class="btn btn-primary vac-group-btn" id='measles'>Measles</a>
+      <a class="btn btn-primary vac-group-btn" id='dpt'>Diphtheria, Tetanus, Pertussis</a>
+      <a class="btn btn-primary vac-group-btn" id='pab'>Neonatal Tetenus</a>
+      <a class="btn btn-primary vac-group-btn" id='polio'>Polio</a>
+      <a class="btn btn-primary vac-group-btn" id='yfv'>Yellow Fever</a>
     </div>
-    
-    <script>
-      
-      $('#Measles').on('click', function (e) {
-        console.log('#Measles was clicked'); 
-      
-        var user_year1 = 2014;   
-        var user_year2 = 2014;
-        var user_disease_group = 'measles';     
-        color_africa(user_year1, user_year2, user_disease_group);
-        
-        draw_immunization_chart(user_disease_group);
-      });
-      $('#DTP').on('click', function (e) {
-        console.log('#DTP was clicked'); 
-        
-        var user_year1 = 2014;   
-        var user_year2 = 2014;
-        var user_disease_group = 'dpt';     
-        color_africa(user_year1, user_year2, user_disease_group);
-        
-        draw_immunization_chart(user_disease_group);
-      });
-      $('#NTet').on('click', function (e) {
-        console.log('#NTet was clicked'); 
-      
-        var user_year1 = 2014;   
-        var user_year2 = 2014;
-        var user_disease_group = 'pab';     
-        color_africa(user_year1, user_year2, user_disease_group);
-        
-        draw_immunization_chart(user_disease_group);
-      });
-      $('#Polio').on('click', function (e) {
-        console.log('#Polio was clicked'); 
-      
-        var user_year1 = 2014;   
-        var user_year2 = 2014;
-        var user_disease_group = 'polio';     
-        color_africa(user_year1, user_year2, user_disease_group);
-        
-        draw_immunization_chart(user_disease_group);
-      });
-      $('#YFev').on('click', function (e) {
-        console.log('#YFev was clicked'); 
-      
-        var user_year1 = 2014;   
-        var user_year2 = 2014;
-        var user_disease_group = 'yfv';     
-        color_africa(user_year1, user_year2, user_disease_group);
-        
-        draw_immunization_chart(user_disease_group);      
-      });
-    </script>
 
     <p></p>
     <div class="dashboard">

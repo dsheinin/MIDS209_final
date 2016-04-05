@@ -1,4 +1,6 @@
-function color_africa(user_year1, user_year2, user_disease_group) {      
+function color_africa(user_year1, user_year2, immunization_data) {
+
+    user_disease_group = immunization_data.group_slug;
 
 // modified from https://gist.github.com/chule
 
@@ -64,27 +66,6 @@ function color_africa(user_year1, user_year2, user_disease_group) {
     })();
       
       
-   
-    ///************************* start api call for data *********************************************************************   
-    var immunization_data = (function () {
-        
-        var apiBaseUrl = "https://demo.sheinin.ca/w209/api/"
-        // For testing with a local Django installation
-        //var apiBaseUrl = "http://localhost:8000/api/"
-                
-        var json = null;
-        $.ajax({
-            'async': false,
-            'global': false,
-            'url': apiBaseUrl + "fetch/coverage/" + user_disease_group + "/",  
-            'dataType': "json",
-            'success': function (data) {
-                json = data;
-            }
-        });
-        return json;
-    })();
-       
     var coverage_year1 = [];
     var coverage_year2 = [];
     var coverage_final = [];

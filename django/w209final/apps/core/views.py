@@ -1,4 +1,4 @@
-from w209final.apps.core.models import DiseaseIncidence, VaccinationEstimate, Country, Vaccine
+from w209final.apps.core.models import VaccinationEstimate, VaccineGroup, Country
 from django.http import JsonResponse
 
 def fetch_coverage(request, group_slug):
@@ -6,6 +6,8 @@ def fetch_coverage(request, group_slug):
     """
     Returns JSON coverage data in the following format:
     {
+        'group_slug': 'measles',
+        'group_name': 'Measles',
         'years': [1984, 1985, 1986],
         'countries': [
             {
@@ -34,12 +36,13 @@ def fetch_coverage(request, group_slug):
     }
     """
 
-    estimate_qs = VaccinationEstimate.objects.filter(vaccine__group__slug=group_slug).order_by('year')
+    group = VaccineGroup.objects.get(slug=group_slug);
+    estimate_qs = VaccinationEstimate.objects.filter(vaccine__group__slug=group.slug).order_by('year')
     years = list(estimate_qs.values_list('year', flat=True).distinct())
     countries = []
     average_years = [{'year':year, 'coverage':{}} for year in years]
 
-    for country in Country.objects.all():
+    for country in Country.objects.all().order_by('name'):
 
         # This is a straightforward way of getting the data, but slow--1 DB query per year per country
         #country_data = {'name': country.name, 'years':[]}
@@ -77,5 +80,11 @@ def fetch_coverage(request, group_slug):
             total, count = year_avg['coverage'][vac_code]
             year_avg['coverage'][vac_code] = total / count
 
-    return JsonResponse({'years':years, 'countries':countries, 'average_years':average_years})
+    return JsonResponse({
+        'group_slug': group.slug,
+        'group_name': group.name,
+        'years':years,
+        'countries':countries,
+        'average_years':average_years
+    })
 

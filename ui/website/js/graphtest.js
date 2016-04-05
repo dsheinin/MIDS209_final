@@ -1,4 +1,4 @@
-function draw_immunization_chart(user_disease_group) {
+function initializeLineChart() {
 
     var width = 800;
     var height = 500;
@@ -13,13 +13,9 @@ function draw_immunization_chart(user_disease_group) {
     var defaultLineColor = "lightgrey";
     var defaultTextColor = "lightgrey";
     var highlightColor = "steelblue";
-    var defaultLabelOpacity = "0.5"
+    var defaultLabelOpacity = "0.5";
     var defaultLineStrokeWidth = 1;
     var highlightLineStrokeWidth = 2;
-    
-    var apiBaseUrl = "https://demo.sheinin.ca/w209/api/"
-    // For testing with a local Django installation
-    //var apiBaseUrl = "http://localhost:8000/api/"
     
     var xScaleMain = d3.scale.linear()
             .domain([1980, 2014])
@@ -34,10 +30,7 @@ function draw_immunization_chart(user_disease_group) {
     var yScaleNav = d3.scale.linear()
             .domain([0, 100])
             .range([height - padding.bottom, height - padding.bottom - navGraphHeight]);
-    
-    // Create svg element
-    d3.selectAll("#graphtest").select("svg").remove() //redraw
-    
+
     var svg = d3.select("#graphtest")
             .append("svg")
             .attr({
@@ -51,9 +44,19 @@ function draw_immunization_chart(user_disease_group) {
     var averageContainerNav = svg.append("g");
     
     // create single element for average
-    var average = averageContainer.append("g");
-    var averageNav = averageContainerNav.append("g");
-    
+    var average = averageContainer.append("g")
+        .append("path")
+        .attr("stroke", "black")
+        .attr("stroke-width", highlightLineStrokeWidth)
+        .attr("fill", "none")
+        .attr("class", "average-line main-line")
+        .attr("clip-path", "url(#clip)");
+    var averageNav = averageContainerNav.append("g")
+        .append("path")
+        .attr("stroke", "black")
+        .attr("stroke-width", highlightLineStrokeWidth)
+        .attr("fill", "none");
+
     // Create axes
     var xAxis = d3.svg.axis()
     
@@ -157,7 +160,7 @@ function draw_immunization_chart(user_disease_group) {
             .interpolate("bundle");
     
     var lineFunctionNav = d3.svg.line()
-            .x(function(d) { return xScaleMain(d["year"]); })
+            .x(function(d) { return xScaleNav(d["year"]); })
             .y(function(d) {
                 var coverage = d["coverage"];
                 return  yScaleNav(calcAverage(coverage));
@@ -193,158 +196,188 @@ function draw_immunization_chart(user_disease_group) {
         }
         return pos.y;
     }
-    
-    $.getJSON( apiBaseUrl + "fetch/coverage/" + user_disease_group + "/", function( data ) {
-    
+
+
+    // Add axes
+    var xAxisG = svg.append("g")
+        .attr({
+            id: "x-axis-main",
+            class: "axis",
+            transform: "translate(0," + (padding.top + mainGraphHeight) + ")",
+        });
+
+    var xAxisGNav = svg.append("g")
+        .attr({
+            id: "x-axis-nav",
+            class: "axis",
+            transform: "translate(0," + (height - padding.bottom) + ")",
+        });
+
+    var immunization_data;
+
+    var update = function(data) {
+
+        immunization_data = data;
+
+        // updating existing country groups is tricky. Start again as a fallback
+        d3.selectAll("#graphtest .country").remove();
+
         // create country groups
         var countries = countryContainer.selectAll(".country")
-                .data(data["countries"])
-                .enter()
-                .append("g")
-                .attr("class", "country");
-    
+            .data(data["countries"]);
+
+        var enteredCountries = countries
+            .enter()
+            .append("g")
+            .attr("class", "country");
+
         // add country lines
-        countries
-                .append("path")
-                .attr({
-                    d: function(d){return lineFunction(d["years"]);},
-                    stroke: defaultLineColor,
-                    "stroke-width": defaultLineStrokeWidth,
-                    fill: "none",
-                    class: "country-line main-line",
-                    "clip-path": "url(#clip)"
-                });
-    
-            // add left country labels
-        countries
-                .append("text")
-                .attr({
-                    y: function(d){
-                        return d3.select(this.parentNode).select("path").node().getPointAtLength(0).y;
-                    },
-                    x: padding.left - 20,
-                    "text-anchor": "end",
-                    class: "country-label country-label-start",
-                    fill: defaultTextColor,
-                    opacity: defaultLabelOpacity
-                })
-                .text(function(d) { return d["name"]; });
-    
+        enteredCountries
+            .append("path")
+            .attr({
+                stroke: defaultLineColor,
+                "stroke-width": defaultLineStrokeWidth,
+                fill: "none",
+                class: "country-line main-line",
+                "clip-path": "url(#clip)"
+            });
+
+        countries.selectAll("path")
+            .attr({
+                d: function (d) {
+                    return lineFunction(d["years"]);
+                }
+            });
+
+        // add left country labels
+        enteredCountries
+            .append("text")
+            .attr({
+                x: padding.left - 20,
+                "text-anchor": "end",
+                class: "country-label country-label-start",
+                fill: defaultTextColor,
+                opacity: defaultLabelOpacity
+            });
+
+        countries.selectAll("text.country-label-start")
+            .attr({
+                y: function (d) {
+                    return d3.select(this.parentNode).select("path").node().getPointAtLength(0).y;
+                }
+            })
+            .text(function (d) {
+                return d["name"];
+            });
+
         // add right country labels
-        countries
-                .append("text")
-                .attr({
-                    y: function(d){
-                        var path = d3.select(this.parentNode).select("path").node();
-                        return path.getPointAtLength(path.getTotalLength()).y;
-                    },
-                    x: width - padding.right + 20,
-                    class: "country-label country-label-end",
-                    fill: defaultTextColor,
-                    opacity: defaultLabelOpacity
-                })
-                .text(function(d) { return d["name"]; });
-    
-    
+        enteredCountries
+            .append("text")
+            .attr({
+                x: width - padding.right + 20,
+                class: "country-label country-label-end",
+                fill: defaultTextColor,
+                opacity: defaultLabelOpacity
+            });
+
+        countries.selectAll("text.country-label-end")
+            .attr({
+                y: function (d) {
+                    var path = d3.select(this.parentNode).select("path").node();
+                    return path.getPointAtLength(path.getTotalLength()).y;
+                }
+            })
+            .text(function (d) {
+                return d["name"];
+            });
+
         //relax(".country-label-start");
         //relax(".country-label-end");
-    
+
         // hover behaviour
         countries.selectAll("*")
-                .on("mouseover", function(d){
-                    countries.selectAll("path")
-                            .transition()
-                            .duration(0)
-                            .attr({
-                                "stroke": defaultLineColor,
-                                "stroke-width": defaultLineStrokeWidth,
-                            });
-                    countries.selectAll("text")
-                            .classed("selected", false)
-                            .transition()
-                            .duration(0)
-                            .attr({
-                                "fill": defaultTextColor,
-                                "opacity": defaultLabelOpacity
-                            });
-                    d3.select(this.parentNode).select("path")
-                            .transition()
-                            .duration(defaultTransitionTime)
-                            .attr({
-                                "stroke": highlightColor,
-                                "stroke-width": highlightLineStrokeWidth,
-                            });
-                    d3.select(this.parentNode).selectAll("text")
-                            .classed("selected", true)
-                            .transition()
-                            .duration(defaultTransitionTime)
-                            .attr({
-                                "fill": highlightColor,
-                                "opacity": 1.0
-                            });
-                    countries.sort(function (a, b) { // select the parent and sort the path's
-                        if (a != d) return -1;               // a is not the hovered element, send "a" to the back
-                        else return 1;                             // a is the hovered element, bring "a" to the front
+            .on("mouseover", function (d) {
+                countries.selectAll("path")
+                    .transition()
+                    .duration(0)
+                    .attr({
+                        "stroke": defaultLineColor,
+                        "stroke-width": defaultLineStrokeWidth,
                     });
+                countries.selectAll("text")
+                    .classed("selected", false)
+                    .transition()
+                    .duration(0)
+                    .attr({
+                        "fill": defaultTextColor,
+                        "opacity": defaultLabelOpacity
+                    });
+                d3.select(this.parentNode).select("path")
+                    .transition()
+                    .duration(defaultTransitionTime)
+                    .attr({
+                        "stroke": highlightColor,
+                        "stroke-width": highlightLineStrokeWidth,
+                    });
+                d3.select(this.parentNode).selectAll("text")
+                    .classed("selected", true)
+                    .transition()
+                    .duration(defaultTransitionTime)
+                    .attr({
+                        "fill": highlightColor,
+                        "opacity": 1.0
+                    });
+                countries.sort(function (a, b) { // select the parent and sort the path's
+                    if (a != d) return -1;               // a is not the hovered element, send "a" to the back
+                    else return 1;                             // a is the hovered element, bring "a" to the front
                 });
-    
-    
+            });
+
+
         // average line
+
         average
-                .datum(data["average_years"])
-                .append("path")
-                .attr("d", function(d){return lineFunction(d);})
-                .attr("stroke", "black")
-                .attr("stroke-width", highlightLineStrokeWidth)
-                .attr("fill", "none")
-                .attr("class", "average-line main-line")
-                .attr("clip-path", "url(#clip)");
-    
+            .datum(data["average_years"])
+            .attr("d", function (d) {
+                return lineFunction(d);
+            });
+
+
         averageNav
-                .datum(data["average_years"])
-                .append("path")
-                .attr("d", function(d){return lineFunctionNav(d);})
-                .attr("stroke", "black")
-                .attr("stroke-width", highlightLineStrokeWidth)
-                .attr("fill", "none");
-    
+            .datum(data["average_years"])
+            .attr("d", function (d) {
+                return lineFunctionNav(d);
+            });
+
         // Add axes
-        svg.append("g")
-                .attr({
-                    id: "x-axis-main",
-                    class: "axis",
-                    transform: "translate(0," + (padding.top + mainGraphHeight) + ")",
-                })
-                .call(xAxis);
-    
-        svg.append("g")
-                .attr({
-                    id: "x-axis-nav",
-                    class: "axis",
-                    transform: "translate(0," + (height - padding.bottom) + ")",
-                })
-                .call(xAxis);
-    
-    });
+        xAxisG.call(xAxis);
+        xAxisGNav.call(xAxisNav);
 
+        // select everything with the brush and reset
+        brush.extent([1980, 2014]);
+        brush(d3.select(".brush"));
+        brush.event(d3.select(".brush"));
 
-function brushed() {
-    xScaleMain.domain(brush.empty() ? xScaleNav.domain() : brush.extent());
-    
-    var user_year1 = Math.round(brush.extent()[0]);   //******************************** Change color of map with brushing
-    var user_year2 = Math.round(brush.extent()[1]);   
-    //var user_disease_group = 'dpt'; 
-    color_africa(user_year1, user_year2, user_disease_group);   //******************************** Change color of map with brushing
-    
-    svg.selectAll("path.country-line").attr("d", function(d){return lineFunction(d["years"]);});
-    svg.selectAll("path.average-line").attr("d", function(d){return lineFunction(d);});
-    svg.selectAll("text.country-label-start").attr("y", function(d){
-        return getPathYCoord(d3.select(this.parentNode).select("path").node(), padding.left);
-    });
-    svg.selectAll("text.country-label-end").attr("y", function(d){
-        return getPathYCoord(d3.select(this.parentNode).select("path").node(), width - padding.right);
-    });
-    svg.select("#x-axis-main").call(xAxis);
-}
+    };
+
+    function brushed() {
+        xScaleMain.domain(brush.empty() ? xScaleNav.domain() : brush.extent());
+
+        var user_year1 = Math.round(brush.extent()[0]);   //******************************** Change color of map with brushing
+        var user_year2 = Math.round(brush.extent()[1]);
+        color_africa(user_year1, user_year2, immunization_data);   //******************************** Change color of map with brushing
+
+        svg.selectAll("path.country-line").attr("d", function(d){return lineFunction(d["years"]);});
+        svg.selectAll("path.average-line").attr("d", function(d){return lineFunction(d);});
+        svg.selectAll("text.country-label-start").attr("y", function(d){
+            return getPathYCoord(d3.select(this.parentNode).select("path").node(), padding.left);
+        });
+        svg.selectAll("text.country-label-end").attr("y", function(d){
+            return getPathYCoord(d3.select(this.parentNode).select("path").node(), width - padding.right);
+        });
+        svg.select("#x-axis-main").call(xAxis);
+    }
+
+    return update;
 
 }
