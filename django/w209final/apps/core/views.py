@@ -1,4 +1,4 @@
-from w209final.apps.core.models import VaccinationEstimate, VaccineGroup, Country
+from w209final.apps.core.models import VaccinationEstimate, VaccineGroup, Country, DiseaseIncidence
 from django.http import JsonResponse
 
 def fetch_coverage(request, group_slug):
@@ -20,6 +20,11 @@ def fetch_coverage(request, group_slug):
                             'DTP1': None,
                             'DTP3': 47
                         }
+                        'disease': {
+                            'diphtheria': 116,
+                            'pertussis': 710,
+                            'ttetanus': 86
+                        }
                     },
                 ]
             }
@@ -31,6 +36,11 @@ def fetch_coverage(request, group_slug):
                         'DTP1': None,
                         'DTP3': 47
                     }
+                    'disease': {
+                        'diphtheria': 210,
+                        'pertussis': 110,
+                        'ttetanus': 329
+                    }
                 },
             ]
     }
@@ -40,7 +50,8 @@ def fetch_coverage(request, group_slug):
     estimate_qs = VaccinationEstimate.objects.filter(vaccine__group__slug=group.slug).order_by('year')
     years = list(estimate_qs.values_list('year', flat=True).distinct())
     countries = []
-    average_years = [{'year':year, 'coverage':{}} for year in years]
+    average_years = [{'year':year, 'coverage':{}, 'disease':{}} for year in years]
+    incidence_qs = DiseaseIncidence.objects.filter(disease__group__slug=group.slug).order_by('year')
 
     for country in Country.objects.all().order_by('name'):
 
@@ -56,7 +67,7 @@ def fetch_coverage(request, group_slug):
         country_data = {
             'name': country.name,
             'iso_code': country.iso_code,
-            'years':[{'year':year, 'coverage':{}} for year in years]
+            'years':[{'year':year, 'coverage':{}, 'disease':{}} for year in years]
         }
         for estimate in estimate_qs.filter(country=country):
             vac_code = estimate.vaccine.code
@@ -72,6 +83,20 @@ def fetch_coverage(request, group_slug):
                 total, count = average_years[year_index]['coverage'][vac_code]
                 average_years[year_index]['coverage'][vac_code] = (total + estimate.coverage, count + 1)
 
+        for incidence in incidence_qs.filter(country=country):
+            disease_name = incidence.disease.name
+            year_index = years.index(incidence.year)
+            # add incidence to date for this country
+            country_data['years'][year_index]['disease'][disease_name] = incidence.reports
+
+            # add to average data
+            if vac_code not in average_years[year_index]['disease']:
+                # store averages as (total, count) tuples while incrementing
+                average_years[year_index]['disease'][disease_name] = (incidence.reports, 1)
+            else:
+                total, count = average_years[year_index]['disease'][disease_name]
+                average_years[year_index]['disease'][disease_name] = (total + incidence.reports, count + 1)
+
         countries.append(country_data)
 
     # calculate averages from (total, count) tuples
@@ -80,6 +105,10 @@ def fetch_coverage(request, group_slug):
             total, count = year_avg['coverage'][vac_code]
             year_avg['coverage'][vac_code] = total / count
 
+        for disease_name in year_avg['disease']:
+            total, count = year_avg['disease'][disease_name]
+            year_avg['disease'][disease_name] = total / count
+
     return JsonResponse({
         'group_slug': group.slug,
         'group_name': group.name,
@@ -87,4 +116,3 @@ def fetch_coverage(request, group_slug):
         'countries':countries,
         'average_years':average_years
     })
-
