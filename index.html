@@ -29,7 +29,7 @@
     <!-- Custom styles for this template -->
     <link href="css/carousel.css" rel="stylesheet">
     <link href="css/immunization.css" rel="stylesheet">
-    
+
     <script src="js/jquery.min.js"></script>
     <script src="js/d3.min.js"></script>
     <script src="js/holder.min.js"></script>
@@ -38,8 +38,8 @@
     <script src="js/colorbrewer.js"></script>
     <script src="js/africamap.js"></script>
     <script src="js/africamap_draw.js"></script>
-    
-    
+
+
     <script>
 
       $(document).ready(function(){
@@ -47,6 +47,7 @@
         //onload_immunization_chart();
 
         var updateLineChart = initializeLineChart();
+        var updateSmallMultiples = initializeSmallMultiples();
 
         $('.vac-group-btn').on('click', function (e) {
           var user_year1 = 2014;
@@ -59,13 +60,12 @@
 
           $.getJSON( apiBaseUrl + "fetch/coverage/" + user_disease_group + "/", function( data ) {
             updateLineChart(data);
+            updateSmallMultiples(data);
             color_africa(user_year1, user_year2, data);
           });
-
-
         });
       })
-      
+
     </script>
 
   </head>
@@ -98,7 +98,7 @@
                     <li><a href="#meettheteam">Meet the Team</a></li>
                   </ul>
                 </li-->
-                
+
               </ul>
             </div>
           </div>
@@ -177,34 +177,41 @@
     <div class="dashboard">
       <!-- Indicators -->
       <div class="row">
-        
+
         <div class="col-md-4">
-          
+
           <!--img data-src="holder.js/100%x500/white"-->
-          
+
           <div class="row">
             <div class="col-md-12">
-              
+
               <div class="africamap"></div>
 
             </div>
           </div>
-          
+
           <div class="row">
             <div class="col-md-12">
-              
+
               <img data-src="holder.js/100%x140/white">
-              
+
             </div>
-          </div>          
-          
+          </div>
+
         </div>
         <div class="col-md-8">
           <h5>Line Chart - Immunization Rate over Time</h5>
           <div id="graphtest"></div>
           <script src="js/graphtest.js"></script>
           <script src="js/graphtest_onload.js"></script>
-          
+
+        </div>
+
+        <div class="col-md-13">
+          <div id="small_multiple1"></div>
+          <div id="small_multiple2"></div>
+          <div id="small_multiple3"></div>
+          <script src="js/smallmultiples.js"></script>
         </div>
       </div>
     </div><!-- /.dashboard -->
