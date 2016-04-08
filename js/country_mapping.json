@@ -1,0 +1,270 @@
+[
+  {
+    "Country_Django": "Algeria",
+    "Country_Map": "Algeria"
+  },
+  {
+    "Country_Django": "Angola",
+    "Country_Map": "Angola"
+  },
+  {
+    "Country_Django": 0,
+    "Country_Map": "Annobon"
+  },
+  {
+    "Country_Django": 0,
+    "Country_Map": "Bassas da India"
+  },
+  {
+    "Country_Django": "Benin",
+    "Country_Map": "Benin"
+  },
+  {
+    "Country_Django": 0,
+    "Country_Map": "Bioko"
+  },
+  {
+    "Country_Django": "Botswana",
+    "Country_Map": "Botswana"
+  },
+  {
+    "Country_Django": "Burkina Faso",
+    "Country_Map": "Burkina Faso"
+  },
+  {
+    "Country_Django": "Burundi",
+    "Country_Map": "Burundi"
+  },
+  {
+    "Country_Django": "Cameroon",
+    "Country_Map": "Cameroon"
+  },
+  {
+    "Country_Django": 0,
+    "Country_Map": "Canary Islands"
+  },
+  {
+    "Country_Django": "Cabo Verde",
+    "Country_Map": "Cape Verde"
+  },
+  {
+    "Country_Django": "CAR",
+    "Country_Map": "Central African Republic"
+  },
+  {
+    "Country_Django": 0,
+    "Country_Map": "Ceuta"
+  },
+  {
+    "Country_Django": "Chad",
+    "Country_Map": "Chad"
+  },
+  {
+    "Country_Django": "Comoros",
+    "Country_Map": "Comoros"
+  },
+  {
+    "Country_Django": "DR Congo",
+    "Country_Map": "Democratic Republic of the Congo"
+  },
+  {
+    "Country_Django": 0,
+    "Country_Map": "Djibouti"
+  },
+  {
+    "Country_Django": 0,
+    "Country_Map": "Egypt"
+  },
+  {
+    "Country_Django": "Eritrea",
+    "Country_Map": "Eritrea"
+  },
+  {
+    "Country_Django": "Ethiopia",
+    "Country_Map": "Ethiopia"
+  },
+  {
+    "Country_Django": 0,
+    "Country_Map": "Europa I."
+  },
+  {
+    "Country_Django": "Gabon",
+    "Country_Map": "Gabon"
+  },
+  {
+    "Country_Django": "Gambia",
+    "Country_Map": "Gambia"
+  },
+  {
+    "Country_Django": "Ghana",
+    "Country_Map": "Ghana"
+  },
+  {
+    "Country_Django": "Guinea",
+    "Country_Map": "Guinea"
+  },
+  {
+    "Country_Django": "Guinea-Bissau",
+    "Country_Map": "Guinea Bissau"
+  },
+  {
+    "Country_Django": "Ivory Coast",
+    "Country_Map": "Ivory Coast"
+  },
+  {
+    "Country_Django": 0,
+    "Country_Map": "Juan De Nova Island"
+  },
+  {
+    "Country_Django": "Kenya",
+    "Country_Map": "Kenya"
+  },
+  {
+    "Country_Django": "Lesotho",
+    "Country_Map": "Lesotho"
+  },
+  {
+    "Country_Django": "Liberia",
+    "Country_Map": "Liberia"
+  },
+  {
+    "Country_Django": 0,
+    "Country_Map": "Libya"
+  },
+  {
+    "Country_Django": "Madagascar",
+    "Country_Map": "Madagascar"
+  },
+  {
+    "Country_Django": 0,
+    "Country_Map": "Madeira"
+  },
+  {
+    "Country_Django": "Malawi",
+    "Country_Map": "Malawi"
+  },
+  {
+    "Country_Django": "Mali",
+    "Country_Map": "Mali"
+  },
+  {
+    "Country_Django": "Mauritania",
+    "Country_Map": "Mauritania"
+  },
+  {
+    "Country_Django": 0,
+    "Country_Map": "Mayotte"
+  },
+  {
+    "Country_Django": 0,
+    "Country_Map": "Melilla"
+  },
+  {
+    "Country_Django": 0,
+    "Country_Map": "Morocco"
+  },
+  {
+    "Country_Django": "Mozambique",
+    "Country_Map": "Mozambique"
+  },
+  {
+    "Country_Django": "Namibia",
+    "Country_Map": "Namibia"
+  },
+  {
+    "Country_Django": "Niger",
+    "Country_Map": "Niger"
+  },
+  {
+    "Country_Django": "Nigeria",
+    "Country_Map": "Nigeria"
+  },
+  {
+    "Country_Django": "Sao Tome and Principe",
+    "Country_Map": "Principe"
+  },
+  {
+    "Country_Django": 0,
+    "Country_Map": "Puntland"
+  },
+  {
+    "Country_Django": "Congo",
+    "Country_Map": "Republic of Congo"
+  },
+  {
+    "Country_Django": "Equatorial Guinea",
+    "Country_Map": "Rio Muni"
+  },
+  {
+    "Country_Django": "Rwanda",
+    "Country_Map": "Rwanda"
+  },
+  {
+    "Country_Django": "Sao Tome and Principe",
+    "Country_Map": "Sao Tome"
+  },
+  {
+    "Country_Django": "Senegal",
+    "Country_Map": "Senegal"
+  },
+  {
+    "Country_Django": "Sierra Leone",
+    "Country_Map": "Sierra Leone"
+  },
+  {
+    "Country_Django": 0,
+    "Country_Map": "Somalia"
+  },
+  {
+    "Country_Django": 0,
+    "Country_Map": "Somaliland"
+  },
+  {
+    "Country_Django": "South Africa",
+    "Country_Map": "South Africa"
+  },
+  {
+    "Country_Django": "South Sudan",
+    "Country_Map": "South Sudan"
+  },
+  {
+    "Country_Django": 0,
+    "Country_Map": "Sudan"
+  },
+  {
+    "Country_Django": "Swaziland",
+    "Country_Map": "Swaziland"
+  },
+  {
+    "Country_Django": "Tanzania",
+    "Country_Map": "Tanzania"
+  },
+  {
+    "Country_Django": "Togo",
+    "Country_Map": "Togo"
+  },
+  {
+    "Country_Django": 0,
+    "Country_Map": "Tunisia"
+  },
+  {
+    "Country_Django": "Uganda",
+    "Country_Map": "Uganda"
+  },
+  {
+    "Country_Django": 0,
+    "Country_Map": "Western Sahara"
+  },
+  {
+    "Country_Django": "Zambia",
+    "Country_Map": "Zambia"
+  },
+  {
+    "Country_Django": 0,
+    "Country_Map": "Zanzibar"
+  },
+  {
+    "Country_Django": "Zimbabwe",
+    "Country_Map": "Zimbabwe"
+  }
+]
