@@ -91,61 +91,6 @@ function initializeLineChart() {
         return  total / count;
     }
     
-    // Function to create spacing between labels
-    // See https://www.safaribooksonline.com/blog/2014/03/11/solving-d3-label-placement-constraint-relaxing/
-    var labelSpacing = 8;
-    function relax(selector) {
-        again = false;
-        textLabels = countryContainer.selectAll(selector);
-        textLabels.each(function (d, i) {
-            a = this;
-            da = d3.select(a);
-            y1 = da.attr("y");
-            textLabels.each(function (d, j) {
-                b = this;
-                if (a == b) return;
-    
-                db = d3.select(b);
-                y2 = db.attr("y");
-                deltaY = y1 - y2;
-    
-                if (Math.abs(deltaY) > labelSpacing) return;
-    
-                again = true;
-                sign = deltaY > 0 ? 1 : -1;
-                adjust = sign * 2.0;
-                da.attr("y", +y1 + adjust);
-                db.attr("y", +y2 - adjust);
-            });
-        });
-    
-        if(again) {
-            relax(selector);
-            // to animate
-            //setTimeout(relax,1);
-        }
-        else {
-            // add lines from labels to graph lines
-            /*
-            countryContainer.selectAll(".country")
-                    .append("line")
-                    .attr({
-                        "x1": padding - 17,
-                        "x2": function(d) {
-                            return d3.select(this.parentNode).select("path").node().getPointAtLength(0).x - 3;
-                        },
-                        "y1": function(d) {
-                            return d3.select(this.parentNode).select("text").attr("y");
-                        },
-                        "y2": function(d) {
-                            return d3.select(this.parentNode).select("path").node().getPointAtLength(0).y;
-                        },
-                        "stroke": "orange"
-                    })
-            */
-        }
-    }
-    
     var lineFunction = d3.svg.line()
             .x(function(d) { return xScaleMain(d["year"]); })
             // This is what we'd do to fetch values for a single vaccine:
@@ -290,9 +235,6 @@ function initializeLineChart() {
             .text(function (d) {
                 return d["name"];
             });
-
-        //relax(".country-label-start");
-        //relax(".country-label-end");
 
         // hover behaviour
         countries.selectAll("*")
