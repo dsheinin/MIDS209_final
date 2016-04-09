@@ -36,17 +36,26 @@
     <script src="js/queue.v1.min.js"></script>
     <script src="js/topojson.v1.min.js"></script>
     <script src="js/colorbrewer.js"></script>
+
+    <script>
+      var lineChart;
+
+      function selectCountry(isoCode) {
+        lineChart.highlightCountry(isoCode);
+        // other calls could go here
+      }
+    </script>
+
     <script src="js/africamap.js"></script>
     <script src="js/africamap_draw.js"></script>
-
+    <script src="js/graphtest.js"></script>
 
     <script>
 
       $(document).ready(function(){
         draw_africa();
-        //onload_immunization_chart();
 
-        var updateLineChart = initializeLineChart();
+        lineChart = initializeLineChart();
         var updateSmallMultiples = initializeSmallMultiples();
 
         $('.vac-group-btn').on('click', function (e) {
@@ -59,7 +68,7 @@
           //var apiBaseUrl = "http://localhost:8000/api/"
 
           $.getJSON( apiBaseUrl + "fetch/coverage/" + user_disease_group + "/", function( data ) {
-            updateLineChart(data);
+            lineChart.update(data);
             updateSmallMultiples(data);
             color_africa(user_year1, user_year2, data);
           });
@@ -202,8 +211,6 @@
         <div class="col-md-8">
           <h5>Line Chart - Immunization Rate over Time</h5>
           <div id="graphtest"></div>
-          <script src="js/graphtest.js"></script>
-          <script src="js/graphtest_onload.js"></script>
 
         </div>
 

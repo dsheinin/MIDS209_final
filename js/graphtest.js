@@ -160,7 +160,47 @@ function initializeLineChart() {
 
     var immunization_data;
 
-    var update = function(data) {
+    function highlightCountry(isoCode) {
+        var countries = countryContainer.selectAll(".country");
+        var country = countryContainer.select("#country-line-" + isoCode);
+
+        countries.selectAll("path")
+            .transition()
+            .duration(0)
+            .attr({
+                "stroke": defaultLineColor,
+                "stroke-width": defaultLineStrokeWidth,
+            });
+        countries.selectAll("text")
+            .classed("selected", false)
+            .transition()
+            .duration(0)
+            .attr({
+                "fill": defaultTextColor,
+                "opacity": defaultLabelOpacity
+            });
+        country.select("path")
+            .transition()
+            .duration(defaultTransitionTime)
+            .attr({
+                "stroke": highlightColor,
+                "stroke-width": highlightLineStrokeWidth,
+            });
+        country.selectAll("text")
+            .classed("selected", true)
+            .transition()
+            .duration(defaultTransitionTime)
+            .attr({
+                "fill": highlightColor,
+                "opacity": 1.0
+            });
+        countries.sort(function (a, b) { // select the parent and sort the path's
+            if (a != country) return -1;       // a is not the hovered element, send "a" to the back
+            else return 1;               // a is the hovered element, bring "a" to the front
+        });
+    };
+
+    function update(data) {
 
         immunization_data = data;
 
@@ -174,7 +214,8 @@ function initializeLineChart() {
         var enteredCountries = countries
             .enter()
             .append("g")
-            .attr("class", "country");
+            .attr("class", "country")
+            .attr("id", function(d){ return "country-line-" + d.iso_code; });
 
         // add country lines
         enteredCountries
@@ -239,42 +280,8 @@ function initializeLineChart() {
         // hover behaviour
         countries.selectAll("*")
             .on("mouseover", function (d) {
-                countries.selectAll("path")
-                    .transition()
-                    .duration(0)
-                    .attr({
-                        "stroke": defaultLineColor,
-                        "stroke-width": defaultLineStrokeWidth,
-                    });
-                countries.selectAll("text")
-                    .classed("selected", false)
-                    .transition()
-                    .duration(0)
-                    .attr({
-                        "fill": defaultTextColor,
-                        "opacity": defaultLabelOpacity
-                    });
-                d3.select(this.parentNode).select("path")
-                    .transition()
-                    .duration(defaultTransitionTime)
-                    .attr({
-                        "stroke": highlightColor,
-                        "stroke-width": highlightLineStrokeWidth,
-                    });
-                d3.select(this.parentNode).selectAll("text")
-                    .classed("selected", true)
-                    .transition()
-                    .duration(defaultTransitionTime)
-                    .attr({
-                        "fill": highlightColor,
-                        "opacity": 1.0
-                    });
-                countries.sort(function (a, b) { // select the parent and sort the path's
-                    if (a != d) return -1;               // a is not the hovered element, send "a" to the back
-                    else return 1;                             // a is the hovered element, bring "a" to the front
-                });
+                selectCountry(d.iso_code);
             });
-
 
         // average line
 
@@ -320,6 +327,9 @@ function initializeLineChart() {
         svg.select("#x-axis-main").call(xAxis);
     }
 
-    return update;
+    function lineChart(){}
+    lineChart.update = update;
+    lineChart.highlightCountry = highlightCountry;
+    return lineChart;
 
 }
