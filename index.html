@@ -54,10 +54,12 @@
     <script>
 
       $(document).ready(function(){
-        draw_africa();
+        
 
         lineChart = initializeLineChart();
         var updateSmallMultiples = initializeSmallMultiples();
+        
+        draw_africa();
 
         $('.vac-group-btn').on('click', function (e) {
           var user_year1 = 2014;
@@ -67,6 +69,9 @@
           var apiBaseUrl = "https://demo.sheinin.ca/w209/api/"
           // For testing with a local Django installation
           //var apiBaseUrl = "http://localhost:8000/api/"
+          
+          $('.vac-group-btn').removeClass('btn-info').addClass('btn-primary ');  
+          $(this).addClass('btn-info').removeClass('btn-primary ');
 
           $.getJSON( apiBaseUrl + "fetch/coverage/" + user_disease_group + "/", function( data ) {
             lineChart.update(data);
@@ -99,7 +104,7 @@
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
-                <li><a href="#myDashboard">Take Me to the Dashboard</a></li>
+                <li><a href="#dashboard_start">Take Me to the Dashboard</a></li>
                 <li><a href="#meettheteam">Meet the Team</a></li>
                 <!--li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More Options<span class="caret"></span></a>
@@ -172,57 +177,78 @@
 
 
     <!-- Dashboard
-    ================================================== -->
-    <h1 id="myDashboard" style="text-align:center">Immunization Effectiveness Dashboard</h1></br>
+    ================================================== -->   
+    <div class="container" id="dashboard_start">
+      <!--h3 id="myDashboard" style="text-align:center">Immunization Effectiveness Dashboard</h3-->
+      <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#instructions">Instructions</a></li>
+        <li><a data-toggle="tab" href="#myviz">Go to Visualization</a></li>
+      </ul>
+    
+      <div class="tab-content">
+        <div id="instructions" class="tab-pane fade in active" style="height:600px;">
 
-    <div class="btn-group btn-group-justified">
-      <a class="btn btn-primary vac-group-btn" id='measles'>Measles</a>
-      <a class="btn btn-primary vac-group-btn" id='dpt'>Diphtheria, Tetanus, Pertussis</a>
-      <a class="btn btn-primary vac-group-btn" id='pab'>Neonatal Tetenus</a>
-      <a class="btn btn-primary vac-group-btn" id='polio'>Polio</a>
-      <a class="btn btn-primary vac-group-btn" id='yfv'>Yellow Fever</a>
-    </div>
-
-    <p></p>
-    <div class="dashboard">
-      <!-- Indicators -->
-      <div class="row">
-
-        <div class="col-md-4">
-
-          <!--img data-src="holder.js/100%x500/white"-->
-
-          <div class="row">
-            <div class="col-md-12">
-
-              <div class="africamap"></div>
-
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-12">
-
-              <img data-src="holder.js/100%x140/white">
-
-            </div>
-          </div>
-
+          <h3>Visualization Instructions</h3>
+          <p>To start using this visualization, click on the next tab and select one of buttons for disease type.</p>
+          <p>[Talk in more detail about diseases and immunizations here.]</p>
         </div>
-        <div class="col-md-8">
-          <h5>Line Chart - Immunization Rate over Time</h5>
-          <div id="graphtest"></div>
+        
+        <div id="myviz" class="tab-pane fade">
 
-        </div>
+          <div class="btn-group btn-group-justified">
+            <a class="btn btn-primary vac-group-btn" id='measles'>Measles</a>
+            <a class="btn btn-primary vac-group-btn" id='dpt'>Diphtheria, Tetanus, Pertussis</a>
+            <a class="btn btn-primary vac-group-btn" id='pab'>Neonatal Tetenus</a>
+            <a class="btn btn-primary vac-group-btn" id='polio'>Polio</a>
+            <a class="btn btn-primary vac-group-btn" id='yfv'>Yellow Fever</a>
+          </div>
+      
+          <p></p>
+          <div class="dashboard">
+            <!-- Indicators -->
+            <div class="row">
+      
+              <div class="col-md-5">
+      
+                <!--img data-src="holder.js/100%x500/white"-->
+                <div class="africamap"></div>
+      
+                <!--div class="row">
+                  <div class="col-md-12">
+      
+                    <div class="africamap"></div>
+      
+                  </div>
+                </div>
+      
+                <div class="row">
+                  <div class="col-md-12">
+      
+                    <img data-src="holder.js/100%x140/white">
+      
+                  </div>
+                </div-->
+      
+              </div>
+              <div class="col-md-7">
+                <!--h5>Line Chart - Immunization Rate over Time</h5-->
+                <div id="graphtest"></div>
+      
+              </div>
+      
+              <div class="col-md-13">
+                <div id="small_multiple1"></div>
+                <div id="small_multiple2"></div>
+                <div id="small_multiple3"></div>
+                <script src="js/smallmultiples.js"></script>
+              </div>
+            </div>
+          </div><!-- /.dashboard -->
 
-        <div class="col-md-13">
-          <div id="small_multiple1"></div>
-          <div id="small_multiple2"></div>
-          <div id="small_multiple3"></div>
-          <script src="js/smallmultiples.js"></script>
         </div>
       </div>
-    </div><!-- /.dashboard -->
+    </div>
+
 
 
     <!-- Marketing messaging and featurettes

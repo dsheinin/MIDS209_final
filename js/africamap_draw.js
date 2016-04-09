@@ -2,8 +2,8 @@ function draw_africa() {
 
 // modified from https://gist.github.com/chule
 
-    var width = 350,                //************************************************** change container size here
-        height = 400;
+    var width = 450,                //************************************************** change container size here
+        height = 600;
     
     var svg = d3.select("div.africamap").append("svg")
     .attr("width", width)
@@ -118,7 +118,7 @@ function draw_africa() {
     
     var projection = d3.geo.mercator()
       .center([15, 5])
-      .scale(230)    //************************************************** change scale here
+      .scale(340)    //************************************************** change scale here
       .translate([width / 2, height / 2]);
     
     // var projection = d3.geo.albers()
