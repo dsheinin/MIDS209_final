@@ -281,6 +281,9 @@ function initializeLineChart() {
         countries.selectAll("*")
             .on("mouseover", function (d) {
                 selectCountry(d.iso_code);
+                
+            highlight_map_border(this.parentNode.querySelector('.country-label').textContent);
+            //console.log(this.parentNode.querySelector('.country-label').textContent)    
             });
 
         // average line

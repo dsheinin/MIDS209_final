@@ -240,12 +240,18 @@ function color_africa(user_year1, user_year2, immunization_data) {
     
     countries.on("mouseover", function (d, i) {
       //console.log(this)
+      //console.log(d)
       tooltip.show("<b>" + d.properties.subunit  + "</b>" + "<br>" + "Rate: " + d.properties.pop_est);
-      //console.log(d.properties.pop_est)
       //toGreyExcept(this);
       
-    });
+      d3.select(this.parentNode.appendChild(this)).transition().duration(50)  //** color boarder of country upon hover over
+        .style({'stroke-opacity':1,'stroke':'#F00','stroke-width':3});
         
+     selectCountry(d.properties.iso_a3);   
+  
+    });
+       
+            
     countries.on('click', function(d,i){   //****************** this is the part where the map is clicked
         
         alert("Country: " + d.properties.subunit  + " was clicked");
@@ -258,6 +264,10 @@ function color_africa(user_year1, user_year2, immunization_data) {
       .on("mouseout", function (d, i) {
       //createStuff();
       tooltip.hide();
+      
+      d3.select(this.parentNode.appendChild(this)).transition().duration(50)
+        .style({'stroke-opacity':1,'stroke':'#FFF','stroke-width':1});
+      
     });     
     
     map.append("path")

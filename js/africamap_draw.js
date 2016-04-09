@@ -160,6 +160,9 @@ function draw_africa() {
       tooltip.show("<b>" + d.properties.subunit  + "</b>" + "<br>" + "Rate: " + d.properties.pop_est);
       //console.log(d.properties.pop_est)
       //toGreyExcept(this);
+      
+      //var country_name = 'South Sudan';
+      //highlight_map_border(country_name);
     });
     
     countries.on("mousemove", function (d, i) {   
