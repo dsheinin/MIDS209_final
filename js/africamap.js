@@ -243,6 +243,13 @@ function color_africa(user_year1, user_year2, immunization_data) {
       //console.log(d)
       tooltip.show("<b>" + d.properties.subunit  + "</b>" + "<br>" + "Rate: " + d.properties.pop_est);
       //toGreyExcept(this);
+     
+     var countries_list = map.selectAll(".subunit").selectAll("path");
+     for (k=0; k < countries_list.length; k++) {
+        countries_list[k].parentNode
+        d3.select(countries_list[k].parentNode.parentNode.appendChild(countries_list[k].parentNode)).transition().duration(10)  //** color boarder of country upon hover over
+            .style({'stroke-opacity':1,'stroke':'#FFF','stroke-width':1});
+    }
       
       d3.select(this.parentNode.appendChild(this)).transition().duration(50)  //** color boarder of country upon hover over
         .style({'stroke-opacity':1,'stroke':'#F00','stroke-width':3});
@@ -265,8 +272,8 @@ function color_africa(user_year1, user_year2, immunization_data) {
       //createStuff();
       tooltip.hide();
       
-      d3.select(this.parentNode.appendChild(this)).transition().duration(50)
-        .style({'stroke-opacity':1,'stroke':'#FFF','stroke-width':1});
+      //d3.select(this.parentNode.appendChild(this)).transition().duration(50)
+       // .style({'stroke-opacity':1,'stroke':'#FFF','stroke-width':1});
       
     });     
     
