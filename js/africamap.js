@@ -33,23 +33,16 @@ function color_africa(user_year1, user_year2, immunization_data) {
       var color = d3.select(t).style("fill");
       console.log(color)
       d3.selectAll(".subunit").style("fill", function(d) {
-        //var a = e.data.color;
-    
+
         if (!t || this === t) {
           
           return; }
         return "#cccccc";
-    
-        // var n = d3.rgb(a).hsl().darker(2);
-        // n.s *= .9;
-        // return n.toString()
+
     
       });
     };
 
-    
-    //d3.json("js/africaTopoMap.json", function(error, data) {
-    //  if (error) return console.error(error);
     var data = (function () {
             
         var json = null;
@@ -148,6 +141,39 @@ function color_africa(user_year1, user_year2, immunization_data) {
     })();
     
     
+
+    var country_list1 = ["Select a country"];
+        for (k = 0; k < country_pair.length; k++) {
+          if (country_pair[k].Country_Django != 0) {
+              country_list1.push(country_pair[k].Country_Django);
+          }
+        }
+    
+      //******* adding drop down bar
+      var dropDown = d3.select("#country-list").select("select")
+      .attr("name", "country-list");
+      
+      var options = dropDown.selectAll("option")
+          .data(country_list1)
+           .enter()
+             .append("option")
+        .text(function (d) { return d; })
+         .attr("value", function (d) { return d; });
+      //console.log(options)
+      
+      dropDown.on("change", change );
+      
+      function change()
+      {
+        var newData = d3.select(this).property('value');
+        if (newData != "Select a country") {
+            console.log(newData);
+            
+            alert("Country: " + newData + " was clicked");
+        }
+      }
+    
+    
     ///************************* end api call for data  *********************************************************************
       
     
@@ -175,15 +201,7 @@ function color_africa(user_year1, user_year2, immunization_data) {
     formatNumber = d3.format(",.0f");  
     
     var subunits = topojson.feature(data, data.objects.collection);
-    
-    /*  
-    var text2 = "";
-    for (k = 0; k < subunits.features.length; k++) { 
-        text2 += subunits.features[k].properties.subunit + "<br>";
-    }
-    document.getElementById("testarea").innerHTML = text2;  
-    //console.log(subunits.features[0].properties.subunit)
-    */  
+     
     
     var projection = d3.geo.mercator()
       .center([15, 5])
