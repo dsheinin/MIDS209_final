@@ -141,11 +141,12 @@ function color_africa(user_year1, user_year2, immunization_data) {
     })();
     
     
-
+    var map_list1 = ["Select a country"];
     var country_list1 = ["Select a country"];
         for (k = 0; k < country_pair.length; k++) {
           if (country_pair[k].Country_Django != 0) {
               country_list1.push(country_pair[k].Country_Django);
+              map_list1.push(country_pair[k].Country_Map);
           }
         }
     
@@ -167,9 +168,26 @@ function color_africa(user_year1, user_year2, immunization_data) {
       {
         var newData = d3.select(this).property('value');
         if (newData != "Select a country") {
-            console.log(newData);
+            //console.log(newData);
             
-            alert("Country: " + newData + " was clicked");
+            //alert("Country: " + newData + " was clicked");
+            
+            highlight_map_border(newData);  // needs Country_Django name
+            
+            //map iso_a3 code
+            for (i=0; i < country_list1.length; i++) {
+                for (j=0; j < data.objects.collection.geometries.length; j++) {
+                    if (country_list1[i]==newData) {
+                        if (map_list1[i]==data.objects.collection.geometries[j].properties.subunit) {
+
+                            var iso_a3_pass = data.objects.collection.geometries[j].properties.iso_a3;
+                            console.log(iso_a3_pass)
+                            selectCountry(iso_a3_pass);   // needs iso_a3
+                        }
+                    }
+                }
+            }
+
         }
       }
     
