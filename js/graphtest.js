@@ -127,8 +127,13 @@ function initializeLineChart() {
     // binary search function to get the y position of a path with a given x position
     // (adapted from http://stackoverflow.com/a/12541696)
     function getPathYCoord(path, x){
+        var pathStart = path.getPointAtLength(0);
+        var pathStartX = pathStart.x;
+
+        if (pathStartX > x) return pathStart.y;
+
         var pathLength = path.getTotalLength();
-        var beginning = x, end = pathLength, target, pos;
+        var beginning = x - pathStartX, end = pathLength - pathStartX, target, pos;
         while (true) {
             target = Math.floor((beginning + end) / 2);
             pos = path.getPointAtLength(target);
