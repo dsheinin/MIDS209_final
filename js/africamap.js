@@ -31,7 +31,7 @@ function color_africa(user_year1, user_year2, immunization_data) {
     var toGreyExcept = function(t) {
     
       var color = d3.select(t).style("fill");
-      console.log(color)
+      //console.log(color)
       d3.selectAll(".subunit").style("fill", function(d) {
 
         if (!t || this === t) {
@@ -39,7 +39,6 @@ function color_africa(user_year1, user_year2, immunization_data) {
           return; }
         return "#cccccc";
 
-    
       });
     };
 
@@ -181,20 +180,18 @@ function color_africa(user_year1, user_year2, immunization_data) {
                         if (map_list1[i]==data.objects.collection.geometries[j].properties.subunit) {
 
                             var iso_a3_pass = data.objects.collection.geometries[j].properties.iso_a3;
-                            console.log(iso_a3_pass)
+                            //console.log(iso_a3_pass)
                             selectCountry(iso_a3_pass);   // needs iso_a3
                         }
                     }
                 }
             }
-
         }
       }
     
     
     ///************************* end api call for data  *********************************************************************
       
-    
     var colorScale = d3.scale.threshold()
     //.domain([2000000, 5000000, 10000000, 13000000,  20000000, 30000000, 45000000])
     .domain([10, 20, 30, 40, 50, 60, 70, 80, 90])
@@ -279,26 +276,34 @@ function color_africa(user_year1, user_year2, immunization_data) {
       //console.log(d)
       tooltip.show("<b>" + d.properties.subunit  + "</b>" + "<br>" + "Rate: " + d.properties.pop_est);
       //toGreyExcept(this);
-     
-     var countries_list = map.selectAll(".subunit").selectAll("path");
-     for (k=0; k < countries_list.length; k++) {
-        countries_list[k].parentNode
-        d3.select(countries_list[k].parentNode.parentNode.appendChild(countries_list[k].parentNode)).transition().duration(10)  //** color boarder of country upon hover over
-            .style({'stroke-opacity':1,'stroke':'#FFF','stroke-width':1});
-    }
       
-      d3.select(this.parentNode.appendChild(this)).transition().duration(50)  //** color boarder of country upon hover over
-        .style({'stroke-opacity':1,'stroke':'#F00','stroke-width':3});
+        var countries_list = map.selectAll(".subunit").selectAll("path");
+        for (k=0; k < countries_list.length; k++) {
+           countries_list[k].parentNode
+           d3.select(countries_list[k].parentNode.parentNode.appendChild(countries_list[k].parentNode)).transition().duration(10)  //** color boarder of country upon hover over
+               .style({'stroke-opacity':1,'stroke':'#FFF','stroke-width':1});
+       }
+         
+         d3.select(this.parentNode.appendChild(this)).transition().duration(50)  //** color boarder of country upon hover over
+           .style({'stroke-opacity':1,'stroke':'#F00','stroke-width':3});
+           
+        selectCountry(d.properties.iso_a3);
         
-     selectCountry(d.properties.iso_a3);   
-  
+        for (k = 0; k < country_pair.length; k++) {
+          if (country_pair[k].Country_Map == d.properties.subunit) {
+
+            d3.select("#country-list").select("select")[0][0].value = country_pair[k].Country_Django;
+
+            }
+        };
+
     });
        
             
     countries.on('click', function(d,i){   //****************** this is the part where the map is clicked
         
-        alert("Country: " + d.properties.subunit  + " was clicked");
-    
+        //alert("Country: " + d.properties.subunit  + " was clicked");
+        
     });
     
     countries.on("mousemove", function (d, i) {   

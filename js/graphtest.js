@@ -291,7 +291,9 @@ function initializeLineChart() {
                 selectCountry(d.iso_code);
                 
             highlight_map_border(this.parentNode.querySelector('.country-label').textContent);
-            //console.log(this.parentNode.querySelector('.country-label').textContent)    
+            //console.log(this.parentNode.querySelector('.country-label').textContent)
+            
+            d3.select("#country-list").select("select")[0][0].value = this.parentNode.querySelector('.country-label').textContent;
             });
 
         // average line
