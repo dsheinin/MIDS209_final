@@ -1,11 +1,11 @@
 function initializeLineChart() {
 
-    var width = 800;
+    var width = 650;
     var height = 500;
     
     //var width = 1100;
     //var height = 1100;
-    var padding = {top: 10, right: 150, bottom: 20, left: 150};
+    var padding = {top: 10, right: 0, bottom: 20, left: 150};
     var navGraphHeight = 70;
     var mainGraphHeight = height - padding.top - padding.bottom - navGraphHeight - 30;
     
@@ -13,7 +13,7 @@ function initializeLineChart() {
     var defaultLineColor = "lightgrey";
     var defaultTextColor = "lightgrey";
     var highlightColor = "steelblue";
-    var defaultLabelOpacity = "0.5";
+    var defaultLabelOpacity = "0";
     var defaultLineStrokeWidth = 1;
     var highlightLineStrokeWidth = 2;
     
@@ -148,6 +148,7 @@ function initializeLineChart() {
     }
 
 
+
     // Add axes
     var xAxisG = svg.append("g")
         .attr({
@@ -262,6 +263,7 @@ function initializeLineChart() {
             });
 
         // add right country labels
+        /*
         enteredCountries
             .append("text")
             .attr({
@@ -281,9 +283,10 @@ function initializeLineChart() {
             .text(function (d) {
                 return d["name"];
             });
+            */
 
         // hover behaviour
-        countries.selectAll("*")
+        countries.selectAll("path")
             .on("mouseover", function (d) {
                 selectCountry(d.iso_code);
                 
@@ -329,9 +332,11 @@ function initializeLineChart() {
         svg.selectAll("text.country-label-start").attr("y", function(d){
             return getPathYCoord(d3.select(this.parentNode).select("path").node(), padding.left);
         });
+        /*
         svg.selectAll("text.country-label-end").attr("y", function(d){
             return getPathYCoord(d3.select(this.parentNode).select("path").node(), width - padding.right);
         });
+        */
         svg.select("#x-axis-main").call(xAxis);
     }
 
