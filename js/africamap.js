@@ -271,6 +271,24 @@ function color_africa(user_year1, user_year2, immunization_data) {
       .attr("d", path)
       .style("fill", function(d, i) {  return colorScale(d.properties.pop_est); });
     
+    
+    // **** keep highlighted map country highlighted even when brushing
+    var countries_list = map.selectAll(".subunit").selectAll("path");
+        
+    if (d3.select("#country-list").select("select")[0][0].value != "Select a country") {
+        for (k=0; k < countries_list.length; k++) {
+            for (j=0; j < country_pair.length; j++) {
+                if (d3.select("#country-list").select("select")[0][0].value == country_pair[j].Country_Django) {
+                    if (countries_list[k].parentNode.__data__.properties.subunit == country_pair[j].Country_Map) {
+                        d3.select(countries_list[k].parentNode.parentNode.appendChild(countries_list[k].parentNode)).transition().duration(200)  //** color boarder of country upon hover over
+                            .style({'stroke-opacity':1,'stroke':'#F00','stroke-width':3});
+                    } 
+                }
+            }
+       }
+    }
+    // **** keep highlighted map country highlighted even when brushing
+    
     countries.on("mouseover", function (d, i) {
       //console.log(this)
       //console.log(d)
@@ -279,12 +297,12 @@ function color_africa(user_year1, user_year2, immunization_data) {
       
         var countries_list = map.selectAll(".subunit").selectAll("path");
         for (k=0; k < countries_list.length; k++) {
-           countries_list[k].parentNode
-           d3.select(countries_list[k].parentNode.parentNode.appendChild(countries_list[k].parentNode)).transition().duration(10)  //** color boarder of country upon hover over
+           //countries_list[k].parentNode
+           d3.select(countries_list[k].parentNode.parentNode.appendChild(countries_list[k].parentNode)).transition().duration(200)  //** color boarder of country upon hover over
                .style({'stroke-opacity':1,'stroke':'#FFF','stroke-width':1});
        }
          
-         d3.select(this.parentNode.appendChild(this)).transition().duration(50)  //** color boarder of country upon hover over
+         d3.select(this.parentNode.appendChild(this)).transition().duration(200)  //** color boarder of country upon hover over
            .style({'stroke-opacity':1,'stroke':'#F00','stroke-width':3});
            
         selectCountry(d.properties.iso_a3);
