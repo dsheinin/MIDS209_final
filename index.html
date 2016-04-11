@@ -39,9 +39,16 @@
 
     <script>
       var lineChart;
+      var smallMultiples;
 
       function selectCountry(isoCode) {
         lineChart.highlightCountry(isoCode);
+        smallMultiples.showCountry(isoCode);
+        // other calls could go here
+      }
+
+      function selectRange(startYear, endYear) {
+        smallMultiples.updateRange(startYear, endYear);
         // other calls could go here
       }
     </script>
@@ -54,11 +61,9 @@
     <script>
 
       $(document).ready(function(){
-        
-
         lineChart = initializeLineChart();
-        var updateSmallMultiples = initializeSmallMultiples();
-        
+        smallMultiples = initializeSmallMultiples();
+
         draw_africa();
 
         $('.vac-group-btn').on('click', function (e) {
@@ -69,13 +74,13 @@
           var apiBaseUrl = "https://demo.sheinin.ca/w209/api/"
           // For testing with a local Django installation
           //var apiBaseUrl = "http://localhost:8000/api/"
-          
-          $('.vac-group-btn').removeClass('btn-info').addClass('btn-primary ');  
+
+          $('.vac-group-btn').removeClass('btn-info').addClass('btn-primary ');
           $(this).addClass('btn-info').removeClass('btn-primary ');
 
           $.getJSON( apiBaseUrl + "fetch/coverage/" + user_disease_group + "/", function( data ) {
             lineChart.update(data);
-            updateSmallMultiples(data);
+            smallMultiples.update(data);
             color_africa(user_year1, user_year2, data);
           });
         });
@@ -125,7 +130,6 @@
 
     <!-- Dashboard
     ================================================== -->
-    
     <div class="container" id="dashboard_start">
       <!--h3 id="myDashboard" style="text-align:center">Immunization Effectiveness Dashboard</h3-->
       <br><br><br><br>
@@ -133,7 +137,7 @@
         <li class="active"><a data-toggle="tab" href="#instructions">Instructions</a></li>
         <li><a data-toggle="tab" href="#myviz">Go to Visualization</a></li>
       </ul>
-    
+
       <div class="tab-content">
         <div id="instructions" class="tab-pane fade in active" style="height:600px;">
 
@@ -141,7 +145,7 @@
           <p>To start using this visualization, click on the next tab and select one of buttons for disease type.</p>
           <p>[Talk in more detail about diseases and immunizations here.]</p>
         </div>
-        
+
         <div id="myviz" class="tab-pane fade">
 
           <div class="btn-group btn-group-justified">
@@ -151,50 +155,50 @@
             <a class="btn btn-primary vac-group-btn" id='polio'>Polio</a>
             <a class="btn btn-primary vac-group-btn" id='yfv'>Yellow Fever</a>
           </div>
-      
+
           <p></p>
           <div class="dashboard">
             <!-- Indicators -->
             <div class="row">
-      
+
               <div class="col-md-5">
-      
+
                 <!--img data-src="holder.js/100%x500/white"-->
                 <div id="country-list"></div>
-                
+
                 <script>
                         //******* adding drop down bar
                     var dropDown = d3.select("#country-list").append("select")
                     .attr("name", "country-list");
-                  
+
                 </script>
-               
-                
+
+
                 <div class="africamap"></div>
-      
+
                 <!--div class="row">
                   <div class="col-md-12">
-      
+
                     <div class="africamap"></div>
-      
+
                   </div>
                 </div>
-      
+
                 <div class="row">
                   <div class="col-md-12">
-      
+
                     <img data-src="holder.js/100%x140/white">
-      
+
                   </div>
                 </div-->
-      
+
               </div>
               <div class="col-md-7">
                 <!--h5>Line Chart - Immunization Rate over Time</h5-->
                 <div id="graphtest"></div>
-      
+
               </div>
-      
+
               <div class="col-md-13">
                 <div id="small_multiple1"></div>
                 <div id="small_multiple2"></div>
