@@ -88,7 +88,8 @@ function initializeLineChart() {
     // brush
     var brush = d3.svg.brush()
             .x(xScaleNav)
-            .on("brush", brushed);
+            .on("brush", brushed)
+            .on("brushend", brushend);
     
     svg.append("g")
             .attr("class", "brush")
@@ -355,9 +356,9 @@ function initializeLineChart() {
     function brushed() {
         xScaleMain.domain(brush.empty() ? xScaleNav.domain() : brush.extent());
 
-        var user_year1 = Math.round(brush.extent()[0]);   //******************************** Change color of map with brushing
+        var user_year1 = Math.round(brush.extent()[0]);
         var user_year2 = Math.round(brush.extent()[1]);
-        color_africa(user_year1, user_year2, immunization_data);   //******************************** Change color of map with brushing
+        selectRange(user_year1, user_year2);
 
         svg.selectAll("path.country-line").attr("d", function(d){return lineFunction(d["years"]);});
         svg.selectAll("path.average-line").attr("d", function(d){return lineFunction(d);});
@@ -383,6 +384,12 @@ function initializeLineChart() {
         });
         */
         svg.select("#x-axis-main").call(xAxis);
+    }
+
+    function brushend() {
+        var user_year1 = Math.round(brush.extent()[0]);
+        var user_year2 = Math.round(brush.extent()[1]);
+        color_africa(user_year1, user_year2, immunization_data);   //******************************** Change color of map with brushing
     }
 
     function lineChart(){}
