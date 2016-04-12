@@ -57,6 +57,8 @@
     <script src="js/africamap_draw.js"></script>
     <script src="js/graphtest.js"></script>
     <script src="js/map_link.js"></script>
+    <script src="js/smallmultiples.js"></script>
+
 
     <script>
 
@@ -67,6 +69,8 @@
         draw_africa();
 
         $('.vac-group-btn').on('click', function (e) {
+          $("#loading").show();
+
           var user_year1 = 2014;
           var user_year2 = 2014;
           var user_disease_group = $(this).attr("id");
@@ -82,6 +86,9 @@
             lineChart.update(data);
             smallMultiples.update(data);
             color_africa(user_year1, user_year2, data);
+            $("#loading").hide();
+            $("#myviz").slideDown();
+            $("html, body").animate({ scrollTop: 0 }, "slow");
           });
           
           if ($(this).attr("id") == "measles") {
@@ -112,91 +119,153 @@
 <!-- NAVBAR
 ================================================== -->
   <body>
-    <div class="navbar-wrapper">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
-
-        <nav class="navbar navbar-inverse navbar-static-top">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href=".">Visualizing Immunization Effectiveness in Africa</a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                <li class="active"><a href=".">Home</a></li>
-                <li><a href="#use_cases">Visualization Use Cases</a></li>
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href=".">Visualizing Immunization Effectiveness in Africa</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href=".">Home</a></li>
+            <li><a href="#use_cases">Visualization Use Cases</a></li>
+            <li><a href="#meettheteam">Meet the Team</a></li>
+            <!--li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More Options<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#myDashboard">Take Me to the Dashboard</a></li>
                 <li><a href="#meettheteam">Meet the Team</a></li>
-                <!--li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More Options<span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#myDashboard">Take Me to the Dashboard</a></li>
-                    <li><a href="#meettheteam">Meet the Team</a></li>
-                  </ul>
-                </li-->
-
               </ul>
+            </li-->
+
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="btn-group btn-group-justified">
+        <a class="btn btn-primary vac-group-btn" id='measles'>Measles</a>
+        <a class="btn btn-primary vac-group-btn" id='dpt'>Diphtheria, Tetanus, Pertussis</a>
+        <a class="btn btn-primary vac-group-btn" id='pab'>Neonatal Tetenus</a>
+        <a class="btn btn-primary vac-group-btn" id='polio'>Polio</a>
+        <a class="btn btn-primary vac-group-btn" id='yfv'>Yellow Fever</a>
+      </div>
+
+      <div class="text-center" id="loading">
+        Loading... <span class="glyphicon glyphicon-refresh spinning"></span>
+      </div>
+
+    </nav>
+
+    <div class="container">
+
+      <div id="myviz">
+
+        <div class="dashboard">
+          <!-- Indicators -->
+          <div class="row">
+
+            <div class="col-md-5">
+              <!--img data-src="holder.js/100%x500/white"-->
+              <div id="country-list"></div>
+              <script>
+                //******* adding drop down bar
+                var dropDown = d3.select("#country-list").append("select")
+                        .attr("name", "country-list");
+              </script>
+              <div class="africamap"></div>
+
+            </div>
+            <div class="col-md-7">
+              <!--h5>Line Chart - Immunization Rate over Time</h5-->
+              <div id="graphtest"></div>
+
             </div>
           </div>
-        </nav>
+          <div class="row">
+            <div class="col-md-14 col-sm-2 nopadding" id="sm_mul1"> <!--measles-->
+              <img data-src="holder.js/100%x100/white">
+            </div>
+            <div class="col-md-14 col-sm-2 nopadding" id="sm_mul2"> <!--dipththeria-->
+              <img data-src="holder.js/100%x100/white">
+            </div>
+            <div class="col-md-14 col-sm-2 nopadding" id="sm_mul3"> <!--tetanus-->
+              <img data-src="holder.js/100%x100/white">
+            </div>
+            <div class="col-md-14 col-sm-2 nopadding" id="sm_mul4"> <!--pertussis-->
+              <img data-src="holder.js/100%x100/white">
+            </div>
+            <div class="col-md-14 col-sm-2 nopadding" id="sm_mul5"> <!--neonatal tetanus-->
+              <img data-src="holder.js/100%x100/white">
+              <div id="small_multiple1"></div>
+            </div>
+            <div class="col-md-14 col-sm-2 nopadding" id="sm_mul6"> <!--polio-->
+              <img data-src="holder.js/100%x100/white">
+              <div id="small_multiple2"></div>
+            </div>
+            <div class="col-md-14 col-sm-2 nopadding" id="sm_mul7"> <!--yellow fever-->
+              <img data-src="holder.js/100%x100/white">
+              <div id="small_multiple3"></div>
+            </div>
+          </div>
+          <!--div class="row">
+            <div class="col-md-13">
+              <div id="small_multiple1"></div>
+              <div id="small_multiple2"></div>
+              <div id="small_multiple3"></div>
+              <script src="js/smallmultiples.js"></script>
+            </div>
+          </div-->
+        </div><!-- /.dashboard -->
 
       </div>
-    </div>
 
-
-    <!-- Dashboard
-    ================================================== -->
-    <div class="container" id="dashboard_start">
-      <!--h3 id="myDashboard" style="text-align:center">Immunization Effectiveness Dashboard</h3-->
-      <br><br><br><br>
-      <ul class="nav nav-tabs">
-        <li class="active"><a data-toggle="tab" href="#instructions">Instructions</a></li>
-        <li><a data-toggle="tab" href="#myviz">Go to Visualization</a></li>
-      </ul>
-
-      <div class="tab-content">
-        <div id="instructions" class="tab-pane fade in active" style="height:600px;">
+      <!-- Dashboard
+      ================================================== -->
+      <div class="" id="dashboard_start">
+        <!--h3 id="myDashboard" style="text-align:center">Immunization Effectiveness Dashboard</h3-->
+        <div id="instructions" class="fade in active" style="height:600px;">
 
           <h3>Visualization Instructions</h3>
           <p>To start using this visualization, click on the "Go to Visualization" tab above and select one of buttons for disease type.</p>
           <p>Or to learn more, please hover over each section of the image below to learn more about our dashboard.</p>
-        
-        
-        <div class="row">
-          <div class="col-md-6" >
-            <div class="row" id="instr-img1">
-              <img src="images/img1.jpg" alt="" width="100%" height="100%">
-            </div>
-            <div class="row">
-              <div class="col-md-6" id="instr-img2">
-                <img src="images/img2.jpg" alt="" width="100%" height="100%">
+
+          <div class="row">
+            <div class="col-md-6" >
+              <div class="row" id="instr-img1">
+                <img src="images/img1.jpg" alt="" width="100%" height="100%">
               </div>
-              <div class="col-md-6" id="instr-img3">
-                <img src="images/img3.jpg" alt="" width="100%" height="100%">
+              <div class="row">
+                <div class="col-md-6" id="instr-img2">
+                  <img src="images/img2.jpg" alt="" width="100%" height="100%">
+                </div>
+                <div class="col-md-6" id="instr-img3">
+                  <img src="images/img3.jpg" alt="" width="100%" height="100%">
+                </div>
+              </div>
+              <div class="row" id="instr-img4">
+                <img src="images/img4.jpg" alt="" width="100%" height="100%">
               </div>
             </div>
-            <div class="row" id="instr-img4">
-              <img src="images/img4.jpg" alt="" width="100%" height="100%">
+            <div class="col-md-6" id="instr-text">
+              <span><br><br><br><br><h2 align=center>Welcome to our Visualization!</h2><br><br><h4>Hover over each section to the right to learn more about our dashboard.</h4></span>
             </div>
-          </div>
-          <div class="col-md-6" id="instr-text">
-            <span><br><br><br><br><h2 align=center>Welcome to our Visualization!</h2><br><br><h4>Hover over each section to the right to learn more about our dashboard.</h4></span>
           </div>
 
-        
-        <script>
+          <script>
             $(document).ready(function(){ //start of instructions display
 
-             $( "#instr-img1" ).hover(  //disease types and data source
-              function() {
-                $( "#instr-text" ).find( "span:last" ).remove();
-                
-                var url = "http://www.who.int/immunization/monitoring_surveillance/data/en/";
-                $( "#instr-text" ).append( $( "<span>\
+              $( "#instr-img1" ).hover(  //disease types and data source
+                      function() {
+                        $( "#instr-text" ).find( "span:last" ).remove();
+
+                        var url = "http://www.who.int/immunization/monitoring_surveillance/data/en/";
+                        $( "#instr-text" ).append( $( "<span>\
                                              <h3>Immunization Effectiveness in Africa</h3>\
                                              <p><strong>To begin using this tool, </strong>select a disease to investigate.</p>\
                                              <p>This tool focuses on seven different types of preventable, communicable diseases:</p>\
@@ -211,18 +280,18 @@
                                              </ul>\
                                              <p>Source: <a href=" + url + " target='_blank'>" + url + "</a></p>\
                                              </span>" ) );
-                
-              }
-            );
-            
-            $( "#instr-img2" ).hover(  //African countries
-              function() {
-                
-                $( "#instr-text" ).find( "span:last" ).remove();
-                
-                var url = "http://www.who.int/immunization/monitoring_surveillance/data/en/";
-                
-                $( "#instr-text" ).append( $( "<span>\
+
+                      }
+              );
+
+              $( "#instr-img2" ).hover(  //African countries
+                      function() {
+
+                        $( "#instr-text" ).find( "span:last" ).remove();
+
+                        var url = "http://www.who.int/immunization/monitoring_surveillance/data/en/";
+
+                        $( "#instr-text" ).append( $( "<span>\
                                              <h3>Focus on Africa</h3>\
                                              <p>This tool is used to visualize the effectiveness of immunization strategy in African nations. <strong>Hover over a country or use the dropdown</strong> to select a country to investigate.</p>\
                                              <p>The data presented in this tool is from the World Health Organization (WHO).</p>\
@@ -238,190 +307,116 @@
                                              </ul>\
                                              <p>Source: <a href=" + url + " target='_blank'>" + url + "</a></p>\
                                              </span>" ) );
-                
-              }
-            );
-            
-            $( "#instr-img3" ).hover(  //immunization rates
-              function() {
-                
-                $( "#instr-text" ).find( "span:last" ).remove();
-                
-                $( "#instr-text" ).append( $( "<span>\
+
+                      }
+              );
+
+              $( "#instr-img3" ).hover(  //immunization rates
+                      function() {
+
+                        $( "#instr-text" ).find( "span:last" ).remove();
+
+                        $( "#instr-text" ).append( $( "<span>\
                                              <h3>Immunization Rates Over Time</h3>\
                                              <p>This line chart displays the immunization rates over time for each African country in our dataset.</p>\
                                              <strong>Hover over the line</strong> to select a country to investigate and <strong>interact with the brush</strong> to select a desired time range.</p>\
                                              <p>The data presented in this tool is from the World Health Organization (WHO) and covers the years 1980 through 2014.</p>\
                                              </span>" ) );
-              }
-            );
-            
-            $( "#instr-img4" ).hover(  //incidence rates
-              function() {
-                
-                $( "#instr-text" ).find( "span:last" ).remove();
-                
-                $( "#instr-text" ).append( $( "<span>\
+                      }
+              );
+
+              $( "#instr-img4" ).hover(  //incidence rates
+                      function() {
+
+                        $( "#instr-text" ).find( "span:last" ).remove();
+
+                        $( "#instr-text" ).append( $( "<span>\
                                              <h3>Disease Incidence Over Time</h3>\
                                              <p>This group of line charts display disease incidence rates over time for the selected African country and selected disease.</p>\
                                              <strong>Hover over the line chart above or map, or use the dropdown</strong> to select a country to investigate. Also, <strong>interact with the brush</strong> to select a desired time range.</p>\
                                              <p>The data presented in this tool is from the World Health Organization (WHO) and covers the years 1980 through 2014.</p>\
                                              </span>" ) );
-              }
-            ); 
-           })//end of instructions display    
-               
-          
-        </script>
-        </div>
-        </div>
+                      }
+              );
+            })//end of instructions display
 
-        <div id="myviz" class="tab-pane fade">
 
-          <div class="btn-group btn-group-justified">
-            <a class="btn btn-primary vac-group-btn" id='measles'>Measles</a>
-            <a class="btn btn-primary vac-group-btn" id='dpt'>Diphtheria, Tetanus, Pertussis</a>
-            <a class="btn btn-primary vac-group-btn" id='pab'>Neonatal Tetenus</a>
-            <a class="btn btn-primary vac-group-btn" id='polio'>Polio</a>
-            <a class="btn btn-primary vac-group-btn" id='yfv'>Yellow Fever</a>
+          </script>
+        </div>
+      </div>
+
+
+      <!-- Marketing messaging and featurettes
+      ================================================== -->
+      <!-- Wrap the rest of the page in another container to center all the content. -->
+
+      <div class="marketing" >
+
+        <!-- START THE FEATURETTES -->
+        <hr class="featurette-divider" id="use_cases">
+        <h2 class="featurette-heading" align="center">Visualizing Immunization Effectiveness in Africa</h2>
+        <br><br><br>
+
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h3 class="featurette-heading">Are immunizations effective?</h3>
+            <p class="lead">Our tool answers this by BLAH BLAH BLAH.</p>
           </div>
-
-          <br>
-          <div class="dashboard">
-            <!-- Indicators -->
-            <div class="row">
-
-              <div class="col-md-5">
-                <!--img data-src="holder.js/100%x500/white"-->
-                <div id="country-list"></div>
-                <script>
-                        //******* adding drop down bar
-                    var dropDown = d3.select("#country-list").append("select")
-                    .attr("name", "country-list");
-                </script>
-                <div class="africamap"></div>
-
-              </div>
-              <div class="col-md-7">
-                <!--h5>Line Chart - Immunization Rate over Time</h5-->
-                <div id="graphtest"></div>
-
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-14 col-sm-2 nopadding" id="sm_mul1"> <!--measles-->
-                <img data-src="holder.js/100%x100/white">
-              </div>
-              <div class="col-md-14 col-sm-2 nopadding" id="sm_mul2"> <!--dipththeria-->
-                <img data-src="holder.js/100%x100/white">
-              </div>
-              <div class="col-md-14 col-sm-2 nopadding" id="sm_mul3"> <!--tetanus-->
-                <img data-src="holder.js/100%x100/white">
-              </div>
-              <div class="col-md-14 col-sm-2 nopadding" id="sm_mul4"> <!--pertussis-->
-                <img data-src="holder.js/100%x100/white">
-              </div>
-              <div class="col-md-14 col-sm-2 nopadding" id="sm_mul5"> <!--neonatal tetanus-->
-                <img data-src="holder.js/100%x100/white">
-                <div id="small_multiple1"></div>
-              </div>
-              <div class="col-md-14 col-sm-2 nopadding" id="sm_mul6"> <!--polio-->
-                <img data-src="holder.js/100%x100/white">
-                <div id="small_multiple2"></div>
-              </div>
-              <div class="col-md-14 col-sm-2 nopadding" id="sm_mul7"> <!--yellow fever-->
-                <img data-src="holder.js/100%x100/white">
-                <div id="small_multiple3"></div>
-              </div>
-            </div>
-            <script src="js/smallmultiples.js"></script>
-            <!--div class="row">
-              <div class="col-md-13">
-                <div id="small_multiple1"></div>
-                <div id="small_multiple2"></div>
-                <div id="small_multiple3"></div>
-                <script src="js/smallmultiples.js"></script>
-              </div>
-            </div-->
-          </div><!-- /.dashboard -->
-
+          <div class="col-md-5">
+            <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+          </div>
         </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-7 col-md-push-5">
+            <h3 class="featurette-heading">Which countries need more international aid for health programs?</h3>
+            <p class="lead">Our tool answers this by BLAH BLAH BLAH.</p>
+          </div>
+          <div class="col-md-5 col-md-pull-7">
+            <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h3 class="featurette-heading">Which diseases require renewed focus to combat?</h3>
+            <p class="lead">Our tool answers this by BLAH BLAH BLAH.</p>
+          </div>
+          <div class="col-md-5">
+            <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <!-- /END THE FEATURETTES -->
+
+
+        <!-- Three columns of text below the carousel -->
+        <h2 class="featurette-heading" id="meettheteam" style="text-align:center">Meet The Team</h2><br><br>
+        <div class="row">
+          <div class="col-lg-4">
+            <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+            <h3>Daniel</h3>
+            <p>MIDS Student</p>
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+            <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+            <h3>Jaime</h3>
+            <p>MIDS Student</p>
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+            <img class="img-circle" src="images/al.jpg" alt="" width=25% height=25%>
+            <h3>Al</h3>
+            <p>MIDS Student</p>
+          </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
+
       </div>
-    </div>
-
-
-
-    <!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
-
-    <div class="container marketing" >
-
-      <!-- START THE FEATURETTES -->
-      <hr class="featurette-divider" id="use_cases">
-      <h2 class="featurette-heading" align="center">Visualizing Immunization Effectiveness in Africa</h2>
-      <br><br><br>
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h3 class="featurette-heading">Are immunizations effective?</h3>
-          <p class="lead">Our tool answers this by BLAH BLAH BLAH.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7 col-md-push-5">
-          <h3 class="featurette-heading">Which countries need more international aid for health programs?</h3>
-          <p class="lead">Our tool answers this by BLAH BLAH BLAH.</p>
-        </div>
-        <div class="col-md-5 col-md-pull-7">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h3 class="featurette-heading">Which diseases require renewed focus to combat?</h3>
-          <p class="lead">Our tool answers this by BLAH BLAH BLAH.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <!-- /END THE FEATURETTES -->
-
-
-      <!-- Three columns of text below the carousel -->
-      <h2 class="featurette-heading" id="meettheteam" style="text-align:center">Meet The Team</h2><br><br>
-      <div class="row">
-        <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h3>Daniel</h3>
-          <p>MIDS Student</p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h3>Jaime</h3>
-          <p>MIDS Student</p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="images/al.jpg" alt="" width=25% height=25%>
-          <h3>Al</h3>
-          <p>MIDS Student</p>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
-
-
 
       <!-- FOOTER -->
       <footer>
@@ -432,9 +427,9 @@
     </div><!-- /.container -->
 
 
+    <!-- Placed at the end of the document so the pages load faster -->
     <!-- Bootstrap core JavaScript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
     <script src="js/bootstrap.min.js"></script>
@@ -442,5 +437,6 @@
     <script src="js/holder.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
+
   </body>
 </html>
