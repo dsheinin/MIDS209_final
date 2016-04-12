@@ -60,7 +60,7 @@ function initializeLineChart() {
     var averageLabel = averageContainer
         .append("text")
         .attr({
-            x: padding.left - 20,
+            x: padding.left - 10,
             "text-anchor": "end",
             class: "average-label average-label-start",
             fill: "black",
@@ -269,7 +269,7 @@ function initializeLineChart() {
         enteredCountries
             .append("text")
             .attr({
-                x: padding.left - 20,
+                x: padding.left - 10,
                 "text-anchor": "end",
                 class: "country-label country-label-start",
                 fill: defaultTextColor,
@@ -363,7 +363,8 @@ function initializeLineChart() {
         svg.selectAll("path.country-line").attr("d", function(d){return lineFunction(d["years"]);});
         svg.selectAll("path.average-line").attr("d", function(d){return lineFunction(d);});
         averageLabel.attr("y", function(d){
-            return getPathYCoord(d3.select(this.parentNode).select("path").node(), padding.left);
+            var yCoord = getPathYCoord(d3.select(this.parentNode).select("path").node(), padding.left);
+            return Math.min(padding.top + mainGraphHeight - 15, Math.max(padding.top + 20, yCoord));
         });
         svg.selectAll("text.country-label-start").attr("y", function(d){
             var yCoord = getPathYCoord(d3.select(this.parentNode).select("path").node(), padding.left);
@@ -376,7 +377,7 @@ function initializeLineChart() {
                 else
                     yCoord += labelSep - diff;
             }
-            return yCoord;
+            return Math.min(padding.top + mainGraphHeight - 15, Math.max(padding.top + 20, yCoord));
         });
         /*
         svg.selectAll("text.country-label-end").attr("y", function(d){
