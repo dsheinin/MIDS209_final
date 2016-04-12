@@ -368,16 +368,27 @@ function initializeLineChart() {
         });
         svg.selectAll("text.country-label-start").attr("y", function(d){
             var yCoord = getPathYCoord(d3.select(this.parentNode).select("path").node(), padding.left);
+            var yBottom = padding.top + mainGraphHeight - 15;
+            var yTop = padding.top + 20;
+            yCoord = Math.min(yBottom, Math.max(yTop, yCoord));
             var avgYCoord = averageLabel.attr("y");
             var diff = Math.abs(yCoord - avgYCoord);
             var labelSep = 20;
             if (diff < labelSep) {
-                if (yCoord < avgYCoord)
-                    yCoord -= labelSep - diff;
-                else
-                    yCoord += labelSep - diff;
+                if (yCoord < avgYCoord){
+                    if (yCoord - (labelSep - diff) > yTop)
+                        yCoord -= labelSep - diff;
+                    else
+                        yCoord += labelSep + diff;
+                }
+                else {
+                    if (yCoord + (labelSep - diff) < yBottom)
+                        yCoord += labelSep - diff;
+                    else
+                        yCoord -= labelSep + diff;
+                }
             }
-            return Math.min(padding.top + mainGraphHeight - 15, Math.max(padding.top + 20, yCoord));
+            return yCoord;
         });
         /*
         svg.selectAll("text.country-label-end").attr("y", function(d){
