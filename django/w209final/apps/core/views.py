@@ -48,7 +48,8 @@ def fetch_coverage(request, group_slug):
 
     group = VaccineGroup.objects.get(slug=group_slug);
     estimate_qs = VaccinationEstimate.objects.filter(vaccine__group__slug=group.slug).order_by('year')
-    years = list(estimate_qs.values_list('year', flat=True).distinct())
+    #years = list(estimate_qs.values_list('year', flat=True).distinct())
+    years = range(1980, 2015) # temporary fix: years should include values from incidence_qs
     countries = []
     average_years = [{'year':year, 'coverage':{}, 'disease':{}} for year in years]
     incidence_qs = DiseaseIncidence.objects.filter(disease__group__slug=group.slug).order_by('year')
