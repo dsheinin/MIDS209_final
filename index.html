@@ -86,6 +86,9 @@
             lineChart.update(data);
             smallMultiples.update(data);
             color_africa(user_year1, user_year2, data);
+
+            $("#viz-heading").html("Immunization Coverage: " + data.group_description);
+
             $("#loading").hide();
             $("#myviz").slideDown();
             $("html, body").animate({ scrollTop: 0 }, "slow");
@@ -151,6 +154,8 @@
 
       <div id="myviz">
 
+        <h3 id="viz-heading"></h3>
+
         <div class="dashboard">
           <!-- Indicators -->
           <div class="row">
@@ -172,28 +177,38 @@
 
             </div>
           </div>
+
+          <h4>Reported Disease Incidence</h4>
+
           <div class="row">
             <div class="col-md-14 col-sm-2 nopadding sm-mul group-measles" id="sm_mul1"> <!--measles-->
+              <h5 class="sm-mul-heading">Measles</h5>
               <img data-src="holder.js/100%x100/white">
             </div>
             <div class="col-md-14 col-sm-2 nopadding sm-mul group-dpt" id="sm_mul2"> <!--dipththeria-->
+              <h5 class="sm-mul-heading">Diphtheria</h5>
               <img data-src="holder.js/100%x100/white">
             </div>
             <div class="col-md-14 col-sm-2 nopadding sm-mul group-dpt" id="sm_mul3"> <!--tetanus-->
+              <h5 class="sm-mul-heading">Tetanus</h5>
               <img data-src="holder.js/100%x100/white">
             </div>
             <div class="col-md-14 col-sm-2 nopadding sm-mul group-dpt" id="sm_mul4"> <!--pertussis-->
+              <h5 class="sm-mul-heading">Pertussis</h5>
               <img data-src="holder.js/100%x100/white">
             </div>
             <div class="col-md-14 col-sm-2 nopadding sm-mul group-pab" id="sm_mul5"> <!--neonatal tetanus-->
+              <h5 class="sm-mul-heading">Neonatal Tetanus</h5>
               <img data-src="holder.js/100%x100/white">
               <div id="small_multiple1"></div>
             </div>
             <div class="col-md-14 col-sm-2 nopadding sm-mul group-polio" id="sm_mul6"> <!--polio-->
+              <h5 class="sm-mul-heading">Polio</h5>
               <img data-src="holder.js/100%x100/white">
               <div id="small_multiple2"></div>
             </div>
             <div class="col-md-14 col-sm-2 nopadding sm-mul group-yfv" id="sm_mul7"> <!--yellow fever-->
+              <h5 class="sm-mul-heading">Yellow Fever</h5>
               <img data-src="holder.js/100%x100/white">
               <div id="small_multiple3"></div>
             </div>
