@@ -1,7 +1,7 @@
 function initializeLineChart() {
 
     var width = 650;
-    var height = 500;
+    var height = 380;
     
     //var width = 1100;
     //var height = 1100;

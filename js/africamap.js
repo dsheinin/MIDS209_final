@@ -4,8 +4,8 @@ function color_africa(user_year1, user_year2, immunization_data) {
 
 // modified from https://gist.github.com/chule
 
-    var width = 450,                //************************************************** change container size here
-        height = 600;
+    var width = 350,                //************************************************** change container size here
+        height = 380;
     
     var svg = d3.select("div.africamap").selectAll("svg") 
 
@@ -220,7 +220,7 @@ function color_africa(user_year1, user_year2, immunization_data) {
     
     var projection = d3.geo.mercator()
       .center([15, 5])
-      .scale(340)    //************************************************** change scale here
+      .scale(215)    //************************************************** change scale here
       .translate([width / 2, height / 2]);
     
     // var projection = d3.geo.albers()
@@ -344,6 +344,6 @@ function color_africa(user_year1, user_year2, immunization_data) {
     //});
     
     // bl.ocks resize
-    d3.select(self.frameElement).style("height", height + 70 + "px");
+    d3.select(self.frameElement).style("height", height + 0 + "px");
 
 };

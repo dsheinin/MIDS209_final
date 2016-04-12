@@ -70,19 +70,39 @@
           var user_year1 = 2014;
           var user_year2 = 2014;
           var user_disease_group = $(this).attr("id");
+          
+          $('.vac-group-btn').removeClass('btn-info').addClass('btn-primary ');  //change color of clicked button
+          $(this).addClass('btn-info').removeClass('btn-primary ');
 
           var apiBaseUrl = "https://demo.sheinin.ca/w209/api/"
           // For testing with a local Django installation
           //var apiBaseUrl = "http://localhost:8000/api/"
-
-          $('.vac-group-btn').removeClass('btn-info').addClass('btn-primary ');
-          $(this).addClass('btn-info').removeClass('btn-primary ');
 
           $.getJSON( apiBaseUrl + "fetch/coverage/" + user_disease_group + "/", function( data ) {
             lineChart.update(data);
             smallMultiples.update(data);
             color_africa(user_year1, user_year2, data);
           });
+          
+          if ($(this).attr("id") == "measles") {
+            console.log("measles")
+            $( "#sm_mul1" ).css({"border-color": "#80e5ff", "border-weight":"2px", "border-style":"solid"});
+            $( "#sm_mul2, #sm_mul3, #sm_mul4, #sm_mul5, #sm_mul6, #sm_mul7" ).css({"border": "none"});
+          } else if ($(this).attr("id") == "dpt") {
+            $( "#sm_mul2, #sm_mul3, #sm_mul4" ).css({"border-color": "#80e5ff", "border-weight":"2px", "border-style":"solid"});
+            $( "#sm_mul1, #sm_mul5, #sm_mul6, #sm_mul7" ).css({"border": "none"});
+          } else if ($(this).attr("id") == "pab") {
+            $( "#sm_mul5" ).css({"border-color": "#80e5ff", "border-weight":"2px", "border-style":"solid"});
+            $( "#sm_mul2, #sm_mul3, #sm_mul4, #sm_mul1, #sm_mul6, #sm_mul7" ).css({"border": "none"});
+          } else if ($(this).attr("id") == "polio") {
+            $( "#sm_mul6" ).css({"border-color": "#80e5ff", "border-weight":"2px", "border-style":"solid"});
+            $( "#sm_mul2, #sm_mul3, #sm_mul4, #sm_mul5, #sm_mul1, #sm_mul7" ).css({"border": "none"});
+          } else if ($(this).attr("id") == "yfv") {
+            $( "#sm_mul7" ).css({"border-color": "#80e5ff", "border-weight":"2px", "border-style":"solid"});
+            $( "#sm_mul2, #sm_mul3, #sm_mul4, #sm_mul5, #sm_mul6, #sm_mul1" ).css({"border": "none"});
+          };
+
+          
         });
       })
 
@@ -104,11 +124,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">Visualizing Immunization Effectiveness in Africa</a>
+              <a class="navbar-brand" href=".">Visualizing Immunization Effectiveness in Africa</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
+                <li class="active"><a href=".">Home</a></li>
                 <li><a href="#use_cases">Visualization Use Cases</a></li>
                 <li><a href="#meettheteam">Meet the Team</a></li>
                 <!--li class="dropdown">
@@ -266,26 +286,20 @@
             <a class="btn btn-primary vac-group-btn" id='yfv'>Yellow Fever</a>
           </div>
 
-          <p></p>
+          <br>
           <div class="dashboard">
             <!-- Indicators -->
             <div class="row">
 
               <div class="col-md-5">
-
                 <!--img data-src="holder.js/100%x500/white"-->
                 <div id="country-list"></div>
-
                 <script>
                         //******* adding drop down bar
                     var dropDown = d3.select("#country-list").append("select")
                     .attr("name", "country-list");
-
                 </script>
-
-
                 <div class="africamap"></div>
-
 
               </div>
               <div class="col-md-7">
@@ -293,14 +307,42 @@
                 <div id="graphtest"></div>
 
               </div>
-
+            </div>
+            <div class="row">
+              <div class="col-md-14 col-sm-2 nopadding" id="sm_mul1"> <!--measles-->
+                <img data-src="holder.js/100%x100/white">
+              </div>
+              <div class="col-md-14 col-sm-2 nopadding" id="sm_mul2"> <!--dipththeria-->
+                <img data-src="holder.js/100%x100/white">
+              </div>
+              <div class="col-md-14 col-sm-2 nopadding" id="sm_mul3"> <!--tetanus-->
+                <img data-src="holder.js/100%x100/white">
+              </div>
+              <div class="col-md-14 col-sm-2 nopadding" id="sm_mul4"> <!--pertussis-->
+                <img data-src="holder.js/100%x100/white">
+              </div>
+              <div class="col-md-14 col-sm-2 nopadding" id="sm_mul5"> <!--neonatal tetanus-->
+                <img data-src="holder.js/100%x100/white">
+                <div id="small_multiple1"></div>
+              </div>
+              <div class="col-md-14 col-sm-2 nopadding" id="sm_mul6"> <!--polio-->
+                <img data-src="holder.js/100%x100/white">
+                <div id="small_multiple2"></div>
+              </div>
+              <div class="col-md-14 col-sm-2 nopadding" id="sm_mul7"> <!--yellow fever-->
+                <img data-src="holder.js/100%x100/white">
+                <div id="small_multiple3"></div>
+              </div>
+            </div>
+            <script src="js/smallmultiples.js"></script>
+            <!--div class="row">
               <div class="col-md-13">
                 <div id="small_multiple1"></div>
                 <div id="small_multiple2"></div>
                 <div id="small_multiple3"></div>
                 <script src="js/smallmultiples.js"></script>
               </div>
-            </div>
+            </div-->
           </div><!-- /.dashboard -->
 
         </div>
@@ -313,15 +355,16 @@
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
-    <div class="container marketing" id="use_cases">
+    <div class="container marketing" >
 
       <!-- START THE FEATURETTES -->
-      <h1 align="center">Visualizing Immunization Effectiveness in Africa</h1>
-      <hr class="featurette-divider">
+      <hr class="featurette-divider" id="use_cases">
+      <h2 class="featurette-heading" align="center">Visualizing Immunization Effectiveness in Africa</h2>
+      <br><br><br>
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">Are immunizations effective?</h2>
+          <h3 class="featurette-heading">Are immunizations effective?</h3>
           <p class="lead">Our tool answers this by BLAH BLAH BLAH.</p>
         </div>
         <div class="col-md-5">
@@ -333,7 +376,7 @@
 
       <div class="row featurette">
         <div class="col-md-7 col-md-push-5">
-          <h2 class="featurette-heading">Which countries need more international aid for health programs?</h2>
+          <h3 class="featurette-heading">Which countries need more international aid for health programs?</h3>
           <p class="lead">Our tool answers this by BLAH BLAH BLAH.</p>
         </div>
         <div class="col-md-5 col-md-pull-7">
@@ -345,7 +388,7 @@
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">Which diseases require renewed focus to combat?</h2>
+          <h3 class="featurette-heading">Which diseases require renewed focus to combat?</h3>
           <p class="lead">Our tool answers this by BLAH BLAH BLAH.</p>
         </div>
         <div class="col-md-5">
@@ -359,7 +402,7 @@
 
 
       <!-- Three columns of text below the carousel -->
-      <h1 id="meettheteam" style="text-align:center">Meet The Team</h1></br>
+      <h2 class="featurette-heading" id="meettheteam" style="text-align:center">Meet The Team</h2><br><br>
       <div class="row">
         <div class="col-lg-4">
           <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
@@ -383,7 +426,7 @@
       <!-- FOOTER -->
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2015 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <p>&copy; Spring 2016 MIDS W209 Final Project</p>
       </footer>
 
     </div><!-- /.container -->

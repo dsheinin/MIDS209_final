@@ -2,8 +2,8 @@ function draw_africa() {
 
 // modified from https://gist.github.com/chule
 
-    var width = 450,                //************************************************** change container size here
-        height = 600;
+    var width = 350,                //************************************************** change container size here
+        height = 380;
     
     var svg = d3.select("div.africamap").append("svg")
     .attr("width", width)
@@ -90,7 +90,7 @@ function draw_africa() {
     // key
     var g = svg.append("g")
       .attr("class", "key")
-      .attr("transform", "translate(170,50)");
+      .attr("transform", "translate(120,30)");
     
     g.selectAll("rect")
       .data(colorScale.range().map(function(d, i) {
@@ -109,7 +109,7 @@ function draw_africa() {
     g.call(xAxis).append("text")
       .attr("class", "caption")
       .attr("y", -6)
-      .text("Immunization Rates in Africa");  
+      .text("Immunization Rates");  
     // key end    
     
     formatNumber = d3.format(",.0f");  
@@ -118,7 +118,7 @@ function draw_africa() {
     
     var projection = d3.geo.mercator()
       .center([15, 5])
-      .scale(340)    //************************************************** change scale here
+      .scale(215)    //************************************************** change scale here
       .translate([width / 2, height / 2]);
     
     // var projection = d3.geo.albers()
@@ -181,6 +181,6 @@ function draw_africa() {
     //});
     
     // bl.ocks resize
-    d3.select(self.frameElement).style("height", height + 70 + "px");
+    d3.select(self.frameElement).style("height", height + 0 + "px");
 
 };
