@@ -70,11 +70,16 @@ function initializeLineChart() {
 
     // Create axes
     var xAxis = d3.svg.axis()
-    
             .scale(xScaleMain)
             .orient("bottom")
             .tickFormat(d3.format("d"));
-    
+
+    var yAxis = d3.svg.axis()
+        .scale(yScaleMain)
+        .orient("left")
+        .tickFormat(function(d) { return d + "%"; })
+        .ticks(1);
+
     var xAxisNav = d3.svg.axis()
             .scale(xScaleNav)
             .orient("bottom")
@@ -168,6 +173,13 @@ function initializeLineChart() {
             transform: "translate(0," + (padding.top + mainGraphHeight) + ")",
         });
 
+    var yAxisG = svg.append("g")
+        .attr({
+            id: "y-axis-main",
+            class: "axis",
+            transform: "translate(" + padding.left + ", 0)",
+        });
+
     var xAxisGNav = svg.append("g")
         .attr({
             id: "x-axis-nav",
@@ -212,7 +224,7 @@ function initializeLineChart() {
                 "opacity": 1.0
             });
         countries.sort(function (a, b) { // select the parent and sort the path's
-            if ("country-line-" + a.iso_code != country.attr("id")) return -1;       // a is not the hovered element, send "a" to the back
+            if ("country-line-" + a.iso_code     != country.attr("id")) return -1;       // a is not the hovered element, send "a" to the back
             else return 1;               // a is the hovered element, bring "a" to the front
         });
     };
@@ -330,6 +342,7 @@ function initializeLineChart() {
 
         // Add axes
         xAxisG.call(xAxis);
+        yAxisG.call(yAxis);
         xAxisGNav.call(xAxisNav);
 
         // select everything with the brush and reset
