@@ -20,6 +20,7 @@ class PopulationMeasurement(models.Model):
 class VaccineGroup(models.Model):
     slug = models.SlugField(unique=True)
     name = models.CharField(max_length=20)
+    description = models.CharField(max_length=255)
 
     def __unicode__(self):
         return self.name

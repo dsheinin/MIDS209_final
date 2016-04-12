@@ -8,6 +8,7 @@ def fetch_coverage(request, group_slug):
     {
         'group_slug': 'measles',
         'group_name': 'Measles',
+        'group_description': '...',
         'years': [1984, 1985, 1986],
         'countries': [
             {
@@ -114,6 +115,7 @@ def fetch_coverage(request, group_slug):
     return JsonResponse({
         'group_slug': group.slug,
         'group_name': group.name,
+        'group_description': group.description,
         'years':years,
         'countries':countries,
         'average_years':average_years

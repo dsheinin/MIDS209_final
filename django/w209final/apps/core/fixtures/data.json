@@ -15185,7 +15185,8 @@
   "pk": 1,
   "fields": {
     "slug": "measles",
-    "name": "Measles"
+    "name": "Measles",
+    "description": "Measles (MCV1 and MCV2 Vaccines)"
   }
 },
 {
@@ -15193,7 +15194,8 @@
   "pk": 2,
   "fields": {
     "slug": "dpt",
-    "name": "DPT"
+    "name": "DTP",
+    "description": "Diphtheria, Tetanus and Pertussis (DTP1 and DTP2 Vaccines)"
   }
 },
 {
@@ -15201,7 +15203,8 @@
   "pk": 3,
   "fields": {
     "slug": "pab",
-    "name": "Neonatal Tetanus"
+    "name": "Neonatal Tetanus",
+    "description": "Neonatal Tetanus (PAB Vaccine)"
   }
 },
 {
@@ -15209,7 +15212,8 @@
   "pk": 4,
   "fields": {
     "slug": "polio",
-    "name": "Polio"
+    "name": "Polio",
+    "description": "Polio (Pol3 Vaccine)"
   }
 },
 {
@@ -15217,7 +15221,8 @@
   "pk": 5,
   "fields": {
     "slug": "yfv",
-    "name": "Yellow Fever"
+    "name": "Yellow Fever",
+    "description": "Yellow Fever (YFV Vaccine)"
   }
 },
 {
