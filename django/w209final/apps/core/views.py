@@ -84,18 +84,19 @@ def fetch_coverage(request, group_slug):
                 average_years[year_index]['coverage'][vac_code] = (total + estimate.coverage, count + 1)
 
         for incidence in incidence_qs.filter(country=country):
+            reports_per_million = incidence.reports_per_million()
             disease_name = incidence.disease.name
             year_index = years.index(incidence.year)
             # add incidence to date for this country
-            country_data['years'][year_index]['disease'][disease_name] = incidence.reports
+            country_data['years'][year_index]['disease'][disease_name] = reports_per_million
 
             # add to average data
-            if vac_code not in average_years[year_index]['disease']:
+            if disease_name not in average_years[year_index]['disease']:
                 # store averages as (total, count) tuples while incrementing
-                average_years[year_index]['disease'][disease_name] = (incidence.reports, 1)
+                average_years[year_index]['disease'][disease_name] = (reports_per_million, 1)
             else:
                 total, count = average_years[year_index]['disease'][disease_name]
-                average_years[year_index]['disease'][disease_name] = (total + incidence.reports, count + 1)
+                average_years[year_index]['disease'][disease_name] = (total + reports_per_million, count + 1)
 
         countries.append(country_data)
 
