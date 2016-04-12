@@ -115,3 +115,13 @@ div.tooltip {
 .tick line{
   opacity: 0.2;
 }
+
+
+/********** instructions tab **********/
+#instr-img1, #instr-img2, #instr-img3, #instr-img4 {
+   /*border:1px solid #fff;*/
+}
+
+#instr-img1:hover, #instr-img2:hover, #instr-img3:hover, #instr-img4:hover {
+   border:5px solid #009900;
+}
