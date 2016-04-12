@@ -44,7 +44,7 @@ function initializeLineChart() {
     var averageContainerNav = svg.append("g");
     
     // create single element for average
-    var average = averageContainer.append("g")
+    var average = averageContainer
         .append("path")
         .attr("stroke", "black")
         .attr("stroke-width", highlightLineStrokeWidth)
@@ -56,6 +56,17 @@ function initializeLineChart() {
         .attr("stroke", "black")
         .attr("stroke-width", highlightLineStrokeWidth)
         .attr("fill", "none");
+
+    var averageLabel = averageContainer
+        .append("text")
+        .attr({
+            x: padding.left - 20,
+            "text-anchor": "end",
+            class: "average-label average-label-start",
+            fill: "black",
+            opacity: 1.0
+        })
+        .text("Africa");
 
     // Create axes
     var xAxis = d3.svg.axis()
@@ -304,6 +315,12 @@ function initializeLineChart() {
                 return lineFunction(d);
             });
 
+        averageLabel
+            .attr({
+                y: function (d) {
+                    return d3.select(this.parentNode).select("path").node().getPointAtLength(0).y;
+                }
+            });
 
         averageNav
             .datum(data["average_years"])
@@ -331,8 +348,21 @@ function initializeLineChart() {
 
         svg.selectAll("path.country-line").attr("d", function(d){return lineFunction(d["years"]);});
         svg.selectAll("path.average-line").attr("d", function(d){return lineFunction(d);});
-        svg.selectAll("text.country-label-start").attr("y", function(d){
+        averageLabel.attr("y", function(d){
             return getPathYCoord(d3.select(this.parentNode).select("path").node(), padding.left);
+        });
+        svg.selectAll("text.country-label-start").attr("y", function(d){
+            var yCoord = getPathYCoord(d3.select(this.parentNode).select("path").node(), padding.left);
+            var avgYCoord = averageLabel.attr("y");
+            var diff = Math.abs(yCoord - avgYCoord);
+            var labelSep = 20;
+            if (diff < labelSep) {
+                if (yCoord < avgYCoord)
+                    yCoord -= labelSep - diff;
+                else
+                    yCoord += labelSep - diff;
+            }
+            return yCoord;
         });
         /*
         svg.selectAll("text.country-label-end").attr("y", function(d){

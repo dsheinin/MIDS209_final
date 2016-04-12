@@ -87,10 +87,9 @@ div.tooltip {
 
 .country-label {
     font-size: 12px;
-    text-align: right;
 }
 
-.country-label.selected {
+.country-label.selected, .average-label {
     font-size: 18px;
     font-weight: bold;
 }
