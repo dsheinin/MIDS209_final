@@ -142,8 +142,118 @@
         <div id="instructions" class="tab-pane fade in active" style="height:600px;">
 
           <h3>Visualization Instructions</h3>
-          <p>To start using this visualization, click on the next tab and select one of buttons for disease type.</p>
-          <p>[Talk in more detail about diseases and immunizations here.]</p>
+          <p>To start using this visualization, click on the "Go to Visualization" tab above and select one of buttons for disease type.</p>
+          <p>Or to learn more, please hover over each section of the image below to learn more about our dashboard.</p>
+        
+        
+        <div class="row">
+          <div class="col-md-6" >
+            <div class="row" id="instr-img1">
+              <img src="images/img1.jpg" alt="" width="100%" height="100%">
+            </div>
+            <div class="row">
+              <div class="col-md-6" id="instr-img2">
+                <img src="images/img2.jpg" alt="" width="100%" height="100%">
+              </div>
+              <div class="col-md-6" id="instr-img3">
+                <img src="images/img3.jpg" alt="" width="100%" height="100%">
+              </div>
+            </div>
+            <div class="row" id="instr-img4">
+              <img src="images/img4.jpg" alt="" width="100%" height="100%">
+            </div>
+          </div>
+          <div class="col-md-6" id="instr-text">
+            <span><br><br><br><br><h2 align=center>Welcome to our Visualization!</h2><br><br><h4>Hover over each section to the right to learn more about our dashboard.</h4></span>
+          </div>
+
+        
+        <script>
+            $(document).ready(function(){ //start of instructions display
+
+             $( "#instr-img1" ).hover(  //disease types and data source
+              function() {
+                $( "#instr-text" ).find( "span:last" ).remove();
+                
+                var url = "http://www.who.int/immunization/monitoring_surveillance/data/en/";
+                $( "#instr-text" ).append( $( "<span>\
+                                             <h3>Immunization Effectiveness in Africa</h3>\
+                                             <p><strong>To begin using this tool, </strong>select a disease to investigate.</p>\
+                                             <p>This tool focuses on seven different types of preventable, communicable diseases:</p>\
+                                             <ul>\
+                                             <li><strong>Measles: </strong>is a highly contagious, serious disease caused by a virus.</li>\
+                                             <li><strong>Diphtheria: </strong>is a bacterial disease that can harm or destroy human body tissues and organs.</li>\
+                                             <li><strong>Tetanus: </strong> is a serious bacterial disease that affects your nervous system.</li>\
+                                             <li><strong>Pertussis: </strong>is a highly contagious bacterial disease of the respiratory tract</li>\
+                                             <li><strong>Neonatal Tetenus: </strong>is a form of generalised tetanus that occurs in newborns.</li>\
+                                             <li><strong>Polio: </strong>is a highly infectious disease that invades the nervous system and can cause total paralysis.</li>\
+                                             <li><strong>Yellow Fever: </strong>is an acute viral haemorrhagic disease transmitted by infected mosquitoes.</li>\
+                                             </ul>\
+                                             <p>Source: <a href=" + url + " target='_blank'>" + url + "</a></p>\
+                                             </span>" ) );
+                
+              }
+            );
+            
+            $( "#instr-img2" ).hover(  //African countries
+              function() {
+                
+                $( "#instr-text" ).find( "span:last" ).remove();
+                
+                var url = "http://www.who.int/immunization/monitoring_surveillance/data/en/";
+                
+                $( "#instr-text" ).append( $( "<span>\
+                                             <h3>Focus on Africa</h3>\
+                                             <p>This tool is used to visualize the effectiveness of immunization strategy in African nations. <strong>Hover over a country or use the dropdown</strong> to select a country to investigate.</p>\
+                                             <p>The data presented in this tool is from the World Health Organization (WHO).</p>\
+                                             <p><strong>World Health Organization: </strong> Its primary role is to direct and coordinate international health within the United Nations’ system.\
+                                              The WHO's main areas of work are:</p>\
+                                             <ul>\
+                                             <li>Health systems</li>\
+                                             <li>Promoting health through the life-course</li>\
+                                             <li>Noncommunicable diseases</li>\
+                                             <li>Communicable diseases</li>\
+                                             <li>Corporate services</li>\
+                                             <li>Preparedness, surveillance and response.</li>\
+                                             </ul>\
+                                             <p>Source: <a href=" + url + " target='_blank'>" + url + "</a></p>\
+                                             </span>" ) );
+                
+              }
+            );
+            
+            $( "#instr-img3" ).hover(  //immunization rates
+              function() {
+                
+                $( "#instr-text" ).find( "span:last" ).remove();
+                
+                $( "#instr-text" ).append( $( "<span>\
+                                             <h3>Immunization Rates Over Time</h3>\
+                                             <p>This line chart displays the immunization rates over time for each African country in our dataset.</p>\
+                                             <strong>Hover over the line</strong> to select a country to investigate and <strong>interact with the brush</strong> to select a desired time range.</p>\
+                                             <p>The data presented in this tool is from the World Health Organization (WHO) and covers the years 1980 through 2014.</p>\
+                                             </span>" ) );
+              }
+            );
+            
+            $( "#instr-img4" ).hover(  //incidence rates
+              function() {
+                
+                $( "#instr-text" ).find( "span:last" ).remove();
+                
+                $( "#instr-text" ).append( $( "<span>\
+                                             <h3>Disease Incidence Over Time</h3>\
+                                             <p>This group of line charts display disease incidence rates over time for the selected African country and selected disease.</p>\
+                                             <strong>Hover over the line chart above or map, or use the dropdown</strong> to select a country to investigate. Also, <strong>interact with the brush</strong> to select a desired time range.</p>\
+                                             <p>The data presented in this tool is from the World Health Organization (WHO) and covers the years 1980 through 2014.</p>\
+                                             </span>" ) );
+              }
+            ); 
+           })//end of instructions display    
+               
+          
+        </script>
+        </div>
         </div>
 
         <div id="myviz" class="tab-pane fade">
