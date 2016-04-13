@@ -174,8 +174,8 @@ function color_africa(user_year1, user_year2, immunization_data) {
             highlight_map_border(newData);  // needs Country_Django name
             
             //map iso_a3 code
-            for (i=0; i < country_list1.length; i++) {
-                for (j=0; j < data.objects.collection.geometries.length; j++) {
+            for (var i=0; i < country_list1.length; i++) {
+                for (var j=0; j < data.objects.collection.geometries.length; j++) {
                     if (country_list1[i]==newData) {
                         if (map_list1[i]==data.objects.collection.geometries[j].properties.subunit) {
 

@@ -167,7 +167,7 @@ function initializeSmallMultiples() {
 			// Get max value per disease across all countries
 			for (var country_index in data.countries) {
 				for (var year_index in data.countries[country_index].years) {
-					for (i = 0; i < diseases.length; i++) {
+					for (var i = 0; i < diseases.length; i++) {
 							var value = data.countries[country_index].years[year_index].disease[diseases[i]];
 							if (value > max_value_per_diasease[i]) {
 								max_value_per_diasease[i] = value;
@@ -182,13 +182,13 @@ function initializeSmallMultiples() {
 			document.getElementById("small_multiple3").innerHTML = "";
 
 			// Display the small multiples graph for each disease
-			for (i = 0; i < diseases.length; i++) {
+			for (var i = 0; i < diseases.length; i++) {
 					add_small_multiples(data, max_value_per_diasease[i], 450, 250, diseases[i], i);
 			}
 		}
 
 		function showCountry(isoCode) {
-			for (i = 0; i < diseases.length; i++) {
+			for (var i = 0; i < diseases.length; i++) {
 					var countries = countryDiseaseContainers[i].selectAll(".country-" + diseases[i]);
 					var country = countryDiseaseContainers[i].select("#country-line-" + isoCode + "-" + diseases[i]);
 
@@ -205,7 +205,7 @@ function initializeSmallMultiples() {
 		}
 
 		function updateRange(startYear, endYear) {
-			for (i = 0; i < diseases.length; i++) {
+			for (var i = 0; i < diseases.length; i++) {
 					var rangeRectangles = rangeContainers[i];
 
 					rangeRectangles[0].selectAll("rect")
