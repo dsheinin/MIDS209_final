@@ -161,13 +161,13 @@ function color_africa(user_year1, user_year2, immunization_data) {
          .attr("value", function (d) { return d; });
       //console.log(options)
       
-      dropDown.on("change", change );
+      dropDown.on("change", change1 );
       
-      function change()
-      {
+      function change1() {
         var newData = d3.select(this).property('value');
-        if (newData != "Select a country") {
-            //console.log(newData);
+        //console.log(newData);
+        if (newData != "Select a country" || newData != "") {
+            
             
             //alert("Country: " + newData + " was clicked");
             
