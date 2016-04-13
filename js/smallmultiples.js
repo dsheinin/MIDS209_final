@@ -4,16 +4,42 @@ function initializeSmallMultiples() {
 		var diseases = [];
 
 		var xScale = null;
-		var w = null;
+		var wid = null;
 
 		function add_small_multiples(data, max_y, w, h, disease, disease_index) {
 			if (disease_index == 0) {
 				countryDiseaseContainers = [];
 				rangeContainers = [];
 			}
-			var div = "#small_multiple" + (disease_index+1);
 
-			var margin = {top: 30, right: 10, bottom: 25, left: 30},
+			var div = "sm_mul";
+			switch(disease) {
+     		case "measles":
+      		div += '1'
+      		break;
+     		case "diphtheria":
+      		div += '2'
+      		break;
+				case "ttetanus":
+      		div += '3'
+      		break;
+				case "pertussis":
+      		div += '4'
+      		break;
+				case "neonatal tetanus":
+      		div += '5'
+      		break;
+				case "polio":
+      		div += '6'
+      		break;
+     		default:
+					div += '7'
+		 	}
+
+			document.getElementById(div).innerHTML = "";
+			div = "#" + div;
+
+			var margin = {top: 0, right: 4, bottom: 4, left: 4},
 					width = w - margin.left - margin.right,
 					height = h - margin.top - margin.bottom;
 
@@ -22,7 +48,7 @@ function initializeSmallMultiples() {
 					.domain([1980, 2014])
 					.range([0, width]);
 
-				w = width;
+				wid = width;
 			}
 
 			var yScale = d3.scale.linear()
@@ -34,7 +60,8 @@ function initializeSmallMultiples() {
 					.orient("bottom")
 					.innerTickSize(5)
 					.outerTickSize(0)
-					.tickFormat(d3.format("d"))
+					.tickValues(null)
+					//.tickFormat(d3.format("d"))
 					.ticks(10);
 
 			var yAxis = d3.svg.axis()
@@ -42,6 +69,7 @@ function initializeSmallMultiples() {
 					.orient("left")
 					.innerTickSize(-width)
 					.outerTickSize(0)
+					//.tickValues([])
 					.tickPadding(5); //5
 
 			var svg = d3.select(div)
@@ -75,14 +103,6 @@ function initializeSmallMultiples() {
 			svg.append("g")
 					.attr("class", "y axis")
 					.call(yAxis)
-
-			svg.append("text")
-				.attr("x", (width / 2))
-				.attr("y", 0 - (margin.top / 2))
-				.attr("text-anchor", "middle")
-				.style("font-size", "16px")
-				.style("text-decoration", "underline")
-				.text(disease);
 
 			//////////////////////
 			// Start using data //
@@ -136,11 +156,11 @@ function initializeSmallMultiples() {
 			rangeRectangles1 = svg.append("rect")
 				.attr("x", 0)
 				.attr("y", 0)
-				.attr("width", xScale(1990))
+				.attr("width", xScale(1980))
 				.attr("height", height)
 				.attr("opacity", .5);
 
-			var x = xScale(2005);
+			var x = xScale(2014);
 			rangeRectangles2 = svg.append("rect")
 				.attr("x", x)
 				.attr("y", 0)
@@ -176,14 +196,9 @@ function initializeSmallMultiples() {
 				}
 			}
 
-			// Remove the previous small multiple graphs
-			document.getElementById("small_multiple1").innerHTML = "";
-			document.getElementById("small_multiple2").innerHTML = "";
-			document.getElementById("small_multiple3").innerHTML = "";
-
 			// Display the small multiples graph for each disease
 			for (i = 0; i < diseases.length; i++) {
-					add_small_multiples(data, max_value_per_diasease[i], 450, 250, diseases[i], i);
+					add_small_multiples(data, max_value_per_diasease[i], 148, 100, diseases[i], i);
 			}
 		}
 
@@ -208,17 +223,17 @@ function initializeSmallMultiples() {
 			for (i = 0; i < diseases.length; i++) {
 					var rangeRectangles = rangeContainers[i];
 
-					rangeRectangles[0].selectAll("rect")
+					rangeRectangles[0]
 							.transition()
 							.duration(0)
 							.attr("width", xScale(startYear));
 
 					var x = xScale(endYear);
-					rangeRectangles[1].select("rect")
+					rangeRectangles[1]
 							.transition()
 							.duration(0)
 							.attr("x", x)
-							.attr("width", w - x);
+							.attr("width", wid - x);
 			}
 
 				return 3;

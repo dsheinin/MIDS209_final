@@ -43,7 +43,7 @@
 
       function selectCountry(isoCode) {
         lineChart.highlightCountry(isoCode);
-        //smallMultiples.showCountry(isoCode);
+        smallMultiples.showCountry(isoCode);
         // other calls could go here
       }
 
@@ -74,7 +74,7 @@
           var user_year1 = 2014;
           var user_year2 = 2014;
           var user_disease_group = $(this).attr("id");
-          
+
           $('.vac-group-btn').removeClass('btn-info').addClass('btn-primary ');  //change color of clicked button
           $(this).addClass('btn-info').removeClass('btn-primary ');
 
@@ -181,46 +181,36 @@
           <h4>Reported Disease Incidence</h4>
 
           <div class="row">
-            <div class="col-md-14 col-sm-2 nopadding sm-mul group-measles" id="sm_mul1"> <!--measles-->
+            <div class="col-md-14 col-sm-2 nopadding sm-mul group-measles"> <!--measles-->
               <h5 class="sm-mul-heading">Measles</h5>
-              <img data-src="holder.js/100%x100/white">
+              <div id="sm_mul1"></div>
+              <!--<img data-src="holder.js/100%x100/white">-->
             </div>
-            <div class="col-md-14 col-sm-2 nopadding sm-mul group-dpt" id="sm_mul2"> <!--dipththeria-->
+            <div class="col-md-14 col-sm-2 nopadding sm-mul group-dpt"> <!--dipththeria-->
               <h5 class="sm-mul-heading">Diphtheria</h5>
-              <img data-src="holder.js/100%x100/white">
+              <div id="sm_mul2"></div>
             </div>
-            <div class="col-md-14 col-sm-2 nopadding sm-mul group-dpt" id="sm_mul3"> <!--tetanus-->
+            <div class="col-md-14 col-sm-2 nopadding sm-mul group-dpt"> <!--tetanus-->
               <h5 class="sm-mul-heading">Tetanus</h5>
-              <img data-src="holder.js/100%x100/white">
+              <div id="sm_mul3"></div>
             </div>
-            <div class="col-md-14 col-sm-2 nopadding sm-mul group-dpt" id="sm_mul4"> <!--pertussis-->
+            <div class="col-md-14 col-sm-2 nopadding sm-mul group-dpt"> <!--pertussis-->
               <h5 class="sm-mul-heading">Pertussis</h5>
-              <img data-src="holder.js/100%x100/white">
+              <div id="sm_mul4"></div>
             </div>
-            <div class="col-md-14 col-sm-2 nopadding sm-mul group-pab" id="sm_mul5"> <!--neonatal tetanus-->
+            <div class="col-md-14 col-sm-2 nopadding sm-mul group-pab"> <!--neonatal tetanus-->
               <h5 class="sm-mul-heading">Neonatal Tetanus</h5>
-              <img data-src="holder.js/100%x100/white">
-              <div id="small_multiple1"></div>
+              <div id="sm_mul5"></div>
             </div>
-            <div class="col-md-14 col-sm-2 nopadding sm-mul group-polio" id="sm_mul6"> <!--polio-->
+            <div class="col-md-14 col-sm-2 nopadding sm-mul group-polio"> <!--polio-->
               <h5 class="sm-mul-heading">Polio</h5>
-              <img data-src="holder.js/100%x100/white">
-              <div id="small_multiple2"></div>
+              <div id="sm_mul6"></div>
             </div>
-            <div class="col-md-14 col-sm-2 nopadding sm-mul group-yfv" id="sm_mul7"> <!--yellow fever-->
+            <div class="col-md-14 col-sm-2 nopadding sm-mul group-yfv"> <!--yellow fever-->
               <h5 class="sm-mul-heading">Yellow Fever</h5>
-              <img data-src="holder.js/100%x100/white">
-              <div id="small_multiple3"></div>
+              <div id="sm_mul7"></div>
             </div>
           </div>
-          <!--div class="row">
-            <div class="col-md-13">
-              <div id="small_multiple1"></div>
-              <div id="small_multiple2"></div>
-              <div id="small_multiple3"></div>
-              <script src="js/smallmultiples.js"></script>
-            </div>
-          </div-->
         </div><!-- /.dashboard -->
 
       </div>
