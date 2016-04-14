@@ -122,5 +122,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# cache
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': os.path.join(BASE_DIR, '..', 'cache'),
+        'TIMEOUT': None,
+    }
+}
+
 # Custom
 DATA_DIR = '/Users/dsheinin/MIDS/W209/final/data'

@@ -1,6 +1,8 @@
 from w209final.apps.core.models import VaccinationEstimate, VaccineGroup, Country, DiseaseIncidence
 from django.http import JsonResponse
+from django.views.decorators.cache import cache_page
 
+@cache_page(None)
 def fetch_incidence(request):
 
     """
@@ -78,7 +80,7 @@ def fetch_incidence(request):
         'average_years':average_years
     })
 
-
+@cache_page(None)
 def fetch_coverage(request, group_slug):
 
     """
