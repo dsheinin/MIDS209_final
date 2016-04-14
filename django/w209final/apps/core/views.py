@@ -1,6 +1,84 @@
 from w209final.apps.core.models import VaccinationEstimate, VaccineGroup, Country, DiseaseIncidence
 from django.http import JsonResponse
 
+def fetch_incidence(request):
+
+    """
+    Returns JSON reported incidence per million (for all diseases) in the following format:
+    {
+        'years': [1984, 1985, 1986],
+        'countries': [
+            {
+                'name':'Algeria',
+                'iso_code':'DZA',
+                'years': [
+                    {
+                        'year': 1984,
+                        'disease': {
+                            'diphtheria': 116,
+                            'pertussis': 710,
+                            'ttetanus': 86
+                        }
+                    },
+                ]
+            }
+        ],
+        'average_years':  [
+                {
+                    'year': 1984,
+                    'disease': {
+                        'diphtheria': 210,
+                        'pertussis': 110,
+                        'ttetanus': 329
+                    }
+                },
+            ]
+    }
+    """
+
+    incidence_qs = DiseaseIncidence.objects.order_by('year')
+    years = list(incidence_qs.values_list('year', flat=True).distinct())
+    average_years = [{'year':year, 'disease':{}} for year in years]
+    countries = []
+
+    for country in Country.objects.all().order_by('name'):
+        country_data = {
+            'name': country.name,
+            'iso_code': country.iso_code,
+            'years':[{'year':year, 'disease':{}} for year in years]
+        }
+
+        for incidence in incidence_qs.filter(country=country):
+            reports_per_million = incidence.reports_per_million()
+            disease_name = incidence.disease.name
+            year_index = years.index(incidence.year)
+
+            # add incidence to data for this country
+            country_data['years'][year_index]['disease'][disease_name] = reports_per_million
+
+            # add to average data
+            if disease_name not in average_years[year_index]['disease']:
+                # store averages as (total, count) tuples while incrementing
+                average_years[year_index]['disease'][disease_name] = (reports_per_million, 1)
+            else:
+                total, count = average_years[year_index]['disease'][disease_name]
+                average_years[year_index]['disease'][disease_name] = (total + reports_per_million, count + 1)
+
+        countries.append(country_data)
+
+    # calculate averages from (total, count) tuples
+    for year_avg in average_years:
+        for disease_name in year_avg['disease']:
+            total, count = year_avg['disease'][disease_name]
+            year_avg['disease'][disease_name] = total / count
+
+    return JsonResponse({
+        'years':years,
+        'countries':countries,
+        'average_years':average_years
+    })
+
+
 def fetch_coverage(request, group_slug):
 
     """
@@ -21,11 +99,6 @@ def fetch_coverage(request, group_slug):
                             'DTP1': None,
                             'DTP3': 47
                         }
-                        'disease': {
-                            'diphtheria': 116,
-                            'pertussis': 710,
-                            'ttetanus': 86
-                        }
                     },
                 ]
             }
@@ -37,11 +110,6 @@ def fetch_coverage(request, group_slug):
                         'DTP1': None,
                         'DTP3': 47
                     }
-                    'disease': {
-                        'diphtheria': 210,
-                        'pertussis': 110,
-                        'ttetanus': 329
-                    }
                 },
             ]
     }
@@ -49,11 +117,9 @@ def fetch_coverage(request, group_slug):
 
     group = VaccineGroup.objects.get(slug=group_slug);
     estimate_qs = VaccinationEstimate.objects.filter(vaccine__group__slug=group.slug).order_by('year')
-    #years = list(estimate_qs.values_list('year', flat=True).distinct())
-    years = range(1980, 2015) # temporary fix: years should include values from incidence_qs
+    years = list(estimate_qs.values_list('year', flat=True).distinct())
     countries = []
     average_years = [{'year':year, 'coverage':{}, 'disease':{}} for year in years]
-    incidence_qs = DiseaseIncidence.objects.filter(disease__group__slug=group.slug).order_by('year')
 
     for country in Country.objects.all().order_by('name'):
 
@@ -69,7 +135,7 @@ def fetch_coverage(request, group_slug):
         country_data = {
             'name': country.name,
             'iso_code': country.iso_code,
-            'years':[{'year':year, 'coverage':{}, 'disease':{}} for year in years]
+            'years':[{'year':year, 'coverage':{}} for year in years]
         }
         for estimate in estimate_qs.filter(country=country):
             vac_code = estimate.vaccine.code
@@ -85,21 +151,6 @@ def fetch_coverage(request, group_slug):
                 total, count = average_years[year_index]['coverage'][vac_code]
                 average_years[year_index]['coverage'][vac_code] = (total + estimate.coverage, count + 1)
 
-        for incidence in incidence_qs.filter(country=country):
-            reports_per_million = incidence.reports_per_million()
-            disease_name = incidence.disease.name
-            year_index = years.index(incidence.year)
-            # add incidence to date for this country
-            country_data['years'][year_index]['disease'][disease_name] = reports_per_million
-
-            # add to average data
-            if disease_name not in average_years[year_index]['disease']:
-                # store averages as (total, count) tuples while incrementing
-                average_years[year_index]['disease'][disease_name] = (reports_per_million, 1)
-            else:
-                total, count = average_years[year_index]['disease'][disease_name]
-                average_years[year_index]['disease'][disease_name] = (total + reports_per_million, count + 1)
-
         countries.append(country_data)
 
     # calculate averages from (total, count) tuples
@@ -107,10 +158,6 @@ def fetch_coverage(request, group_slug):
         for vac_code in year_avg['coverage']:
             total, count = year_avg['coverage'][vac_code]
             year_avg['coverage'][vac_code] = total / count
-
-        for disease_name in year_avg['disease']:
-            total, count = year_avg['disease'][disease_name]
-            year_avg['disease'][disease_name] = total / count
 
     return JsonResponse({
         'group_slug': group.slug,
