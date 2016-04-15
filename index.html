@@ -61,7 +61,6 @@
 
 
     <script>
-
       $(document).ready(function(){
         lineChart = initializeLineChart();
         smallMultiples = initializeSmallMultiples();
@@ -82,9 +81,12 @@
           // For testing with a local Django installation
           //var apiBaseUrl = "http://localhost:8000/api/"
 
+          $.getJSON( apiBaseUrl + "fetch/incidence/", function( data ) {
+            smallMultiples.update(data);
+          });
+
           $.getJSON( apiBaseUrl + "fetch/coverage/" + user_disease_group + "/", function( data ) {
             lineChart.update(data);
-            smallMultiples.update(data);
             color_africa(user_year1, user_year2, data);
 
             $("#viz-heading").html("Immunization Coverage: " + data.group_description);

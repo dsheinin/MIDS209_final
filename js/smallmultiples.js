@@ -3,6 +3,7 @@ function initializeSmallMultiples() {
 		var rangeContainers = [];
 		var diseases = [];
 
+		var yScales = [];
 		var xScale = null;
 		var wid = null;
 
@@ -15,25 +16,32 @@ function initializeSmallMultiples() {
 			var div = "sm_mul";
 			switch(disease) {
      		case "measles":
-      		div += '1'
+      		div += '1';
+					max_y = 5000;
       		break;
      		case "diphtheria":
-      		div += '2'
+      		div += '2';
+					max_y = 40;
       		break;
 				case "ttetanus":
-      		div += '3'
+      		div += '3';
+					max_y = 100;
       		break;
 				case "pertussis":
-      		div += '4'
+      		div += '4';
+					max_y = 2000;
       		break;
-				case "neonatal tetanus":
-      		div += '5'
+				case "ntetanus":
+      		div += '5';
+					max_y = 60;
       		break;
 				case "polio":
-      		div += '6'
+      		div += '6';
+					max_y = 35;
       		break;
      		default:
-					div += '7'
+					div += '7';
+					max_y = 30;
 		 	}
 
 			document.getElementById(div).innerHTML = "";
@@ -115,7 +123,7 @@ function initializeSmallMultiples() {
 	        .attr("stroke", "black")
 	        .attr("stroke-width", 2)
 	        .attr("fill", "none")
-	        .attr("class", "average-line main-line");
+	        //.attr("class", "average-line main-line");
 	        //.attr("clip-path", "url(#clip)");
 
 			average
@@ -139,11 +147,11 @@ function initializeSmallMultiples() {
 			enteredCountries
 					.append("path")
 					.attr({
-							stroke: 'blue',
+							stroke: 'steelblue',
 							"stroke-width": 2,
 							fill: "none",
 							opacity: 0,
-							class: "country-line main-line" //,
+							//class: "country-line main-line" //,
 							//"clip-path": "url(#clip)"
 					});
 
