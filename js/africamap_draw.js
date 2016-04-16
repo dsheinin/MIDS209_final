@@ -74,42 +74,43 @@ function draw_africa() {
     formatValue = d3.format("s");
     
     // A position encoding for the key only.
-    var x = d3.scale.linear()
+    var y = d3.scale.linear()
       //.domain([500000, 50000000])
       //.range([0, 600]);
-      .domain([0, 100])
-      .range([0, 180]);
+      .domain([0, 200])
+      .range([500,0]);
     
-    var xAxis = d3.svg.axis()
-      .scale(x)
-      .orient("bottom")
-      .tickSize(10)
+    var yAxis = d3.svg.axis()
+      .scale(y)
+      .orient("left")
+      .tickSize(5)
       .tickValues(colorScale.domain())
-      .tickFormat(function(d) { return formatValue(d)});  
-           
+      .tickFormat(function(d) { return formatValue(d) + "%"});
+      
     // key
     var g = svg.append("g")
       .attr("class", "key")
-      .attr("transform", "translate(120,30)");
+      .attr("transform", "translate(325,-250)");
     
     g.selectAll("rect")
       .data(colorScale.range().map(function(d, i) {
         return {
-          x0: i ? x(colorScale.domain()[i - 1]) : x.range()[0],
-          x1: i < colorScale.domain().length ? x(colorScale.domain()[i]) : x.range()[1],
+          y0: i ? y(colorScale.domain()[i-1]) : y.range()[0],
+          y1: i < (colorScale.domain().length) ? y(colorScale.domain()[i]) : y.range()[1],
           z: d
         };
       }))
     .enter().append("rect")
-      .attr("height", 8)
-      .attr("x", function(d) { return d.x0; })
-      .attr("width", function(d) { return d.x1 - d.x0; })
+      .attr("height", 25)
+      .attr("y", function(d) { return d.y0 - 25; })
+      .attr("width", function(d) { return d.y0 - d.y1; })
       .style("fill", function(d) { return d.z; });
+      
     
-    g.call(xAxis).append("text")
-      .attr("class", "caption")
-      .attr("y", -6)
-      .text("Immunization Rates");  
+    g.call(yAxis).append("text")
+      .attr("class", "caption");
+      //.attr("y", 20);
+      //.text("Immunization Rates");
     // key end    
     
     formatNumber = d3.format(",.0f");  
@@ -117,7 +118,7 @@ function draw_africa() {
     var subunits = topojson.feature(data, data.objects.collection);
     
     var projection = d3.geo.mercator()
-      .center([15, 5])
+      .center([25, -5])
       .scale(215)    //************************************************** change scale here
       .translate([width / 2, height / 2]);
     

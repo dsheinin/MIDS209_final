@@ -219,7 +219,7 @@ function color_africa(user_year1, user_year2, immunization_data) {
      
     
     var projection = d3.geo.mercator()
-      .center([15, 5])
+      .center([25, -5])
       .scale(215)    //************************************************** change scale here
       .translate([width / 2, height / 2]);
     
