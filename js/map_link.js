@@ -37,7 +37,7 @@ function highlight_map_border(country_name) {
     for (k=0; k < countries.length; k++) {
         countries[k].parentNode
         d3.select(countries[k].parentNode.parentNode.appendChild(countries[k].parentNode)).transition().duration(10)  //** color boarder of country upon hover over
-            .style({'stroke-opacity':1,'stroke':'#FFF','stroke-width':1});
+            .style({'stroke-opacity':1,'stroke':'#CCC','stroke-width':1});
     }
     
     for (j=0; j < country_pair_list.length; j++) {
@@ -47,7 +47,7 @@ function highlight_map_border(country_name) {
 
                     var selected_country_obj = countries[i].parentNode;
                     d3.select(selected_country_obj.parentNode.appendChild(selected_country_obj)).transition().duration(100)  //** color boarder of country upon hover over
-                    .style({'stroke-opacity':1,'stroke':'#F00','stroke-width':3});
+                    .style({'stroke-opacity':1,'stroke':'steelblue','stroke-width':3});
                 }
             }
         }

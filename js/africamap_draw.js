@@ -68,8 +68,8 @@ function draw_africa() {
     
     var colorScale = d3.scale.threshold()
     //.domain([2000000, 5000000, 10000000, 13000000,  20000000, 30000000, 45000000])
-    .domain([10, 20, 30, 40, 50, 60, 70, 80, 90])
-    .range(colorbrewer.RdBu["10"]);    
+        .domain([10, 20, 30, 40, 50, 60, 70, 80, 90])
+        .range(["#FFF"].concat(colorbrewer.Oranges["9"]));
     
     formatValue = d3.format("s");
     
@@ -84,13 +84,13 @@ function draw_africa() {
       .scale(y)
       .orient("left")
       .tickSize(5)
-      .tickValues(colorScale.domain())
+      .tickValues([0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100])
       .tickFormat(function(d) { return formatValue(d) + "%"});
       
     // key
     var g = svg.append("g")
       .attr("class", "key")
-      .attr("transform", "translate(325,-250)");
+      .attr("transform", "translate(325,-230)");
     
     g.selectAll("rect")
       .data(colorScale.range().map(function(d, i) {
@@ -154,7 +154,7 @@ function draw_africa() {
       .enter().append("path")
       .attr("class", function(d) { return "subunit " + d.properties.subunit; })
       .attr("d", path)
-      .style("fill", function(d, i) {  return colorScale(d.properties.pop_est); });
+      //.style("fill", "#666");
     
     countries.on("mouseover", function (d, i) {
       //console.log(this)

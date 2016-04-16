@@ -195,7 +195,7 @@ function color_africa(user_year1, user_year2, immunization_data) {
     var colorScale = d3.scale.threshold()
     //.domain([2000000, 5000000, 10000000, 13000000,  20000000, 30000000, 45000000])
     .domain([10, 20, 30, 40, 50, 60, 70, 80, 90])
-    .range(colorbrewer.RdBu["10"]);    
+    .range(["#FFF"].concat(colorbrewer.Oranges["9"]));
     
     formatValue = d3.format("s");
     
@@ -269,7 +269,7 @@ function color_africa(user_year1, user_year2, immunization_data) {
       .enter().append("path")
       .attr("class", function(d) { return "subunit " + d.properties.subunit; })
       .attr("d", path)
-      .style("fill", function(d, i) {  return colorScale(d.properties.pop_est); });
+      .style("fill", function(d, i) {  return isNaN(d.properties.pop_est) ? "#999" : colorScale(d.properties.pop_est); });
     
     
     // **** keep highlighted map country highlighted even when brushing
@@ -281,7 +281,7 @@ function color_africa(user_year1, user_year2, immunization_data) {
                 if (d3.select("#country-list").select("select")[0][0].value == country_pair[j].Country_Django) {
                     if (countries_list[k].parentNode.__data__.properties.subunit == country_pair[j].Country_Map) {
                         d3.select(countries_list[k].parentNode.parentNode.appendChild(countries_list[k].parentNode)).transition().duration(200)  //** color boarder of country upon hover over
-                            .style({'stroke-opacity':1,'stroke':'#F00','stroke-width':3});
+                            .style({'stroke-opacity':1,'stroke':'steelblue','stroke-width':3});
                     } 
                 }
             }
@@ -299,11 +299,11 @@ function color_africa(user_year1, user_year2, immunization_data) {
         for (k=0; k < countries_list.length; k++) {
            //countries_list[k].parentNode
            d3.select(countries_list[k].parentNode.parentNode.appendChild(countries_list[k].parentNode)).transition().duration(200)  //** color boarder of country upon hover over
-               .style({'stroke-opacity':1,'stroke':'#FFF','stroke-width':1});
+               .style({'stroke-opacity':1,'stroke':'#CCC','stroke-width':1});
        }
          
          d3.select(this.parentNode.appendChild(this)).transition().duration(200)  //** color boarder of country upon hover over
-           .style({'stroke-opacity':1,'stroke':'#F00','stroke-width':3});
+           .style({'stroke-opacity':1,'stroke':'steelblue','stroke-width':3});
            
         selectCountry(d.properties.iso_a3);
         
@@ -339,7 +339,8 @@ function color_africa(user_year1, user_year2, immunization_data) {
     map.append("path")
       .datum(topojson.mesh(data, data.objects.collection, function(a, b) { return a !== b; }))
       .attr("d", path)
-      .attr("class", "subunit-boundary");
+      .attr("class", "subunit-boundary")
+      .style("stroke", "#CCC");
     
     //});
     

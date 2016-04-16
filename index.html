@@ -175,15 +175,20 @@
         <div class="dashboard">
           <!-- Indicators -->
           <div class="row">
-
-            <div class="col-md-4">
-              <!--img data-src="holder.js/100%x500/white"-->
+            <div class="col-md-12">
               <div id="country-list"></div>
               <script>
                 //******* adding drop down bar
                 var dropDown = d3.select("#country-list").append("select")
                         .attr("name", "country-list");
               </script>
+            </div>
+          </div>
+
+          <div class="row">
+
+            <div class="col-md-4">
+              <!--img data-src="holder.js/100%x500/white"-->
               <div class="africamap"></div>
 
             </div>
