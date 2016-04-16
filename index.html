@@ -67,6 +67,14 @@
 
         draw_africa();
 
+        var apiBaseUrl = "https://demo.sheinin.ca/w209/api/"
+        // For testing with a local Django installation
+        //var apiBaseUrl = "http://localhost:8000/api/"
+
+        $.getJSON( apiBaseUrl + "fetch/incidence/", function( data ) {
+          smallMultiples.update(data);
+        });
+
         $('.vac-group-btn').on('click', function (e) {
           $("#loading").show();
 
@@ -76,14 +84,6 @@
 
           $('.vac-group-btn').removeClass('btn-info').addClass('btn-primary ');  //change color of clicked button
           $(this).addClass('btn-info').removeClass('btn-primary ');
-
-          var apiBaseUrl = "https://demo.sheinin.ca/w209/api/"
-          // For testing with a local Django installation
-          //var apiBaseUrl = "http://localhost:8000/api/"
-
-          $.getJSON( apiBaseUrl + "fetch/incidence/", function( data ) {
-            smallMultiples.update(data);
-          });
 
           $.getJSON( apiBaseUrl + "fetch/coverage/" + user_disease_group + "/", function( data ) {
             lineChart.update(data);

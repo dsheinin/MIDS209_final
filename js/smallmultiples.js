@@ -87,11 +87,21 @@ function initializeSmallMultiples() {
 				.append("g")
 					.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-			var line = d3.svg.line()
+			var lineAverage = d3.svg.line()
 				.interpolate("monotone")
 				.x(function(d) { return xScale(d["year"]); })
 				.y(function(d) { return yScale(d["disease"][disease]); })
 				.defined(function(d) { return !$.isEmptyObject(d["disease"]); });
+
+			var lineCountry = d3.svg.line()
+				.interpolate("monotone")
+				.x(function(d) { return xScale(d["year"]); })
+				.y(function(d) { return yScale(d["disease"][disease]); })
+				.defined(function(d) {
+					var isDefined = !isNaN(d["disease"][disease]);
+					//if (!isDefined) { console.log('No data for [' + disease + '] in [' + d["year"] + ']'); }
+					return isDefined;
+				});
 
 			// Use this when testing the layout
 			/*var borderPath = svg.append("rect")
@@ -128,7 +138,7 @@ function initializeSmallMultiples() {
 
 			average
 					.datum(data["average_years"])
-					.attr("d", function (d) { return line(d);});
+					.attr("d", function (d) { return lineAverage(d);});
 
 			// Then graph each countries disease incidence, but make the lines invisible for now until a country is selected.
 	    var countryDiseaseContainer = svg.append("g");
@@ -156,7 +166,10 @@ function initializeSmallMultiples() {
 					});
 
 			countries.selectAll("path")
-					.attr("d", function (d) { return line(d["years"]); });
+					.attr("d", function (d) {
+						//console.log('Drawing path for [' + d["name"] + ']');
+						return lineCountry(d["years"]);
+					});
 
 			/////////////////////////////
 			// Create range rectangles //
@@ -228,6 +241,7 @@ function initializeSmallMultiples() {
 		}
 
 		function updateRange(startYear, endYear) {
+			return;
 			for (var i = 0; i < diseases.length; i++) {
 					var rangeRectangles = rangeContainers[i];
 
