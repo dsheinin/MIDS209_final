@@ -61,7 +61,7 @@
 
 
     <script>
-      $(document).ready(function(){
+      $(document).ready(function() {
         lineChart = initializeLineChart();
         smallMultiples = initializeSmallMultiples();
 
@@ -71,37 +71,53 @@
         // For testing with a local Django installation
         //var apiBaseUrl = "http://localhost:8000/api/"
 
-        $.getJSON( apiBaseUrl + "fetch/incidence/", function( data ) {
+        var smallMultiplesReady = false;
+        $.getJSON(apiBaseUrl + "fetch/incidence/", function (data) {
           smallMultiples.update(data);
+          smallMultiplesReady = true;
         });
+
+        function updateViz(data) {
+
+          var user_year1 = 2014;
+          var user_year2 = 2014;
+
+          if (!smallMultiplesReady) {
+            console.log("test");
+
+            setTimeout(function() { updateViz(data); }, 1000);
+          }
+
+          lineChart.update(data);
+          color_africa(user_year1, user_year2, data);
+
+          $("#viz-heading").html("Immunization Coverage: " + data.group_description);
+
+          $("#loading").hide();
+          $("#myviz").slideDown();
+          $("html, body").animate({scrollTop: 0}, "slow");
+
+          $(".sm-mul.group-" + data.group_slug).css({
+            "border-color": "#80e5ff",
+            "border-weight": "2px",
+            "border-style": "solid"
+          });
+          $(".sm-mul").not(".group-" + data.group_slug).css({"border": "none"});
+        }
 
         $('.vac-group-btn').on('click', function (e) {
           $("#loading").show();
 
-          var user_year1 = 2014;
-          var user_year2 = 2014;
           var user_disease_group = $(this).attr("id");
 
           $('.vac-group-btn').removeClass('btn-info').addClass('btn-primary ');  //change color of clicked button
           $(this).addClass('btn-info').removeClass('btn-primary ');
 
-          $.getJSON( apiBaseUrl + "fetch/coverage/" + user_disease_group + "/", function( data ) {
-            lineChart.update(data);
-            color_africa(user_year1, user_year2, data);
-
-            $("#viz-heading").html("Immunization Coverage: " + data.group_description);
-
-            $("#loading").hide();
-            $("#myviz").slideDown();
-            $("html, body").animate({ scrollTop: 0 }, "slow");
-
-            $(".sm-mul.group-" + data.group_slug).css({"border-color": "#80e5ff", "border-weight":"2px", "border-style":"solid"});
-            $(".sm-mul").not(".group-" + data.group_slug).css({"border": "none"});
+          $.getJSON(apiBaseUrl + "fetch/coverage/" + user_disease_group + "/", function (data) {
+            updateViz(data);
           });
-
-
         });
-      })
+      });
 
     </script>
 
