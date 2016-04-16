@@ -189,10 +189,12 @@ function initializeLineChart() {
         });
 
     var immunization_data;
+    var selectedCountryCode = null;
 
     function highlightCountry(isoCode) {
         var countries = countryContainer.selectAll(".country");
         var country = countryContainer.select("#country-line-" + isoCode);
+        selectedCountryCode = isoCode;
 
         countries.selectAll("path")
             .transition()
@@ -350,6 +352,10 @@ function initializeLineChart() {
         brush.extent([1980, 2014]);
         brush(d3.select(".brush"));
         brush.event(d3.select(".brush"));
+
+        if (selectedCountryCode != null) {
+            highlightCountry(selectedCountryCode);
+        }
 
     };
 
