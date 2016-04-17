@@ -17,31 +17,31 @@ function initializeSmallMultiples() {
 			switch(disease) {
      		case "measles":
       		div += '1';
-					max_y = 5000;
+					//max_y = 5000;
       		break;
      		case "diphtheria":
       		div += '2';
-					max_y = 40;
+					//max_y = 40;
       		break;
 				case "ttetanus":
       		div += '3';
-					max_y = 100;
+					//max_y = 100;
       		break;
 				case "pertussis":
       		div += '4';
-					max_y = 2000;
+					//max_y = 2000;
       		break;
 				case "ntetanus":
       		div += '5';
-					max_y = 60;
+					//max_y = 60;
       		break;
 				case "polio":
       		div += '6';
-					max_y = 35;
+					//max_y = 35;
       		break;
      		default:
 					div += '7';
-					max_y = 30;
+					//max_y = 30;
 		 	}
 
 			document.getElementById(div).innerHTML = "";
@@ -59,9 +59,14 @@ function initializeSmallMultiples() {
 				wid = width;
 			}
 
-			var yScale = d3.scale.linear()
+			/*var yScale = d3.scale.linear()
 				.domain([0, max_y])
-				.range([height, 0]);
+				.range([height, 0]);*/
+
+			var yScale = d3.scale.log()
+	    		.base(10)
+			    .domain([1, max_y])
+			    .range([height, 0]);
 
 			var xAxis = d3.svg.axis()
 					.scale(xScale)
@@ -75,7 +80,8 @@ function initializeSmallMultiples() {
 			var yAxis = d3.svg.axis()
 					.scale(yScale)
 					.orient("left")
-					.innerTickSize(-width)
+					//.innerTickSize(-width)
+					.innerTickSize(0)
 					.outerTickSize(0)
 					//.tickValues([])
 					.tickPadding(5); //5
@@ -90,13 +96,25 @@ function initializeSmallMultiples() {
 			var lineAverage = d3.svg.line()
 				.interpolate("monotone")
 				.x(function(d) { return xScale(d["year"]); })
-				.y(function(d) { return yScale(d["disease"][disease]); })
+				.y(function(d) {
+					var value = d["disease"][disease];
+					if (value < 1 || value == null) {
+						return yScale(1);
+					}
+					return yScale(value);
+				})
 				.defined(function(d) { return !$.isEmptyObject(d["disease"]); });
 
 			var lineCountry = d3.svg.line()
 				.interpolate("monotone")
 				.x(function(d) { return xScale(d["year"]); })
-				.y(function(d) { return yScale(d["disease"][disease]); })
+				.y(function(d) {
+					var value = d["disease"][disease];
+					if (value < 1 || value == null) {
+						return yScale(1);
+					}
+					return yScale(value);
+				})
 				.defined(function(d) {
 					var isDefined = !isNaN(d["disease"][disease]);
 					//if (!isDefined) { console.log('No data for [' + disease + '] in [' + d["year"] + ']'); }
