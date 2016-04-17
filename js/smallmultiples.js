@@ -179,6 +179,7 @@ function initializeSmallMultiples() {
 				.attr("y", 0)
 				.attr("width", xScale(1980))
 				.attr("height", height)
+				.attr("fill", "#80dfff")
 				.attr("opacity", .5);
 
 			var x = xScale(2014);
@@ -187,6 +188,7 @@ function initializeSmallMultiples() {
 				.attr("y", 0)
 				.attr("width", width - x)
 				.attr("height", height)
+				.attr("fill", "#80dfff")
 				.attr("opacity", .5);
 
 			rangeContainers.push([rangeRectangles1, rangeRectangles2]);
@@ -241,7 +243,6 @@ function initializeSmallMultiples() {
 		}
 
 		function updateRange(startYear, endYear) {
-			return;
 			for (var i = 0; i < diseases.length; i++) {
 					var rangeRectangles = rangeContainers[i];
 
