@@ -63,6 +63,15 @@
 
     <script>
       $(document).ready(function() {
+
+        $('#vac-group-buttons')
+                .popover({
+                  placement: "bottom",
+                  content: "Choose a disease/vaccine group to get started",
+                  trigger: "manual"
+                })
+                .popover('show');
+
         lineChart = initializeLineChart();
         smallMultiples = initializeSmallMultiples();
 
@@ -106,6 +115,10 @@
         }
 
         $('.vac-group-btn').on('click', function (e) {
+
+          $('#vac-group-buttons')
+                  .popover('destroy');
+
           $("#loading").show();
 
           var user_disease_group = $(this).attr("id");
@@ -154,7 +167,7 @@
       </div>
 
 
-      <div class="btn-group btn-group-justified">
+      <div class="btn-group btn-group-justified" id="vac-group-buttons">
         <a class="btn btn-primary vac-group-btn" id='measles'>Measles</a>
         <a class="btn btn-primary vac-group-btn" id='dpt'>Diphtheria, Tetanus, Pertussis</a>
         <a class="btn btn-primary vac-group-btn" id='pab'>Neonatal Tetenus</a>
@@ -234,123 +247,65 @@
 
       <!-- Dashboard
       ================================================== -->
-      <div class="" id="dashboard_start">
-        <!--h3 id="myDashboard" style="text-align:center">Immunization Effectiveness Dashboard</h3-->
-        <div id="instructions" class="fade in active" style="height:600px;">
-
-          <h3>Visualization Instructions</h3>
-          <p>To start using this visualization, click one of the buttons above for disease type.</p>
-          <p>Or to learn more, please hover over each section of the image below to learn more about our dashboard.</p>
-
-          <div class="row">
-            <div class="col-md-6" >
-              <div class="row" id="instr-img1">
-                <img src="images/img1.jpg" alt="" width="100%" height="100%">
-              </div>
-              <div class="row">
-                <div class="col-md-5" id="instr-img2">
-                  <img src="images/img2.jpg" alt="" width="100%" height="100%">
-                </div>
-                <div class="col-md-7" id="instr-img3">
-                  <img src="images/img3.jpg" alt="" width="100%" height="100%">
-                </div>
-              </div>
-              <div class="row" id="instr-img4">
-                <img src="images/img4.jpg" alt="" width="100%" height="100%">
-              </div>
-            </div>
-            <div class="col-md-6" id="instr-text">
-              <span><br><br><br><br><h2 align=center>Welcome to our Visualization!</h2><br><br><h4>Hover over each section to the right to learn more about our dashboard.</h4></span>
-            </div>
-          </div>
-
-          <script>
-            $(document).ready(function(){ //start of instructions display
-
-              $( "#instr-img1" ).hover(  //disease types and data source
-                      function() {
-                        $( "#instr-text" ).find( "span:last" ).remove();
-
-                        var url = "http://www.who.int/immunization/monitoring_surveillance/data/en/";
-                        $( "#instr-text" ).append( $( "<span>\
-                                             <h3>Immunization Effectiveness in Africa</h3>\
-                                             <p><strong>To begin using this tool, </strong>select a disease to investigate.</p>\
-                                             <p>This tool focuses on seven different types of preventable, communicable diseases:</p>\
-                                             <ul>\
-                                             <li><strong>Measles: </strong>is a highly contagious, serious disease caused by a virus.</li>\
-                                             <li><strong>Diphtheria: </strong>is a bacterial disease that can harm or destroy human body tissues and organs.</li>\
-                                             <li><strong>Tetanus: </strong> is a serious bacterial disease that affects your nervous system.</li>\
-                                             <li><strong>Pertussis: </strong>is a highly contagious bacterial disease of the respiratory tract</li>\
-                                             <li><strong>Neonatal Tetanus: </strong>is a form of generalised tetanus that occurs in newborns.</li>\
-                                             <li><strong>Polio: </strong>is a highly infectious disease that invades the nervous system and can cause total paralysis.</li>\
-                                             <li><strong>Yellow Fever: </strong>is an acute viral haemorrhagic disease transmitted by infected mosquitoes.</li>\
-                                             </ul>\
-                                             <p>Source: <a href=" + url + " target='_blank'>" + url + "</a></p>\
-                                             </span>" ) );
-
-                      }
-              );
-
-              $( "#instr-img2" ).hover(  //African countries
-                      function() {
-
-                        $( "#instr-text" ).find( "span:last" ).remove();
-
-                        var url = "http://www.who.int/immunization/monitoring_surveillance/data/en/";
-
-                        $( "#instr-text" ).append( $( "<span>\
-                                             <h3>Focus on Africa</h3>\
-                                             <p>This tool is used to visualize the effectiveness of immunization strategy in African nations. <strong>Hover over a country or use the dropdown</strong> to select a country to investigate.</p>\
-                                             <p>The data presented in this tool is from the World Health Organization (WHO).</p>\
-                                             <p><strong>World Health Organization: </strong> Its primary role is to direct and coordinate international health within the United Nations’ system.\
-                                              The WHO's main areas of work are:</p>\
-                                             <ul>\
-                                             <li>Health systems</li>\
-                                             <li>Promoting health through the life-course</li>\
-                                             <li>Noncommunicable diseases</li>\
-                                             <li>Communicable diseases</li>\
-                                             <li>Corporate services</li>\
-                                             <li>Preparedness, surveillance and response.</li>\
-                                             </ul>\
-                                             <p>Source: <a href=" + url + " target='_blank'>" + url + "</a></p>\
-                                             </span>" ) );
-
-                      }
-              );
-
-              $( "#instr-img3" ).hover(  //immunization rates
-                      function() {
-
-                        $( "#instr-text" ).find( "span:last" ).remove();
-
-                        $( "#instr-text" ).append( $( "<span>\
-                                             <h3>Immunization Rates Over Time</h3>\
-                                             <p>This line chart displays the immunization rates over time for each African country in our dataset.</p>\
-                                             <strong>Hover over the line</strong> to select a country to investigate and <strong>interact with the brush</strong> to select a desired time range.</p>\
-                                             <p>The data presented in this tool is from the World Health Organization (WHO) and covers the years 1980 through 2014.</p>\
-                                             </span>" ) );
-                      }
-              );
-
-              $( "#instr-img4" ).hover(  //incidence rates
-                      function() {
-
-                        $( "#instr-text" ).find( "span:last" ).remove();
-
-                        $( "#instr-text" ).append( $( "<span>\
-                                             <h3>Disease Incidence Over Time</h3>\
-                                             <p>This group of line charts display disease incidence rates over time for the selected African country and all seven of the different diseases. The chart for the selected disease is highlighted in blue.</p>\
-                                             <strong>Hover over the line chart above or map, or use the dropdown</strong> to select a country to investigate. Also, <strong>interact with the brush</strong> to select a desired time range.</p>\
-                                             <p>The data presented in this tool is from the World Health Organization (WHO) and covers the years 1980 through 2014.</p>\
-                                             </span>" ) );
-                      }
-              );
-            })//end of instructions display
-
-
-          </script>
+      <div class="row" style="margin-top:50px;">
+        <div class="col-md-6">
+          <h3>Focus on Africa</h3>
+          <p>This tool is used to visualize the effectiveness of immunization strategy in African nations.</p>
+          <p>The data presented in this tool is from the World Health Organization (WHO).</p>
+          <p><strong>World Health Organization: </strong> Its primary role is to direct and coordinate international health within the United Nations’ system.
+            The WHO's main areas of work are:</p>
+          <ul>
+            <li>Health systems</li>
+            <li>Promoting health through the life-course</li>
+            <li>Noncommunicable diseases</li>
+            <li>Communicable diseases</li>
+            <li>Corporate services</li>
+            <li>Preparedness, surveillance and response.</li>
+          </ul>
+          <p>Source: <a href="http://www.who.int/immunization/monitoring_surveillance/data/en/" target="_blank">http://www.who.int/immunization/monitoring_surveillance/data/en/</a></p>
+        </div>
+        <div class="col-md-6">
+          <h3>Immunization Effectiveness in Africa</h3>
+          <p>The visualization includes data on seven different types of preventable, communicable diseases, organized into five groups
+            by vaccine:</p>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Diseases</th>
+                <th>WHO Vaccine Codes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Measles</td>
+                <td>MCV1, MCV2</td>
+              </tr>
+              <tr>
+                <td>Diphtheria, Tetanus, Pertussis</td>
+                <td>DTP1, DTP3</td>
+              </tr>
+              <tr>
+                <td>Neonatal Tetanus</td>
+                <td>PAB</td>
+              </tr>
+              <tr>
+                <td>Polio</td>
+                <td>Pol3</td>
+              </tr>
+              <tr>
+                <td>Yellow Fever</td>
+                <td>YFV</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
+
+
+
+
+
+
 
 
       <!-- Marketing messaging and featurettes
