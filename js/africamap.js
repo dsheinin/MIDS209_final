@@ -77,7 +77,7 @@ function color_africa(user_year1, user_year2, immunization_data) {
             }
         }   
     }
-    
+
     for (i = 0; i < coverage_year1.length; i++) {
         
         if (user_disease_group=='dpt') {
@@ -85,6 +85,7 @@ function color_africa(user_year1, user_year2, immunization_data) {
                 coverage_final.push((coverage_year1[i].DTP1 + coverage_year1[i].DTP3)/2); 
             }
             else {
+                
                 var cov_ave = (coverage_year2[i].DTP1 + coverage_year1[i].DTP1 + coverage_year2[i].DTP3 + coverage_year1[i].DTP3) / 4;      
                 coverage_final.push(cov_ave);    
             }
@@ -144,8 +145,10 @@ function color_africa(user_year1, user_year2, immunization_data) {
     var country_list1 = ["Select a country"];
         for (k = 0; k < country_pair.length; k++) {
           if (country_pair[k].Country_Django != 0) {
-              country_list1.push(country_pair[k].Country_Django);
-              map_list1.push(country_pair[k].Country_Map);
+            if (country_pair[k].Country_Map != "Sao Tome") {
+                country_list1.push(country_pair[k].Country_Django);
+                map_list1.push(country_pair[k].Country_Map);
+            }
           }
         }
     
@@ -167,8 +170,7 @@ function color_africa(user_year1, user_year2, immunization_data) {
         var newData = d3.select(this).property('value');
         //console.log(newData);
         if (newData != "Select a country" || newData != "") {
-            
-            
+
             //alert("Country: " + newData + " was clicked");
             
             highlight_map_border(newData);  // needs Country_Django name
@@ -179,7 +181,14 @@ function color_africa(user_year1, user_year2, immunization_data) {
                     if (country_list1[i]==newData) {
                         if (map_list1[i]==data.objects.collection.geometries[j].properties.subunit) {
 
-                            var iso_a3_pass = data.objects.collection.geometries[j].properties.iso_a3;
+                           if (newData == "Sao Tome and Principe") {
+                                var iso_a3_pass = "STP";
+                            } else if (newData == "Equatorial Guinea") {
+                                var iso_a3_pass = "GNQ";
+                            } else {
+                                var iso_a3_pass = data.objects.collection.geometries[j].properties.iso_a3;    
+                            }
+                            //var iso_a3_pass = data.objects.collection.geometries[j].properties.iso_a3; 
                             //console.log(iso_a3_pass)
                             selectCountry(iso_a3_pass);   // needs iso_a3
                         }
@@ -281,7 +290,7 @@ function color_africa(user_year1, user_year2, immunization_data) {
                 if (d3.select("#country-list").select("select")[0][0].value == country_pair[j].Country_Django) {
                     if (countries_list[k].parentNode.__data__.properties.subunit == country_pair[j].Country_Map) {
                         keep_color_ind = k;
-                        console.log(countries_list[k].parentNode)
+                        //console.log(countries_list[k].parentNode)
                     } else {
                     d3.select(countries_list[k].parentNode.parentNode.appendChild(countries_list[k].parentNode)).transition().duration(50)  //** color boarder of country upon hover over
                .style({'stroke':'#CCC','stroke-width':1});
@@ -299,7 +308,11 @@ function color_africa(user_year1, user_year2, immunization_data) {
     countries.on("mouseover", function (d, i) {
       //console.log(this)
       //console.log(d)
-      tooltip.show("<b>" + d.properties.subunit  + "</b>" + "<br>" + "Rate: " + d.properties.pop_est);
+      var tooltip_val = d.properties.pop_est;
+      if (isNaN(tooltip_val)) {
+        tooltip_val = "NA";
+      }
+      tooltip.show("<b>" + d.properties.subunit  + "</b>" + "<br>" + "Rate: " + tooltip_val);
       //toGreyExcept(this);
       
         var countries_list = map.selectAll(".subunit").selectAll("path");
