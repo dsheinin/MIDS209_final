@@ -84,6 +84,7 @@
 
           if (!smallMultiplesReady) {
             setTimeout(function() { updateViz(data); }, 500);
+            return;
           }
 
           lineChart.update(data);
