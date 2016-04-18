@@ -141,8 +141,8 @@ function color_africa(user_year1, user_year2, immunization_data) {
     })();
     
     
-    var map_list1 = ["Select a country"];
-    var country_list1 = ["Select a country"];
+    var map_list1 = ["Select a country"];  // list of map names
+    var country_list1 = ["Select a country"]; // list of Django names
         for (k = 0; k < country_pair.length; k++) {
           if (country_pair[k].Country_Django != 0) {
             if (country_pair[k].Country_Map != "Sao Tome") {
@@ -151,7 +151,7 @@ function color_africa(user_year1, user_year2, immunization_data) {
             }
           }
         }
-    
+
       //******* adding drop down bar
       var dropDown = d3.select("#country-list").select("select")
       .attr("name", "country-list");
@@ -180,11 +180,14 @@ function color_africa(user_year1, user_year2, immunization_data) {
                 for (var j=0; j < data.objects.collection.geometries.length; j++) {
                     if (country_list1[i]==newData) {
                         if (map_list1[i]==data.objects.collection.geometries[j].properties.subunit) {
-
+                            console.log(map_list1[i])
+                            console.log(data.objects.collection.geometries[j].properties.subunit)
                            if (newData == "Sao Tome and Principe") {
                                 var iso_a3_pass = "STP";
                             } else if (newData == "Equatorial Guinea") {
                                 var iso_a3_pass = "GNQ";
+                            } else if (newData == "South Africa") {
+                                var iso_a3_pass = "ZAF";
                             } else {
                                 var iso_a3_pass = data.objects.collection.geometries[j].properties.iso_a3;    
                             }
