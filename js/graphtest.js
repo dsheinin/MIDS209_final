@@ -6,7 +6,7 @@ function initializeLineChart() {
     //var width = 1100;
     //var height = 1100;
     var padding = {top: 10, right: 12, bottom: 20, left: 150};
-    var navGraphHeight = 70;
+    var navGraphHeight = 40;
     var mainGraphHeight = height - padding.top - padding.bottom - navGraphHeight - 30;
     
     var defaultTransitionTime = 0;
@@ -113,7 +113,7 @@ function initializeLineChart() {
         */
 
     var arc = d3.svg.arc()
-        .outerRadius(8)
+        .outerRadius(6)
         .startAngle(0)
         .endAngle(function(d, i) { return i ? -Math.PI : Math.PI; });
 
