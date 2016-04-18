@@ -143,6 +143,13 @@ div.tooltip {
     shape-rendering: crispEdges;
 }
 
+.resize {
+    fill: #999;
+    fill-opacity: .8;
+    stroke: #000;
+    stroke-width: 1px;
+}
+
 /*********** small multiples ***********/
 .sm-mul-heading {
     margin: 0;

@@ -5,7 +5,7 @@ function initializeLineChart() {
     
     //var width = 1100;
     //var height = 1100;
-    var padding = {top: 10, right: 0, bottom: 20, left: 150};
+    var padding = {top: 10, right: 12, bottom: 20, left: 150};
     var navGraphHeight = 70;
     var mainGraphHeight = height - padding.top - padding.bottom - navGraphHeight - 30;
     
@@ -90,14 +90,37 @@ function initializeLineChart() {
             .x(xScaleNav)
             .on("brush", brushed)
             .on("brushend", brushend);
-    
-    svg.append("g")
+
+    var brushg = svg.append("g")
             .attr("class", "brush")
             .call(brush)
-            .selectAll("rect")
+
+    brushg.selectAll("rect")
             .attr("y", height - padding.bottom - navGraphHeight - 6)
             .attr("height", navGraphHeight + 7);
-    
+
+    brushg.selectAll(".resize").select("rect")
+        .style("visibility", "visible");
+
+    /* To add circles inside brush handles...
+    brushg.selectAll(".resize")
+        .append("circle")
+        .attr({
+            cx: 0,
+            cy: height - padding.bottom - navGraphHeight / 2 ,
+            r: 2
+        });
+        */
+
+    var arc = d3.svg.arc()
+        .outerRadius(8)
+        .startAngle(0)
+        .endAngle(function(d, i) { return i ? -Math.PI : Math.PI; });
+
+    brushg.selectAll(".resize").append("path")
+        .attr("transform", function(d, i){ return "translate(" + (i ? "-3," : "3,") +  (height - padding.bottom - navGraphHeight / 2 - 2) + ")"; })
+        .attr("d", arc);
+
     function calcAverage(coverage) {
         var total = 0;
         var count = 0;
