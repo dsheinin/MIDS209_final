@@ -107,14 +107,19 @@ function initializeLineChart() {
         });
         */
 
-    var arc = d3.svg.arc()
-        .outerRadius(6)
-        .startAngle(0)
-        .endAngle(function(d, i) { return i ? -Math.PI : Math.PI; });
-
     brushg.selectAll(".resize").append("path")
         .attr("transform", function(d, i){ return "translate(" + (i ? "-3," : "3,") +  (height - padding.bottom - navGraphHeight / 2 - 2) + ")"; })
-        .attr("d", arc);
+        .attr('d', function(d, i) {
+            var pointX = i ? -6 : 6;
+            return 'M0 -6 L' + pointX + ' 0 L0 6';
+        });
+
+    brushg.selectAll(".resize").append("path")
+        .attr("transform", function(d, i){ return "translate(" + (i ? "3," : "-3,") +  (height - padding.bottom - navGraphHeight / 2 - 2) + ")"; })
+        .attr('d', function(d, i) {
+            var pointX = i ? 6 : -6;
+            return 'M0 -6 L' + pointX + ' 0 L0 6';
+        });
 
     function calcAverage(coverage) {
         var total = 0;
