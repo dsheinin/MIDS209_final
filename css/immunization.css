@@ -15,6 +15,7 @@ body {
 #myviz {
     display: none;
     border-bottom: 2px solid grey;
+    padding-bottom: 20px;
 }
 
 /*********** loading ***********/
@@ -123,7 +124,7 @@ div.tooltip {
     shape-rendering: crispEdges;
 }
 
-.axis text {
+.axis text, .tick text {
     font-size: 11px;
     opacity: 0.5;
 }

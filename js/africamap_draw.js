@@ -2,12 +2,10 @@ function draw_africa() {
 
 // modified from https://gist.github.com/chule
 
-    var width = 350,                //************************************************** change container size here
-        height = 380;
+    var width = 450,                //************************************************** change container size here
+        height = 480;
     
-    var svg = d3.select("div.africamap").append("svg")
-    .attr("width", width)
-    .attr("height", height);  
+    var svg = d3.select("#mainviz");
 
     var tooltip = {
         element: null,
@@ -77,8 +75,8 @@ function draw_africa() {
     var y = d3.scale.linear()
       //.domain([500000, 50000000])
       //.range([0, 600]);
-      .domain([0, 200])
-      .range([500,0]);
+      .domain([0, 100])
+      .range([300,0]);
     
     var yAxis = d3.svg.axis()
       .scale(y)
@@ -90,7 +88,7 @@ function draw_africa() {
     // key
     var g = svg.append("g")
       .attr("class", "key")
-      .attr("transform", "translate(325,-230)");
+      .attr("transform", "translate(440,10)");
     
     g.selectAll("rect")
       .data(colorScale.range().map(function(d, i) {
@@ -101,9 +99,9 @@ function draw_africa() {
         };
       }))
     .enter().append("rect")
-      .attr("height", 25)
-      .attr("y", function(d) { return d.y0 - 25; })
-      .attr("width", function(d) { return d.y0 - d.y1; })
+      .attr("height", 30)
+      .attr("y", function(d, i) { return d.y0 - 30; })
+      .attr("width", 30)
       .style("fill", function(d) { return d.z; });
       
     
@@ -119,7 +117,7 @@ function draw_africa() {
     
     var projection = d3.geo.mercator()
       .center([25, -5])
-      .scale(215)    //************************************************** change scale here
+      .scale(285)    //************************************************** change scale here
       .translate([width / 2, height / 2]);
     
     // var projection = d3.geo.albers()

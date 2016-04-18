@@ -4,10 +4,10 @@ function color_africa(user_year1, user_year2, immunization_data) {
 
 // modified from https://gist.github.com/chule
 
-    var width = 350,                //************************************************** change container size here
-        height = 380;
+    var width = 450,                //************************************************** change container size here
+        height = 480;
     
-    var svg = d3.select("div.africamap").selectAll("svg") 
+    var svg = d3.select("#mainviz");
 
     var tooltip = {
         element: null,
@@ -229,7 +229,7 @@ function color_africa(user_year1, user_year2, immunization_data) {
     
     var projection = d3.geo.mercator()
       .center([25, -5])
-      .scale(215)    //************************************************** change scale here
+      .scale(285)    //************************************************** change scale here
       .translate([width / 2, height / 2]);
     
     // var projection = d3.geo.albers()

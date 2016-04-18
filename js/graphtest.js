@@ -1,11 +1,11 @@
 function initializeLineChart() {
 
-    var width = 750;
-    var height = 380;
+    var width = 1140;
+    var height = 400;
     
     //var width = 1100;
     //var height = 1100;
-    var padding = {top: 10, right: 12, bottom: 20, left: 150};
+    var padding = {top: 10, right: 12, bottom: 20, left: 470};
     var navGraphHeight = 40;
     var mainGraphHeight = height - padding.top - padding.bottom - navGraphHeight - 30;
     
@@ -31,13 +31,8 @@ function initializeLineChart() {
             .domain([0, 100])
             .range([height - padding.bottom, height - padding.bottom - navGraphHeight]);
 
-    var svg = d3.select("#graphtest")
-            .append("svg")
-            .attr({
-                width: width,
-                height: height,
-            });
-    
+    var svg = d3.select("#mainviz");
+
     // Separate container elements for countries and average allow us to keep average on top (at end)
     var countryContainer = svg.append("g");
     var averageContainer = svg.append("g");
@@ -60,11 +55,11 @@ function initializeLineChart() {
     var averageLabel = averageContainer
         .append("text")
         .attr({
-            x: padding.left - 10,
-            "text-anchor": "end",
+            x: padding.left + 10,
+            //"text-anchor": "end",
             class: "average-label average-label-start",
             fill: "black",
-            opacity: 1.0
+            opacity: 0.5
         })
         .text("Africa");
 
@@ -78,7 +73,7 @@ function initializeLineChart() {
         .scale(yScaleMain)
         .orient("left")
         .tickFormat(function(d) { return d + "%"; })
-        .ticks(1);
+        .ticks(0);
 
     var xAxisNav = d3.svg.axis()
             .scale(xScaleNav)
@@ -247,7 +242,7 @@ function initializeLineChart() {
             .duration(defaultTransitionTime)
             .attr({
                 "fill": highlightColor,
-                "opacity": 1.0
+                "opacity": 0.5
             });
         countries.sort(function (a, b) { // select the parent and sort the path's
             if ("country-line-" + a.iso_code     != country.attr("id")) return -1;       // a is not the hovered element, send "a" to the back
@@ -294,8 +289,8 @@ function initializeLineChart() {
         enteredCountries
             .append("text")
             .attr({
-                x: padding.left - 10,
-                "text-anchor": "end",
+                x: padding.left + 10,
+                //"text-anchor": "end",
                 class: "country-label country-label-start",
                 fill: defaultTextColor,
                 opacity: defaultLabelOpacity
