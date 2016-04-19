@@ -45,12 +45,10 @@
         //console.log(isoCode)
         lineChart.highlightCountry(isoCode);
         smallMultiples.showCountry(isoCode);
-        // other calls could go here
       }
 
       function selectRange(startYear, endYear) {
         smallMultiples.updateRange(startYear, endYear);
-        // other calls could go here
       }
     </script>
 
@@ -83,6 +81,7 @@
 
         var smallMultiplesReady = false;
         $.getJSON(apiBaseUrl + "fetch/incidence/", function (data) {
+          // Add small multiples
           smallMultiples.update(data);
           smallMultiplesReady = true;
         });
@@ -305,13 +304,6 @@
           </table>
         </div>
       </div>
-
-
-
-
-
-
-
 
       <!-- Marketing messaging and featurettes
       ================================================== -->
