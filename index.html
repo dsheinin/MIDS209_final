@@ -45,12 +45,10 @@
         //console.log(isoCode)
         lineChart.highlightCountry(isoCode);
         smallMultiples.showCountry(isoCode);
-        // other calls could go here
       }
 
       function selectRange(startYear, endYear) {
         smallMultiples.updateRange(startYear, endYear);
-        // other calls could go here
       }
     </script>
 
@@ -83,6 +81,7 @@
 
         var smallMultiplesReady = false;
         $.getJSON(apiBaseUrl + "fetch/incidence/", function (data) {
+          // Add small multiples
           smallMultiples.update(data);
           smallMultiplesReady = true;
         });
@@ -175,6 +174,11 @@
         <a class="btn btn-primary vac-group-btn" id='yfv'>Yellow Fever</a>
       </div>
 
+      <div id="tooltip" class="hidden">
+        <p><strong>Roll #<span id="toss">0</span></strong></p>
+        <p><span id="value">100</span></p>
+			</div>
+
       <div class="text-center" id="loading">
         Loading... <span class="glyphicon glyphicon-refresh spinning"></span>
       </div>
@@ -209,7 +213,6 @@
           </div>
 
           <h4>Reported Disease Incidence</h4>
-
           <div class="row" style="margin-left:-5px;margin-right:-5px;">
             <div class="col-md-14 col-sm-2 nopadding sm-mul group-measles"> <!--measles-->
               <h5 class="sm-mul-heading">Measles</h5>
@@ -242,6 +245,7 @@
             </div>
           </div>
         </div><!-- /.dashboard -->
+        <h5><i>Note: Incidents are per capita and on a log-10 scale.</i></h5>
 
       </div>
 
@@ -301,13 +305,6 @@
         </div>
       </div>
 
-
-
-
-
-
-
-
       <!-- Marketing messaging and featurettes
       ================================================== -->
       <!-- Wrap the rest of the page in another container to center all the content. -->
@@ -317,50 +314,51 @@
         <!-- START THE FEATURETTES -->
         <hr class="featurette-divider" id="use_cases">
         <h2 class="featurette-heading" align="center">Visualizing Immunization Effectiveness in Africa</h2>
+        <h3 align="center">Below are example use cases for questions that this visualization can help to investigate.</h3>
         <br><br><br>
 
         <div class="row featurette">
-          <div class="col-md-7">
-            <h3 class="featurette-heading">Are immunizations effective?</h3>
-            <p class="lead">Our visualization shows that African countries with high immunization rates also have low incidence rates of the disease. The example to the right shows Botswana.
-            Botswana’s immunization rates for each of the 5 disease groups are consistently above the average of all African countries.
+          <div class="col-md-6">
+            <h1>Are immunizations effective?</h1>
+            <h4>Our visualization shows that African countries with high immunization rates also have low incidence rates for each the disease. The example to the right shows Botswana.
+            Botswana’s immunization rates for each of the 5 disease groups are consistently above the African average.
             Botswana also has disease incidence rates that are consistently below the African average.
-            The quick visual trends shown on this tool could lead to further investigation to better understand the causality in the relationship 
-            between immunization and disease incidence rates.</p>
+            The trends shown with this tool could lead to further investigation to better understand the causality in the relationship
+            between immunization and disease incidence rates.</h4>
           </div>
-          <div class="col-md-5">
+          <div class="col-md-6">
             <!--img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image"-->
-            <img src="images/img_usecase1.jpg" alt="" width="450px" style="vertical-align:middle">
+            <img src="images/img_usecase1.jpg" alt="" width=100% style="vertical-align:middle">
           </div>
         </div>
 
         <hr class="featurette-divider">
 
         <div class="row featurette">
-          <div class="col-md-7 col-md-push-5">
-            <h3 class="featurette-heading">Which countries need more international aid for health programs?</h3>
-            <p class="lead">Our visualization shows that Nigeria is a country that could use an increase in international aid to help augment its health programs.
-            For each of the 5 disease groups analyzed with our tool, Nigeria has been consistently below the average of all African countries in the WHO dataset.
-            Nigeria also has been consistently above average in number of reported disease incidence cases.</p>
+          <div class="col-md-6 col-md-push-6">
+            <h1>Which countries need more international aid for health programs?</h1>
+            <h4>Our visualization shows that Nigeria is a country that could use an increase in international aid to help augment its health programs.
+            For each of the 5 disease groups analyzed with our tool, Nigeria has been consistently below the African average.
+            Nigeria also has been consistently above average in number of reported disease incidence cases.</h4>
           </div>
-          <div class="col-md-5 col-md-pull-7">
+          <div class="col-md-6 col-md-pull-6">
             <!--img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image"-->
-            <img src="images/img_usecase2.jpg" alt="" width="450px" style="vertical-align:middle">
+            <img src="images/img_usecase2.jpg" alt="" width=100% style="vertical-align:middle">
           </div>
         </div>
 
         <hr class="featurette-divider">
 
         <div class="row featurette">
-          <div class="col-md-7">
-            <h3 class="featurette-heading">Which diseases require renewed focus to combat?</h3>
-            <p class="lead">Our visualization shows that Yellow Fever has had the highest average of reported incidences in the last 5 years (based on the bottom right incidence chart).
+          <div class="col-md-6">
+            <h1>Which diseases require renewed focus to combat?</h1>
+            <h4>Our visualization shows that Yellow Fever has had the highest average of reported incidences in the last 5 years (based on the bottom right incidence chart).
             The map shows that many African countries in eastern and southern Africa either do not report or do not implement immunization programs for the YFV vaccine.
-            Further investigation into Yellow Fever immunization programs in these areas may reveal a need for renewed focus against this disease. </p>
+            Further investigation into Yellow Fever immunization programs in these areas may reveal a need for renewed focus against this disease. </h4>
           </div>
-          <div class="col-md-5">
+          <div class="col-md-6">
             <!--img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image"-->
-            <img src="images/img_usecase3.jpg" alt="" width="450px" style="vertical-align:middle">
+            <img src="images/img_usecase3.jpg" alt="" width=100% style="vertical-align:middle">
           </div>
         </div>
 
@@ -378,7 +376,7 @@
             <p>MIDS Student</p>
           </div><!-- /.col-lg-4 -->
           <div class="col-lg-4">
-            <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+            <img class="img-circle" src="images/jaime.png" alt="" width="26%" height="26%">
             <h3>Jaime</h3>
             <p>MIDS Student</p>
           </div><!-- /.col-lg-4 -->

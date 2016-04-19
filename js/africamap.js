@@ -172,7 +172,7 @@ function color_africa(user_year1, user_year2, immunization_data) {
         if (newData != "Select a country" || newData != "") {
 
             //alert("Country: " + newData + " was clicked");
-            
+            //console.log(newData)
             highlight_map_border(newData);  // needs Country_Django name
             
             //map iso_a3 code
@@ -180,8 +180,8 @@ function color_africa(user_year1, user_year2, immunization_data) {
                 for (var j=0; j < data.objects.collection.geometries.length; j++) {
                     if (country_list1[i]==newData) {
                         if (map_list1[i]==data.objects.collection.geometries[j].properties.subunit) {
-                            console.log(map_list1[i])
-                            console.log(data.objects.collection.geometries[j].properties.subunit)
+                            //console.log(map_list1[i])
+                            //console.log(data.objects.collection.geometries[j].properties.subunit)
                            if (newData == "Sao Tome and Principe") {
                                 var iso_a3_pass = "STP";
                             } else if (newData == "Equatorial Guinea") {
