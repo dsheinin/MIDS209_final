@@ -14,7 +14,9 @@ function highlight_map_border(country_name) {
         return json;
     })();
     
-    var svg = d3.select("div.africamap").select("svg");
+    var svg = d3.select("#mainviz");
+    
+    console.log(svg)
     var map = svg.selectAll(".map");
 
     var country_pair_list = (function () {
@@ -33,7 +35,7 @@ function highlight_map_border(country_name) {
     var countries_list = data;
     var country = countries_list.objects.collection.geometries;
     var countries = map.selectAll(".subunit").selectAll("path");
-    
+    //console.log(country_name)
     for (k=0; k < countries.length; k++) {
         countries[k].parentNode
         d3.select(countries[k].parentNode.parentNode.appendChild(countries[k].parentNode)).transition().duration(10)  //** color boarder of country upon hover over
@@ -46,6 +48,7 @@ function highlight_map_border(country_name) {
                 if (countries[i].parentNode.__data__.properties.subunit == country_pair_list[j].Country_Map) {
 
                     var selected_country_obj = countries[i].parentNode;
+                    console.log(selected_country_obj)
                     d3.select(selected_country_obj.parentNode.appendChild(selected_country_obj)).transition().duration(100)  //** color boarder of country upon hover over
                     .style({'stroke-opacity':1,'stroke':'steelblue','stroke-width':3});
                 }
