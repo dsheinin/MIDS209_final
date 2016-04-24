@@ -217,42 +217,45 @@ function initializeLineChart() {
     function highlightCountry(isoCode) {
         var countries = countryContainer.selectAll(".country");
         var country = countryContainer.select("#country-line-" + isoCode);
-        selectedCountryCode = isoCode;
 
-        countries.selectAll("path")
-            .transition()
-            .duration(0)
-            .attr({
-                "stroke": defaultLineColor,
-                "stroke-width": defaultLineStrokeWidth,
+        if (!country.empty()) {
+            selectedCountryCode = isoCode;
+
+            countries.selectAll("path")
+                .transition()
+                .duration(0)
+                .attr({
+                    "stroke": defaultLineColor,
+                    "stroke-width": defaultLineStrokeWidth,
+                });
+            countries.selectAll("text")
+                .classed("selected", false)
+                .transition()
+                .duration(0)
+                .attr({
+                    "fill": defaultTextColor,
+                    "opacity": defaultLabelOpacity
+                });
+            country.select("path")
+                .transition()
+                .duration(defaultTransitionTime)
+                .attr({
+                    "stroke": highlightColor,
+                    "stroke-width": highlightLineStrokeWidth,
+                });
+            country.selectAll("text")
+                .classed("selected", true)
+                .transition()
+                .duration(defaultTransitionTime)
+                .attr({
+                    "fill": highlightColor,
+                    "opacity": 0.5
+                });
+            countries.sort(function (a, b) { // select the parent and sort the path's
+                if ("country-line-" + a.iso_code     != country.attr("id")) return -1;       // a is not the hovered element, send "a" to the back
+                else return 1;               // a is the hovered element, bring "a" to the front
             });
-        countries.selectAll("text")
-            .classed("selected", false)
-            .transition()
-            .duration(0)
-            .attr({
-                "fill": defaultTextColor,
-                "opacity": defaultLabelOpacity
-            });
-        country.select("path")
-            .transition()
-            .duration(defaultTransitionTime)
-            .attr({
-                "stroke": highlightColor,
-                "stroke-width": highlightLineStrokeWidth,
-            });
-        country.selectAll("text")
-            .classed("selected", true)
-            .transition()
-            .duration(defaultTransitionTime)
-            .attr({
-                "fill": highlightColor,
-                "opacity": 0.5
-            });
-        countries.sort(function (a, b) { // select the parent and sort the path's
-            if ("country-line-" + a.iso_code     != country.attr("id")) return -1;       // a is not the hovered element, send "a" to the back
-            else return 1;               // a is the hovered element, bring "a" to the front
-        });
+        }
     };
 
     function update(data) {
