@@ -80,7 +80,7 @@
         //var apiBaseUrl = "http://localhost:8000/api/"
 
         var smallMultiplesReady = false;
-        $.getJSON(apiBaseUrl + "fetch/incidence/", function (data) {
+        $.getJSON(apiBaseUrl + "fetch/incidence/?101", function (data) {
           // Add small multiples
           smallMultiples.update(data);
           smallMultiplesReady = true;
@@ -125,7 +125,7 @@
           $('.vac-group-btn').removeClass('btn-info').addClass('btn-primary ');  //change color of clicked button
           $(this).addClass('btn-info').removeClass('btn-primary ');
 
-          $.getJSON(apiBaseUrl + "fetch/coverage/" + user_disease_group + "/", function (data) {
+          $.getJSON(apiBaseUrl + "fetch/coverage/" + user_disease_group + "/?101", function (data) {
             updateViz(data);
           });
         });
