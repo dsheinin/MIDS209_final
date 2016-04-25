@@ -436,9 +436,8 @@ function initializeLineChart() {
         color_africa(user_year1, user_year2, immunization_data);   //******************************** Change color of map with brushing
     }
 
-    function lineChart(){}
-    lineChart.update = update;
-    lineChart.highlightCountry = highlightCountry;
-    return lineChart;
-
+    return {
+        update: update,
+        highlightCountry: highlightCountry
+    };
 }
