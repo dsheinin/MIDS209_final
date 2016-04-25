@@ -94,7 +94,7 @@ function initializeSmallMultiples() {
 					.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 			var lineAverage = d3.svg.line()
-				.interpolate("monotone")
+				.interpolate("bundle")
 				.x(function(d) { return xScale(d["year"]); })
 				.y(function(d) {
 					var value = d["disease"][disease];
@@ -102,11 +102,10 @@ function initializeSmallMultiples() {
 						return yScale(1);
 					}
 					return yScale(value);
-				})
-				.defined(function(d) { return !$.isEmptyObject(d["disease"]); });
+				});
 
 			var lineCountry = d3.svg.line()
-				.interpolate("monotone")
+				.interpolate("bundle")
 				.x(function(d) { return xScale(d["year"]); })
 				.y(function(d) {
 					var value = d["disease"][disease];
@@ -114,11 +113,6 @@ function initializeSmallMultiples() {
 						return yScale(1);
 					}
 					return yScale(value);
-				})
-				.defined(function(d) {
-					var isDefined = !isNaN(d["disease"][disease]);
-					//if (!isDefined) { console.log('No data for [' + disease + '] in [' + d["year"] + ']'); }
-					return isDefined;
 				});
 
 			// Use this when testing the layout
