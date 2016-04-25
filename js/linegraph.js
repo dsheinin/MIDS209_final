@@ -263,7 +263,7 @@ function initializeLineChart() {
         immunization_data = data;
 
         // updating existing country groups is tricky. Start again as a fallback
-        d3.selectAll("#graphtest .country").remove();
+        countryContainer.selectAll(".country").remove();
 
         // create country groups
         var countries = countryContainer.selectAll(".country")

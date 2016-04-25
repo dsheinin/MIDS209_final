@@ -54,7 +54,7 @@
 
     <script src="js/africamap.js"></script>
     <script src="js/africamap_draw.js"></script>
-    <script src="js/graphtest.js"></script>
+    <script src="js/linegraph.js"></script>
     <script src="js/map_link.js"></script>
     <script src="js/smallmultiples.js"></script>
 
@@ -75,9 +75,9 @@
 
         draw_africa();
 
-        var apiBaseUrl = "https://demo.sheinin.ca/w209/api/"
+        //var apiBaseUrl = "https://demo.sheinin.ca/w209/api/"
         // For testing with a local Django installation
-        //var apiBaseUrl = "http://localhost:8000/api/"
+        var apiBaseUrl = "http://localhost:8000/api/"
 
         var smallMultiplesReady = false;
         $.getJSON(apiBaseUrl + "fetch/incidence/", function (data) {
