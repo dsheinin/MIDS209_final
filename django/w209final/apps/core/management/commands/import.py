@@ -8,15 +8,19 @@ class Command(BaseCommand):
     help = 'Imports data from CSV files'
 
     def handle(self, *args, **options):
+
+        non_region_codes = ['EGY', 'SDN', 'LBY', 'TUN', 'MAR']
+
         # Vaccination Coverage
         with open(os.path.join(settings.DATA_DIR, 'coverage.csv')) as coverage_file:
             coverage_reader = csv.DictReader(coverage_file)
             for row in coverage_reader:
-                if row['Region'] == 'AFR':
+                iso_code = row['Country ISO Code'].decode('utf-8')
+                if row['Region'] == 'AFR' or iso_code in non_region_codes:
 
                     # Country
                     country, created = Country.objects.get_or_create(
-                        iso_code=row['Country ISO Code'].decode('utf-8'),
+                        iso_code=iso_code,
                         defaults={'name':row['Country Name'].decode('utf-8')},
                     )
 
@@ -43,7 +47,7 @@ class Command(BaseCommand):
         with open(os.path.join(settings.DATA_DIR, 'incidence.csv')) as incidence_file:
             incidence_reader = csv.DictReader(incidence_file)
             for row in incidence_reader:
-                if row['Region'] == 'AFR':
+                if row['Region'] == 'AFR' or row['Country ISO Code'].decode('utf-8') in non_region_codes:
                     country = Country.objects.get(
                             iso_code=row['Country ISO Code'].decode('utf-8')
                     )
