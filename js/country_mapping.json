@@ -72,7 +72,7 @@
     "Country_Map": "Djibouti"
   },
   {
-    "Country_Django": 0,
+    "Country_Django": "Egypt",
     "Country_Map": "Egypt"
   },
   {
@@ -128,7 +128,7 @@
     "Country_Map": "Liberia"
   },
   {
-    "Country_Django": 0,
+    "Country_Django": "Libya",
     "Country_Map": "Libya"
   },
   {
@@ -160,7 +160,7 @@
     "Country_Map": "Melilla"
   },
   {
-    "Country_Django": 0,
+    "Country_Django": "Morocco",
     "Country_Map": "Morocco"
   },
   {
@@ -228,7 +228,7 @@
     "Country_Map": "South Sudan"
   },
   {
-    "Country_Django": 0,
+    "Country_Django": "Sudan",
     "Country_Map": "Sudan"
   },
   {
@@ -244,7 +244,7 @@
     "Country_Map": "Togo"
   },
   {
-    "Country_Django": 0,
+    "Country_Django": "Tunisia",
     "Country_Map": "Tunisia"
   },
   {
